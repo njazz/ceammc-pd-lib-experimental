@@ -68,20 +68,68 @@ void SDIFFrameClass::dump() const
     OBJ_DBG << "contents:  " << _sdifFrameData->toString();
 }
 
-void SDIFFrameClass::m_info(t_symbol* s, const AtomList& l)
-{
-    if (!_sdifFrameData->sdifFrame()) {
-        post("sdif.frame: no data");
-        return;
-    }
+//void SDIFFrameClass::m_info(t_symbol* s, const AtomList& l)
+//{
+//    if (!_sdifFrameData->sdifFrame()) {
+//        post("sdif.frame: no data");
+//        return;
+//    }
 
-    post(_sdifFrameData->sdifFrame()->info().c_str());
-}
+//    post(_sdifFrameData->sdifFrame()->info().c_str());
+//}
 
 void SDIFFrameClass::m_newframe(t_symbol* s, const AtomList& l)
 {
     _sdifFrameData = new DataTypeSDIFFrame(new MSDIFFrame());
     _dPtr = DataPtr(_sdifFrameData);
+}
+
+void SDIFFrameClass::m_addmatrix(t_symbol* s, const AtomList& l)
+{
+}
+void SDIFFrameClass::m_removematrix(t_symbol* s, const AtomList& l)
+{
+}
+
+void SDIFFrameClass::m_replace_matrix(t_symbol* s, const AtomList& l)
+{
+}
+
+void SDIFFrameClass::m_time(t_symbol* s, const AtomList& l)
+{
+    if (!_sdifFrameData) return;
+    if (!_sdifFrameData->sdifFrame()) {
+        post("sdif.frame: no data");
+        return;
+    }
+
+    if (l.size() < 1) {
+        AtomList L(gensym("time"));
+
+        L.append(Atom((_sdifFrameData->sdifFrame()->time())));
+        L.output(_out1);
+    } else {
+        float t = l.at(0).asFloat();
+        _sdifFrameData->sdifFrame()->setTime(t);
+    }
+}
+void SDIFFrameClass::m_stream_id(t_symbol* s, const AtomList& l)
+{
+    if (!_sdifFrameData) return;
+    if (!_sdifFrameData->sdifFrame()) {
+        post("sdif.frame: no data");
+        return;
+    }
+
+    if (l.size() < 1) {
+        AtomList L(gensym("stream_id"));
+
+        L.append(Atom((_sdifFrameData->sdifFrame()->streamID())));
+        L.output(_out1);
+    } else {
+        float i = l.at(0).asFloat();
+        _sdifFrameData->sdifFrame()->setStreamID(i);
+    }
 }
 
 void SDIFFrameClass::m_clear(t_symbol* s, const AtomList& l)
@@ -94,9 +142,12 @@ extern "C" {
 void setup_sdif0x2eframe()
 {
     ObjectFactory<SDIFFrameClass> f("sdif.frame");
-    f.addMethod("info", &SDIFFrameClass::m_info);
+//    f.addMethod("info", &SDIFFrameClass::m_info);
     f.addMethod("clear", &SDIFFrameClass::m_clear);
     f.addMethod("new", &SDIFFrameClass::m_newframe);
+
+    f.addMethod("time", &SDIFFrameClass::m_time);
+    f.addMethod("stream_id", &SDIFFrameClass::m_stream_id);
 }
 }
 

@@ -20,7 +20,7 @@ public:
     virtual void onList(const AtomList& l) override;
     virtual void onFloat(float f) override;
 
-    void m_info(t_symbol* s, const AtomList& l);
+//    void m_info(t_symbol* s, const AtomList& l);
     void m_clear(t_symbol* s, const AtomList& l);
 
     void m_newframe(t_symbol* s, const AtomList& l);
@@ -29,6 +29,9 @@ public:
     void m_removematrix(t_symbol* s, const AtomList& l);
 
     void m_replace_matrix(t_symbol* s, const AtomList& l);
+
+    void m_time(t_symbol* s, const AtomList& l);
+    void m_stream_id(t_symbol* s, const AtomList& l);
 };
 
 #endif // SDIF_FILE_H

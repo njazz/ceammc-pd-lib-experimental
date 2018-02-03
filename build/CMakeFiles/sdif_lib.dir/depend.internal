@@ -2194,6 +2194,7 @@ CMakeFiles/sdif_lib.dir/src/sdif_file.cpp.o
  .././lib/ceammc_atom.h
  .././lib/ceammc_atomlist.h
  .././lib/ceammc_data.h
+ .././lib/ceammc_dataatom.h
  .././lib/ceammc_factory.h
  .././lib/ceammc_log.h
  .././lib/ceammc_message.h

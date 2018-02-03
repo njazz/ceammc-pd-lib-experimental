@@ -33,7 +33,8 @@ AbstractData* DataTypeSDIFFile::clone() const
 
 std::string DataTypeSDIFFile::toString() const
 {
-    return "[SDIF File]";
+    if (!_sdifFile) return "[empty file]";
+    return _sdifFile->info();
 }
 
 // ===========
@@ -67,7 +68,8 @@ AbstractData* DataTypeSDIFFrame::clone() const
 
 std::string DataTypeSDIFFrame::toString() const
 {
-    return "[SDIF Frame]";
+    if (!_sdifFrame) return "[empty file]";
+    return _sdifFrame->info();
 }
 
 // ===========
@@ -101,5 +103,6 @@ AbstractData* DataTypeSDIFMatrix::clone() const
 
 std::string DataTypeSDIFMatrix::toString() const
 {
-    return "[SDIF Matrix]";
+    if (!_sdifMatrix) return "[empty file]";
+    return _sdifMatrix->info();
 }

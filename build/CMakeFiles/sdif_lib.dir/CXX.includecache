@@ -829,6 +829,8 @@ sdif_data_types.h
 /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_data_types.h
 sdif_file.h
 /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_file.h
+ceammc_dataatom.h
+/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/ceammc_dataatom.h
 
 /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_file.h
 ceammc_object.h

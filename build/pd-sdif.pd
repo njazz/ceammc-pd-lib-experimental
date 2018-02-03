@@ -7,7 +7,7 @@
 -1 -1;
 #X msg 205 191 newfile;
 #X msg 298 197 clear;
-#X msg 287 85 read /Users/njazz/Documents/____ios/2017-07/pd-sdif/build/test.sdif
+#X msg 287 35 read /Users/njazz/Documents/____ios/2017-07/pd-sdif/build/test.sdif
 ;
 #X obj 687 377 string;
 #X obj 652 426 ui.display @size 40 18 @fontname "Helvetica" @fontweight
@@ -81,13 +81,18 @@
 #X msg 433 360 data;
 #X obj 61 434 list.length;
 #X floatatom 53 470 5 0 0 0 - - -, f 5;
-#X obj 172 454 list.sort;
-#X obj 167 494 list.slice 0 16;
-#X obj 114 546 ui.display @size 250 75 @fontname "Helvetica" @fontweight
+#X obj 190 448 list.sort;
+#X obj 70 536 ui.display @size 250 450 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
 @pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
 0.6 1 @display_events 1 @display_type 0 @auto_size 1;
-#X msg 419 322 column_at 1;
+#X floatatom 512 241 5 0 0 0 - - -, f 5;
+#X msg 419 322 column_at \$1;
+#X obj 466 179 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 126 495 list.slice 0 256;
+#X msg 295 104 write /Users/njazz/Documents/____ios/2017-07/pd-sdif/build/testWrite.sdif
+;
 #X connect 1 0 35 0;
 #X connect 1 0 31 0;
 #X connect 2 0 1 0;
@@ -124,6 +129,7 @@
 #X connect 43 0 42 0;
 #X connect 44 0 54 0;
 #X connect 44 0 56 0;
+#X connect 44 0 61 0;
 #X connect 45 0 44 0;
 #X connect 46 0 44 0;
 #X connect 47 0 44 0;
@@ -134,6 +140,8 @@
 #X connect 52 0 51 0;
 #X connect 53 0 44 0;
 #X connect 54 0 55 0;
-#X connect 56 0 57 0;
-#X connect 57 0 58 0;
+#X connect 58 0 59 0;
 #X connect 59 0 44 0;
+#X connect 60 0 58 0;
+#X connect 61 0 57 0;
+#X connect 62 0 1 0;

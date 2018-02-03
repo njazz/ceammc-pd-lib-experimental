@@ -19,7 +19,7 @@ public:
     virtual void onData(const DataPtr& d) override;
     virtual void onList(const AtomList& l) override;
 
-    void m_info(t_symbol* s, const AtomList& l);
+//    void m_info(t_symbol* s, const AtomList& l);
     void m_clear(t_symbol* s, const AtomList& l);
 
     void m_newmatrix(t_symbol* s, const AtomList& l);

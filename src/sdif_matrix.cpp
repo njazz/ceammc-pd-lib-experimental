@@ -48,15 +48,15 @@ void SDIFMatrixClass::dump() const
     OBJ_DBG << "contents:  " << _sdifMatrixData->toString();
 }
 
-void SDIFMatrixClass::m_info(t_symbol* s, const AtomList& l)
-{
-    if (!_sdifMatrixData->sdifMatrix()) {
-        post("sdif.matrix: no data");
-        return;
-    }
+//void SDIFMatrixClass::m_info(t_symbol* s, const AtomList& l)
+//{
+//    if (!_sdifMatrixData->sdifMatrix()) {
+//        post("sdif.matrix: no data");
+//        return;
+//    }
 
-    post(_sdifMatrixData->sdifMatrix()->info().c_str());
-}
+//    post(_sdifMatrixData->sdifMatrix()->info().c_str());
+//}
 
 void SDIFMatrixClass::m_newmatrix(t_symbol* s, const AtomList& l)
 {
@@ -147,7 +147,7 @@ extern "C" {
 void setup_sdif0x2ematrix()
 {
     ObjectFactory<SDIFMatrixClass> f("sdif.matrix");
-    f.addMethod("info", &SDIFMatrixClass::m_info);
+//    f.addMethod("info", &SDIFMatrixClass::m_info);
     f.addMethod("clear", &SDIFMatrixClass::m_clear);
     f.addMethod("new", &SDIFMatrixClass::m_newmatrix);
 
