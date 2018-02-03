@@ -84,14 +84,9 @@ void SDIFFrameClass::m_newframe(t_symbol* s, const AtomList& l)
     _dPtr = DataPtr(_sdifFrameData);
 }
 
-void SDIFFrameClass::m_addmatrix(t_symbol* s, const AtomList& l)
-{
-}
-void SDIFFrameClass::m_removematrix(t_symbol* s, const AtomList& l)
-{
-}
 
-void SDIFFrameClass::m_replace_matrix(t_symbol* s, const AtomList& l)
+
+void SDIFFrameClass::m_replace_matrices(t_symbol* s, const AtomList& l)
 {
 }
 
@@ -138,6 +133,59 @@ void SDIFFrameClass::m_clear(t_symbol* s, const AtomList& l)
     _dPtr = DataPtr(_sdifFrameData);
 }
 
+//
+
+void SDIFFrameClass::m_add_matrix(t_symbol* s, const AtomList& l)
+{
+    if (l.size() < 1)
+        return;
+
+    DataAtom a(l.at(0));
+    if (!a.isData())
+        return;
+
+    if (!_sdifFrameData->sdifFrame())
+        return;
+
+    DataTypeSDIFMatrix* f = const_cast<DataTypeSDIFMatrix*>(a.data().as<DataTypeSDIFMatrix>());
+    _sdifFrameData->sdifFrame()->addMatrix(f->sdifMatrix());
+}
+
+void SDIFFrameClass::m_insert_matrix(t_symbol* s, const AtomList& l)
+{
+    if (l.size() < 2)
+        return;
+
+    DataAtom a(l.at(1));
+    if (!a.isData())
+        return;
+
+    if (!_sdifFrameData->sdifFrame())
+        return;
+
+    DataTypeSDIFMatrix* f = const_cast<DataTypeSDIFMatrix*>(a.data().as<DataTypeSDIFMatrix>());
+    _sdifFrameData->sdifFrame()->insertMatrix(l.at(0).asInt(), f->sdifMatrix());
+}
+
+void SDIFFrameClass::m_remove_matrix(t_symbol* s, const AtomList& l)
+{
+    if (l.size() < 1)
+        return;
+
+    if (!_sdifFrameData->sdifFrame())
+        return;
+
+    _sdifFrameData->sdifFrame()->removeMatrixAt(l.at(0).asInt());
+}
+
+void SDIFFrameClass::m_remove_all_matrices(t_symbol* s, const AtomList& l)
+{
+    if (!_sdifFrameData->sdifFrame())
+        return;
+
+    _sdifFrameData->sdifFrame()->removeAllMatrices();
+}
+
 extern "C" {
 void setup_sdif0x2eframe()
 {
@@ -148,6 +196,12 @@ void setup_sdif0x2eframe()
 
     f.addMethod("time", &SDIFFrameClass::m_time);
     f.addMethod("stream_id", &SDIFFrameClass::m_stream_id);
+
+    f.addMethod("add_matrix", &SDIFFrameClass::m_add_matrix);
+    f.addMethod("insert_matrix", &SDIFFrameClass::m_insert_matrix);
+    f.addMethod("remove_matrix", &SDIFFrameClass::m_remove_matrix);
+    f.addMethod("remove_all_matrices", &SDIFFrameClass::m_remove_all_matrices);
+
 }
 }
 

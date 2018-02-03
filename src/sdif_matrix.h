@@ -28,6 +28,8 @@ public:
     void m_columnat(t_symbol* s, const AtomList& l);
     void m_data(t_symbol* s, const AtomList& l);
 
+        void m_type(t_symbol* s, const AtomList& l);
+
     void m_resize(t_symbol* s, const AtomList& l);
     void m_erase_data(t_symbol* s, const AtomList& l);
 };

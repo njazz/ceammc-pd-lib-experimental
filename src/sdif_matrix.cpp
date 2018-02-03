@@ -95,6 +95,13 @@ void SDIFMatrixClass::m_rowat(t_symbol* s, const AtomList& l)
     L.output(_out1);
 }
 
+void SDIFMatrixClass::m_type(t_symbol* s, const AtomList& l)
+{
+    AtomList L(Atom(gensym("type")));
+    L.append(Atom(gensym(_sdifMatrixData->sdifMatrix()->signature())));
+    L.output(_out1);
+}
+
 void SDIFMatrixClass::m_columnat(t_symbol* s, const AtomList& l)
 {
     if (!_sdifMatrixData)
@@ -147,9 +154,11 @@ extern "C" {
 void setup_sdif0x2ematrix()
 {
     ObjectFactory<SDIFMatrixClass> f("sdif.matrix");
-//    f.addMethod("info", &SDIFMatrixClass::m_info);
+    //    f.addMethod("info", &SDIFMatrixClass::m_info);
     f.addMethod("clear", &SDIFMatrixClass::m_clear);
     f.addMethod("new", &SDIFMatrixClass::m_newmatrix);
+
+    f.addMethod("type", &SDIFMatrixClass::m_type);
 
     f.addMethod("row_at", &SDIFMatrixClass::m_rowat);
     f.addMethod("column_at", &SDIFMatrixClass::m_columnat);

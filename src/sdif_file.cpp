@@ -164,6 +164,8 @@ void SDIFFileClass::m_remove_frame(t_symbol* s, const AtomList& l)
 
     if (!_sdifFileData->sdifFile())
         return;
+
+    _sdifFileData->sdifFile()->removeFrameAt(l.at(0).asInt());
 }
 
 void SDIFFileClass::m_remove_all_frames(t_symbol* s, const AtomList& l)

@@ -25,10 +25,12 @@ public:
 
     void m_newframe(t_symbol* s, const AtomList& l);
 
-    void m_addmatrix(t_symbol* s, const AtomList& l);
-    void m_removematrix(t_symbol* s, const AtomList& l);
+    void m_add_matrix(t_symbol* s, const AtomList& l);
+    void m_insert_matrix(t_symbol* s, const AtomList& l);
+    void m_remove_matrix(t_symbol* s, const AtomList& l);
+    void m_remove_all_matrices(t_symbol* s, const AtomList& l);
 
-    void m_replace_matrix(t_symbol* s, const AtomList& l);
+    void m_replace_matrices(t_symbol* s, const AtomList& l);
 
     void m_time(t_symbol* s, const AtomList& l);
     void m_stream_id(t_symbol* s, const AtomList& l);
