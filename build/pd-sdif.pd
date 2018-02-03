@@ -40,9 +40,9 @@
 #X text 376 664 sdif.matrix.each_column;
 #X text 380 691 sdif.matrix.each;
 #X msg 117 138 dump;
-#X text 181 504 'frames 1TRC';
-#X text 179 587 'matrices';
-#X text 175 685 'list';
+#X text 181 579 'frames 1TRC';
+#X text 179 662 'matrices';
+#X text 175 760 'list';
 #X msg 362 198 frames;
 #X obj 354 420 ui.display @size 250 105 @fontname "Helvetica" @fontweight
 "normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
@@ -79,8 +79,15 @@
 #X msg 333 350 row_at \$1;
 #X floatatom 334 317 5 0 0 0 - - -, f 5;
 #X msg 433 360 data;
-#X obj 146 421 list.length;
-#X floatatom 138 457 5 0 0 0 - - -, f 5;
+#X obj 61 434 list.length;
+#X floatatom 53 470 5 0 0 0 - - -, f 5;
+#X obj 172 454 list.sort;
+#X obj 167 494 list.slice 0 16;
+#X obj 114 546 ui.display @size 250 75 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X msg 419 322 column_at 1;
 #X connect 1 0 35 0;
 #X connect 1 0 31 0;
 #X connect 2 0 1 0;
@@ -116,6 +123,7 @@
 #X connect 41 0 31 0;
 #X connect 43 0 42 0;
 #X connect 44 0 54 0;
+#X connect 44 0 56 0;
 #X connect 45 0 44 0;
 #X connect 46 0 44 0;
 #X connect 47 0 44 0;
@@ -126,3 +134,6 @@
 #X connect 52 0 51 0;
 #X connect 53 0 44 0;
 #X connect 54 0 55 0;
+#X connect 56 0 57 0;
+#X connect 57 0 58 0;
+#X connect 59 0 44 0;

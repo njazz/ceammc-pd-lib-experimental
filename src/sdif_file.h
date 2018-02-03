@@ -22,9 +22,18 @@ public:
     virtual void onFloat(float f) override;
 
     void m_info(t_symbol* s, const AtomList& l);
-    void m_newfile(t_symbol* s, const AtomList& l);
     void m_clear(t_symbol* s, const AtomList& l);
+
+        void m_newfile(t_symbol* s, const AtomList& l);
+
     void m_read(t_symbol* s, const AtomList& l);
+    void m_write(t_symbol* s, const AtomList& l);
+
+    void m_add_frame(t_symbol* s, const AtomList& l);
+    void m_remove_frame(t_symbol* s, const AtomList& l);
+
+    void m_replace_frames(t_symbol* s, const AtomList& l);
+
     void m_frames(t_symbol* s, const AtomList& l);
 };
 

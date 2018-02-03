@@ -11,7 +11,6 @@ class SDIFFrameClass : public BaseObject {
     DataTypeSDIFFrame* _sdifFrameData;
     DataPtr _dPtr;
 
-
 public:
     SDIFFrameClass(const PdArgs& args);
 
@@ -26,6 +25,10 @@ public:
 
     void m_newframe(t_symbol* s, const AtomList& l);
 
+    void m_addmatrix(t_symbol* s, const AtomList& l);
+    void m_removematrix(t_symbol* s, const AtomList& l);
+
+    void m_replace_matrix(t_symbol* s, const AtomList& l);
 };
 
 #endif // SDIF_FILE_H

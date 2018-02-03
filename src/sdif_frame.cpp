@@ -27,7 +27,8 @@ void SDIFFrameClass::onBang()
 
 void SDIFFrameClass::onFloat(float f)
 {
-    if (!_sdifFrameData) return;
+    if (!_sdifFrameData)
+        return;
     if (!_sdifFrameData->sdifFrame())
         return;
 
@@ -74,7 +75,7 @@ void SDIFFrameClass::m_info(t_symbol* s, const AtomList& l)
         return;
     }
 
-     post(_sdifFrameData->sdifFrame()->info().c_str());
+    post(_sdifFrameData->sdifFrame()->info().c_str());
 }
 
 void SDIFFrameClass::m_newframe(t_symbol* s, const AtomList& l)
