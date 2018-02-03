@@ -80,7 +80,16 @@ void SDIFFrameClass::dump() const
 
 void SDIFFrameClass::m_newframe(t_symbol* s, const AtomList& l)
 {
-    _sdifFrameData = new DataTypeSDIFFrame(new MSDIFFrame());
+    std::string t = "1NVT";
+    int str_id = -1;
+
+    if (l.size()>0)
+        t = l.at(0).asString();
+
+    if (l.size()>1)
+        str_id = l.at(1).asInt();
+
+    _sdifFrameData = new DataTypeSDIFFrame(new MSDIFFrame(t,str_id));
     _dPtr = DataPtr(_sdifFrameData);
 }
 
@@ -131,6 +140,13 @@ void SDIFFrameClass::m_clear(t_symbol* s, const AtomList& l)
 {
     _sdifFrameData = new DataTypeSDIFFrame(0);
     _dPtr = DataPtr(_sdifFrameData);
+}
+
+void SDIFFrameClass::m_type(t_symbol* s, const AtomList& l)
+{
+    AtomList L(Atom(gensym("type")));
+    L.append(Atom(gensym(_sdifFrameData->sdifFrame()->signature())));
+    L.output(_out1);
 }
 
 //
@@ -196,6 +212,8 @@ void setup_sdif0x2eframe()
 
     f.addMethod("time", &SDIFFrameClass::m_time);
     f.addMethod("stream_id", &SDIFFrameClass::m_stream_id);
+
+        f.addMethod("type", &SDIFFrameClass::m_type);
 
     f.addMethod("add_matrix", &SDIFFrameClass::m_add_matrix);
     f.addMethod("insert_matrix", &SDIFFrameClass::m_insert_matrix);

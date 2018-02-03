@@ -85,10 +85,10 @@ void SDIFMatrixClass::m_rowat(t_symbol* s, const AtomList& l)
     int idx = l.at(0).asInt();
     if (idx < 0)
         return;
-    if (idx >= _sdifMatrixData->sdifMatrix()->header.rows)
+    if (idx >= _sdifMatrixData->sdifMatrix()->rows())
         return;
 
-    for (int i = 0; i < _sdifMatrixData->sdifMatrix()->header.columns; i++) {
+    for (int i = 0; i < _sdifMatrixData->sdifMatrix()->columns(); i++) {
         L.append(Atom(_sdifMatrixData->sdifMatrix()->rowAt<float>(idx)[i]));
     }
 
@@ -117,10 +117,10 @@ void SDIFMatrixClass::m_columnat(t_symbol* s, const AtomList& l)
     int idx = l.at(0).asInt();
     if (idx < 0)
         return;
-    if (idx >= _sdifMatrixData->sdifMatrix()->header.columns)
+    if (idx >= _sdifMatrixData->sdifMatrix()->columns())
         return;
 
-    for (int i = 0; i < _sdifMatrixData->sdifMatrix()->header.rows; i++) {
+    for (int i = 0; i < _sdifMatrixData->sdifMatrix()->rows(); i++) {
         L.append(Atom(_sdifMatrixData->sdifMatrix()->columnAt<float>(idx)[i]));
     }
 
@@ -137,7 +137,7 @@ void SDIFMatrixClass::m_data(t_symbol* s, const AtomList& l)
     AtomList L;
 
     if (_sdifMatrixData->sdifMatrix()->is<float>()) {
-        for (int i = 0; i < _sdifMatrixData->sdifMatrix()->header.rows * _sdifMatrixData->sdifMatrix()->header.columns; i++) {
+        for (int i = 0; i < _sdifMatrixData->sdifMatrix()->rows() * _sdifMatrixData->sdifMatrix()->columns(); i++) {
             L.append(Atom(_sdifMatrixData->sdifMatrix()->values<float>()[i]));
         }
     }
@@ -155,6 +155,7 @@ void setup_sdif0x2ematrix()
 {
     ObjectFactory<SDIFMatrixClass> f("sdif.matrix");
     //    f.addMethod("info", &SDIFMatrixClass::m_info);
+
     f.addMethod("clear", &SDIFMatrixClass::m_clear);
     f.addMethod("new", &SDIFMatrixClass::m_newmatrix);
 

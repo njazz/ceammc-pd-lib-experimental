@@ -20,10 +20,12 @@ public:
     virtual void onList(const AtomList& l) override;
     virtual void onFloat(float f) override;
 
-//    void m_info(t_symbol* s, const AtomList& l);
+    //    void m_info(t_symbol* s, const AtomList& l);
     void m_clear(t_symbol* s, const AtomList& l);
 
     void m_newframe(t_symbol* s, const AtomList& l);
+
+    void m_type(t_symbol* s, const AtomList& l);
 
     void m_add_matrix(t_symbol* s, const AtomList& l);
     void m_insert_matrix(t_symbol* s, const AtomList& l);

@@ -87,7 +87,7 @@ void DataTypeSDIFMatrix::dump()
         return;
     }
 
-    post("sdif.matrix: rows %i columns %i", _sdifMatrix->header.rows, _sdifMatrix->header.columns);
+    post("sdif.matrix: rows %i columns %i", _sdifMatrix->rows(), _sdifMatrix->columns());
 }
 
 DataType DataTypeSDIFMatrix::type() const
