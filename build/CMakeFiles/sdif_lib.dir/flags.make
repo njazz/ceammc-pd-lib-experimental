@@ -7,11 +7,11 @@ C_FLAGS = -fPIC
 
 C_DEFINES = -DHAVE_UNISTD_H -Dsdif_lib_EXPORTS
 
-C_INCLUDES = -I/usr/local/include -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/build -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/. -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./tl -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./lib -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./pd -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./utf8 -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./CICMWrapper -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/../miniSDIF/src 
+C_INCLUDES = -I/usr/local/include -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/build -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/. -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./tl -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./lib -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./pd -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./utf8 -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./CICMWrapper -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/../miniSDIF/src -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/../PartialSynth/src 
 
 CXX_FLAGS = -fPIC   -std=gnu++11
 
 CXX_DEFINES = -DHAVE_UNISTD_H -Dsdif_lib_EXPORTS
 
-CXX_INCLUDES = -I/usr/local/include -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/build -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/. -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./tl -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./lib -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./pd -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./utf8 -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./CICMWrapper -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/../miniSDIF/src 
+CXX_INCLUDES = -I/usr/local/include -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/build -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/. -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./tl -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./lib -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./pd -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./utf8 -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/./CICMWrapper -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/../miniSDIF/src -I/Users/njazz/Documents/____ios/2017-07/pd-sdif/../PartialSynth/src 
 

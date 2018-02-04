@@ -33,6 +33,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sdif_lib.dir/src/sdif_frame.cpp.o"
   "CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o"
   "CMakeFiles/sdif_lib.dir/src/sdif_data_types.cpp.o"
+  "CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o"
   "CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o"
   "CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o"
   "CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o"
@@ -51,6 +52,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o"
   "CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o"
   "CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o"
+  "CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o"
+  "CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o"
+  "CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o"
+  "CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o"
   "sdif_lib.pdb"
   "sdif_lib.pd_darwin"
 )

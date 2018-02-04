@@ -124,6 +124,18 @@ CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.o
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/unicodedatabase.h
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/utf8rewind.c
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/utf8rewind.h
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.hpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.hpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.hpp
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o
  /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp
  /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.hpp
@@ -139,6 +151,12 @@ CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIF
  /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp
  /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.hpp
  /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFStructures.hpp
+ /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.hpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o
+ /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/json.hpp
+ /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFStructures.hpp
+ /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp
+ /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.hpp
 CMakeFiles/sdif_lib.dir/lib/array_load_pattern.cpp.o
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/lib/array_load_pattern.cpp
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/lib/array_load_pattern.h
@@ -2241,4 +2259,20 @@ CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_data_types.h
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_matrix.cpp
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_matrix.h
+ /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o
+ ../../PartialSynth/src/BasePartial.hpp
+ ../../PartialSynth/src/SinePartial.hpp
+ ../../PartialSynth/src/SineSynth.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_factory.h
+ .././lib/ceammc_log.h
+ .././lib/ceammc_message.h
+ .././lib/ceammc_object.h
+ .././lib/ceammc_property.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/synth_sine.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/synth_sine.h
  /usr/local/include/m_pd.h

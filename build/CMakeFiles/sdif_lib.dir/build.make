@@ -873,9 +873,33 @@ CMakeFiles/sdif_lib.dir/src/sdif_data_types.cpp.o.provides: CMakeFiles/sdif_lib.
 CMakeFiles/sdif_lib.dir/src/sdif_data_types.cpp.o.provides.build: CMakeFiles/sdif_lib.dir/src/sdif_data_types.cpp.o
 
 
+CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o: CMakeFiles/sdif_lib.dir/flags.make
+CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o: ../src/synth_sine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o"
+	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/synth_sine.cpp
+
+CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.i"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/synth_sine.cpp > CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.i
+
+CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.s"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/synth_sine.cpp -o CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.s
+
+CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o.requires:
+
+.PHONY : CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o.requires
+
+CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o.provides: CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o.provides.build
+.PHONY : CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o.provides
+
+CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o.provides.build: CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o
+
+
 CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o: ../CICMWrapper/ebox.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/CICMWrapper/ebox.c
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.i: cmake_force
@@ -899,7 +923,7 @@ CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o.provides.build: CMakeFiles/sdif_lib
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o: ../CICMWrapper/eclass.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/CICMWrapper/eclass.c
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.i: cmake_force
@@ -923,7 +947,7 @@ CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o.provides.build: CMakeFiles/sdif_l
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o: ../CICMWrapper/ecommon.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/CICMWrapper/ecommon.c
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.i: cmake_force
@@ -947,7 +971,7 @@ CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o.provides.build: CMakeFiles/sdif_
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/egraphics.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/CICMWrapper/egraphics.c.o: ../CICMWrapper/egraphics.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/egraphics.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/egraphics.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/CICMWrapper/egraphics.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/CICMWrapper/egraphics.c
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/egraphics.c.i: cmake_force
@@ -971,7 +995,7 @@ CMakeFiles/sdif_lib.dir/CICMWrapper/egraphics.c.o.provides.build: CMakeFiles/sdi
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/eobj.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/CICMWrapper/eobj.c.o: ../CICMWrapper/eobj.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/eobj.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/eobj.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/CICMWrapper/eobj.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/CICMWrapper/eobj.c
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/eobj.c.i: cmake_force
@@ -995,7 +1019,7 @@ CMakeFiles/sdif_lib.dir/CICMWrapper/eobj.c.o.provides.build: CMakeFiles/sdif_lib
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/epopup.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/CICMWrapper/epopup.c.o: ../CICMWrapper/epopup.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/epopup.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/sdif_lib.dir/CICMWrapper/epopup.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/CICMWrapper/epopup.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/CICMWrapper/epopup.c
 
 CMakeFiles/sdif_lib.dir/CICMWrapper/epopup.c.i: cmake_force
@@ -1019,7 +1043,7 @@ CMakeFiles/sdif_lib.dir/CICMWrapper/epopup.c.o.provides.build: CMakeFiles/sdif_l
 
 CMakeFiles/sdif_lib.dir/utf8/unicodedatabase.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/utf8/unicodedatabase.c.o: ../utf8/unicodedatabase.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/sdif_lib.dir/utf8/unicodedatabase.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/sdif_lib.dir/utf8/unicodedatabase.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/utf8/unicodedatabase.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/unicodedatabase.c
 
 CMakeFiles/sdif_lib.dir/utf8/unicodedatabase.c.i: cmake_force
@@ -1043,7 +1067,7 @@ CMakeFiles/sdif_lib.dir/utf8/unicodedatabase.c.o.provides.build: CMakeFiles/sdif
 
 CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.o: ../utf8/utf8rewind.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/utf8rewind.c
 
 CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.i: cmake_force
@@ -1067,7 +1091,7 @@ CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.o.provides.build: CMakeFiles/sdif_lib.
 
 CMakeFiles/sdif_lib.dir/utf8/internal/casemapping.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/utf8/internal/casemapping.c.o: ../utf8/internal/casemapping.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/casemapping.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/casemapping.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/utf8/internal/casemapping.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/internal/casemapping.c
 
 CMakeFiles/sdif_lib.dir/utf8/internal/casemapping.c.i: cmake_force
@@ -1091,7 +1115,7 @@ CMakeFiles/sdif_lib.dir/utf8/internal/casemapping.c.o.provides.build: CMakeFiles
 
 CMakeFiles/sdif_lib.dir/utf8/internal/codepoint.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/utf8/internal/codepoint.c.o: ../utf8/internal/codepoint.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/codepoint.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/codepoint.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/utf8/internal/codepoint.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/internal/codepoint.c
 
 CMakeFiles/sdif_lib.dir/utf8/internal/codepoint.c.i: cmake_force
@@ -1115,7 +1139,7 @@ CMakeFiles/sdif_lib.dir/utf8/internal/codepoint.c.o.provides.build: CMakeFiles/s
 
 CMakeFiles/sdif_lib.dir/utf8/internal/composition.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/utf8/internal/composition.c.o: ../utf8/internal/composition.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/composition.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/composition.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/utf8/internal/composition.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/internal/composition.c
 
 CMakeFiles/sdif_lib.dir/utf8/internal/composition.c.i: cmake_force
@@ -1139,7 +1163,7 @@ CMakeFiles/sdif_lib.dir/utf8/internal/composition.c.o.provides.build: CMakeFiles
 
 CMakeFiles/sdif_lib.dir/utf8/internal/database.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/utf8/internal/database.c.o: ../utf8/internal/database.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/database.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/database.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/utf8/internal/database.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/internal/database.c
 
 CMakeFiles/sdif_lib.dir/utf8/internal/database.c.i: cmake_force
@@ -1163,7 +1187,7 @@ CMakeFiles/sdif_lib.dir/utf8/internal/database.c.o.provides.build: CMakeFiles/sd
 
 CMakeFiles/sdif_lib.dir/utf8/internal/decomposition.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/utf8/internal/decomposition.c.o: ../utf8/internal/decomposition.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/decomposition.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/decomposition.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/utf8/internal/decomposition.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/internal/decomposition.c
 
 CMakeFiles/sdif_lib.dir/utf8/internal/decomposition.c.i: cmake_force
@@ -1187,7 +1211,7 @@ CMakeFiles/sdif_lib.dir/utf8/internal/decomposition.c.o.provides.build: CMakeFil
 
 CMakeFiles/sdif_lib.dir/utf8/internal/seeking.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/utf8/internal/seeking.c.o: ../utf8/internal/seeking.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/seeking.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/seeking.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/utf8/internal/seeking.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/internal/seeking.c
 
 CMakeFiles/sdif_lib.dir/utf8/internal/seeking.c.i: cmake_force
@@ -1211,7 +1235,7 @@ CMakeFiles/sdif_lib.dir/utf8/internal/seeking.c.o.provides.build: CMakeFiles/sdi
 
 CMakeFiles/sdif_lib.dir/utf8/internal/streaming.c.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/utf8/internal/streaming.c.o: ../utf8/internal/streaming.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/streaming.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/sdif_lib.dir/utf8/internal/streaming.c.o"
 	/usr/bin/clang  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sdif_lib.dir/utf8/internal/streaming.c.o   -c /Users/njazz/Documents/____ios/2017-07/pd-sdif/utf8/internal/streaming.c
 
 CMakeFiles/sdif_lib.dir/utf8/internal/streaming.c.i: cmake_force
@@ -1235,7 +1259,7 @@ CMakeFiles/sdif_lib.dir/utf8/internal/streaming.c.o.provides.build: CMakeFiles/s
 
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o: /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o"
 	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o -c /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp
 
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.i: cmake_force
@@ -1259,7 +1283,7 @@ CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIF
 
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o: /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o"
 	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o -c /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp
 
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.i: cmake_force
@@ -1283,7 +1307,7 @@ CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIF
 
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o: CMakeFiles/sdif_lib.dir/flags.make
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o: /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o"
 	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o -c /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp
 
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.i: cmake_force
@@ -1303,6 +1327,102 @@ CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIF
 .PHONY : CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o.provides
 
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o.provides.build: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o
+
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o: CMakeFiles/sdif_lib.dir/flags.make
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o: /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o"
+	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o -c /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.i"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp > CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.i
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.s"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.s
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o.requires:
+
+.PHONY : CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o.requires
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o.provides: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o.provides.build
+.PHONY : CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o.provides
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o.provides.build: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o
+
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o: CMakeFiles/sdif_lib.dir/flags.make
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o"
+	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o -c /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.i"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp > CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.i
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o.requires:
+
+.PHONY : CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o.requires
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o.provides: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o.provides.build
+.PHONY : CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o.provides
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o.provides.build: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o
+
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o: CMakeFiles/sdif_lib.dir/flags.make
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o"
+	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o -c /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.i"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp > CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.i
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.s"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.s
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o.requires:
+
+.PHONY : CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o.requires
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o.provides: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o.provides.build
+.PHONY : CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o.provides
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o.provides.build: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o
+
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o: CMakeFiles/sdif_lib.dir/flags.make
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o"
+	/usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o -c /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.i"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp > CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.i
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.s"
+	/usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp -o CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.s
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o.requires:
+
+.PHONY : CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o.requires
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o.provides: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o.requires
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o.provides.build
+.PHONY : CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o.provides
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o.provides.build: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o
 
 
 # Object files for target sdif_lib
@@ -1341,6 +1461,7 @@ sdif_lib_OBJECTS = \
 "CMakeFiles/sdif_lib.dir/src/sdif_frame.cpp.o" \
 "CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o" \
 "CMakeFiles/sdif_lib.dir/src/sdif_data_types.cpp.o" \
+"CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o" \
 "CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o" \
 "CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o" \
 "CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o" \
@@ -1358,7 +1479,11 @@ sdif_lib_OBJECTS = \
 "CMakeFiles/sdif_lib.dir/utf8/internal/streaming.c.o" \
 "CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o" \
 "CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o" \
-"CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o"
+"CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o" \
+"CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o" \
+"CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o" \
+"CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o" \
+"CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o"
 
 # External object files for target sdif_lib
 sdif_lib_EXTERNAL_OBJECTS =
@@ -1397,6 +1522,7 @@ sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/src/sdif_file.cpp.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/src/sdif_frame.cpp.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/src/sdif_data_types.cpp.o
+sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o
@@ -1415,9 +1541,13 @@ sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/utf8/internal/streaming.c.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o
+sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o
+sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o
+sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o
+sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/build.make
 sdif_lib.pd_darwin: CMakeFiles/sdif_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Linking CXX shared library sdif_lib.pd_darwin"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Linking CXX shared library sdif_lib.pd_darwin"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sdif_lib.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1459,6 +1589,7 @@ CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/src/sdif_file.cpp.o.re
 CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/src/sdif_frame.cpp.o.requires
 CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o.requires
 CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/src/sdif_data_types.cpp.o.requires
+CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o.requires
 CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/CICMWrapper/ebox.c.o.requires
 CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/CICMWrapper/eclass.c.o.requires
 CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/CICMWrapper/ecommon.c.o.requires
@@ -1477,6 +1608,10 @@ CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/utf8/internal/streamin
 CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o.requires
 CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o.requires
 CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o.requires
+CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o.requires
+CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o.requires
+CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o.requires
+CMakeFiles/sdif_lib.dir/requires: CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o.requires
 
 .PHONY : CMakeFiles/sdif_lib.dir/requires
 

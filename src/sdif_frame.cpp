@@ -83,17 +83,15 @@ void SDIFFrameClass::m_newframe(t_symbol* s, const AtomList& l)
     std::string t = "1NVT";
     int str_id = -1;
 
-    if (l.size()>0)
+    if (l.size() > 0)
         t = l.at(0).asString();
 
-    if (l.size()>1)
+    if (l.size() > 1)
         str_id = l.at(1).asInt();
 
-    _sdifFrameData = new DataTypeSDIFFrame(new MSDIFFrame(t,str_id));
+    _sdifFrameData = new DataTypeSDIFFrame(new MSDIFFrame(t, str_id));
     _dPtr = DataPtr(_sdifFrameData);
 }
-
-
 
 void SDIFFrameClass::m_replace_matrices(t_symbol* s, const AtomList& l)
 {
@@ -101,7 +99,8 @@ void SDIFFrameClass::m_replace_matrices(t_symbol* s, const AtomList& l)
 
 void SDIFFrameClass::m_time(t_symbol* s, const AtomList& l)
 {
-    if (!_sdifFrameData) return;
+    if (!_sdifFrameData)
+        return;
     if (!_sdifFrameData->sdifFrame()) {
         post("sdif.frame: no data");
         return;
@@ -119,7 +118,8 @@ void SDIFFrameClass::m_time(t_symbol* s, const AtomList& l)
 }
 void SDIFFrameClass::m_stream_id(t_symbol* s, const AtomList& l)
 {
-    if (!_sdifFrameData) return;
+    if (!_sdifFrameData)
+        return;
     if (!_sdifFrameData->sdifFrame()) {
         post("sdif.frame: no data");
         return;
@@ -206,20 +206,20 @@ extern "C" {
 void setup_sdif0x2eframe()
 {
     ObjectFactory<SDIFFrameClass> f("sdif.frame");
-//    f.addMethod("info", &SDIFFrameClass::m_info);
+    //    f.addMethod("info", &SDIFFrameClass::m_info);
+
     f.addMethod("clear", &SDIFFrameClass::m_clear);
     f.addMethod("new", &SDIFFrameClass::m_newframe);
 
     f.addMethod("time", &SDIFFrameClass::m_time);
     f.addMethod("stream_id", &SDIFFrameClass::m_stream_id);
 
-        f.addMethod("type", &SDIFFrameClass::m_type);
+    f.addMethod("type", &SDIFFrameClass::m_type);
 
     f.addMethod("add_matrix", &SDIFFrameClass::m_add_matrix);
     f.addMethod("insert_matrix", &SDIFFrameClass::m_insert_matrix);
     f.addMethod("remove_matrix", &SDIFFrameClass::m_remove_matrix);
     f.addMethod("remove_all_matrices", &SDIFFrameClass::m_remove_all_matrices);
-
 }
 }
 

@@ -40,11 +40,16 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   ".././utf8"
   ".././CICMWrapper"
   "../../miniSDIF/src"
+  "../../PartialSynth/src"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFrame.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/lib/array_load_pattern.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/lib/array_load_pattern.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/lib/ceammc.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/lib/ceammc.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/lib/ceammc_abstractdata.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/lib/ceammc_abstractdata.cpp.o"
@@ -78,6 +83,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_file.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/sdif_file.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_frame.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/sdif_frame.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_matrix.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/synth_sine.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
@@ -97,6 +103,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   ".././utf8"
   ".././CICMWrapper"
   "../../miniSDIF/src"
+  "../../PartialSynth/src"
   )
 
 # Targets to which this target links.

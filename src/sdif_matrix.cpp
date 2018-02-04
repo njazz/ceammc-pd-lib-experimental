@@ -60,10 +60,37 @@ void SDIFMatrixClass::dump() const
 
 void SDIFMatrixClass::m_newmatrix(t_symbol* s, const AtomList& l)
 {
-    _sdifMatrixData = new DataTypeSDIFMatrix(new MSDIFMatrix());
+    std::string t = "1TRC";
+    int rows = 0;
+    int cols = 0;
+    int b = mTFloat4;
+
+    if (l.size()>0)
+        t = l.at(0).asString();
+
+    if (l.size()>1)
+        rows = l.at(1).asSizeT();
+
+    if (l.size()>2)
+        cols = l.at(2).asSizeT();
+
+
+    _sdifMatrixData = new DataTypeSDIFMatrix(new MSDIFMatrix(t,rows,cols,b));
     _dPtr = DataPtr(_sdifMatrixData);
 }
 
+void SDIFMatrixClass::m_set_size(t_symbol* s, const AtomList& l)
+{
+    if (l.size()<2) return;
+
+    if (!_sdifMatrixData)
+        return;
+    if (!_sdifMatrixData->sdifMatrix())
+        return;
+
+    _sdifMatrixData->sdifMatrix()->newSize(l.at(0).asSizeT(),l.at(1).asSizeT());
+
+}
 void SDIFMatrixClass::m_clear(t_symbol* s, const AtomList& l)
 {
     _sdifMatrixData = new DataTypeSDIFMatrix(0);

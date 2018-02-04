@@ -285,6 +285,87 @@ CICMWrapper/epopup.c.s:
 	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/CICMWrapper/epopup.c.s
 .PHONY : CICMWrapper/epopup.c.s
 
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.o: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.o
+
+# target to build an object file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.i: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.i
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.i
+
+# target to preprocess a source file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.i
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.i
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.s: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.s
+
+# target to generate assembly for a file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.o: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.o
+
+# target to build an object file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.i: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.i
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.i
+
+# target to preprocess a source file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.i
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.i
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.s: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.s
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.s
+
+# target to generate assembly for a file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.s
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.s
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.o: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.o
+
+# target to build an object file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.o
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.i: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.i
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.i
+
+# target to preprocess a source file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.i
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.i
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.s: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.s
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.s
+
+# target to generate assembly for a file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.s
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.cpp.s
+
 Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.o: Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.cpp.o
 
 .PHONY : Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.o
@@ -365,6 +446,33 @@ Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.s: Users/njazz/Do
 Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.s:
 	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.s
 .PHONY : Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.cpp.s
+
+Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.o: Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.o
+
+# target to build an object file
+Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o
+.PHONY : Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.o
+
+Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.i: Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.i
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.i
+
+# target to preprocess a source file
+Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.i
+.PHONY : Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.i
+
+Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.s: Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.s
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.s
+
+# target to generate assembly for a file
+Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.s
+.PHONY : Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.cpp.s
 
 lib/array_load_pattern.o: lib/array_load_pattern.cpp.o
 
@@ -1284,6 +1392,33 @@ src/sdif_matrix.cpp.s:
 	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.s
 .PHONY : src/sdif_matrix.cpp.s
 
+src/synth_sine.o: src/synth_sine.cpp.o
+
+.PHONY : src/synth_sine.o
+
+# target to build an object file
+src/synth_sine.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o
+.PHONY : src/synth_sine.cpp.o
+
+src/synth_sine.i: src/synth_sine.cpp.i
+
+.PHONY : src/synth_sine.i
+
+# target to preprocess a source file
+src/synth_sine.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.i
+.PHONY : src/synth_sine.cpp.i
+
+src/synth_sine.s: src/synth_sine.cpp.s
+
+.PHONY : src/synth_sine.s
+
+# target to generate assembly for a file
+src/synth_sine.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.s
+.PHONY : src/synth_sine.cpp.s
+
 utf8/internal/casemapping.o: utf8/internal/casemapping.c.o
 
 .PHONY : utf8/internal/casemapping.o
@@ -1554,6 +1689,15 @@ help:
 	@echo "... CICMWrapper/epopup.o"
 	@echo "... CICMWrapper/epopup.i"
 	@echo "... CICMWrapper/epopup.s"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.o"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.i"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.s"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.o"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.i"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.s"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.o"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.i"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SineSynth.s"
 	@echo "... Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.o"
 	@echo "... Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.i"
 	@echo "... Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFFile.s"
@@ -1563,6 +1707,9 @@ help:
 	@echo "... Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.o"
 	@echo "... Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.i"
 	@echo "... Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFMatrix.s"
+	@echo "... Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.o"
+	@echo "... Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.i"
+	@echo "... Users/njazz/Documents/____ios/2017-07/miniSDIF/src/mSDIFTypes.s"
 	@echo "... lib/array_load_pattern.o"
 	@echo "... lib/array_load_pattern.i"
 	@echo "... lib/array_load_pattern.s"
@@ -1665,6 +1812,9 @@ help:
 	@echo "... src/sdif_matrix.o"
 	@echo "... src/sdif_matrix.i"
 	@echo "... src/sdif_matrix.s"
+	@echo "... src/synth_sine.o"
+	@echo "... src/synth_sine.i"
+	@echo "... src/synth_sine.s"
 	@echo "... utf8/internal/casemapping.o"
 	@echo "... utf8/internal/casemapping.i"
 	@echo "... utf8/internal/casemapping.s"

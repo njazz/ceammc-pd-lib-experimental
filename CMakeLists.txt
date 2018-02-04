@@ -50,7 +50,15 @@ set (SDIFLIB
     ../miniSDIF/src/mSDIFFile.cpp
     ../miniSDIF/src/mSDIFFrame.cpp
     ../miniSDIF/src/mSDIFMatrix.cpp
+    ../miniSDIF/src/mSDIFTypes.cpp
     )
+
+set (SYNTH
+    ../PartialSynth/src/BasePartial.cpp
+    ../PartialSynth/src/SinePartial.cpp
+    ../PartialSynth/src/SineSynth.cpp
+    )
+
 set (SOURCES
     sdif_lib.cpp
 
@@ -60,6 +68,7 @@ set (SOURCES
 
     src/sdif_data_types.cpp
 
+    src/synth_sine.cpp
 #    tl/tl_cue.cpp
 #    tl/tl_bang.cpp
 #    tl/tl_transport.cpp
@@ -89,8 +98,9 @@ include_directories(./utf8/)
 include_directories(./CICMWrapper/)
 
 include_directories(../miniSDIF/src/)
+include_directories(../PartialSynth/src/)
 
-add_library(sdif_lib SHARED ${TL_LIB_SOURCES} ${TL_LIB_SOURCES_PLUS} ${SOURCES} ${CICM} ${UTF8} ${SDIFLIB})
+add_library(sdif_lib SHARED ${TL_LIB_SOURCES} ${TL_LIB_SOURCES_PLUS} ${SOURCES} ${CICM} ${UTF8} ${SDIFLIB} ${SYNTH})
 target_link_libraries(sdif_lib "-undefined dynamic_lookup")
 SET_TARGET_PROPERTIES(sdif_lib PROPERTIES PREFIX "")
 set_target_properties(sdif_lib PROPERTIES SUFFIX ".pd_darwin")
