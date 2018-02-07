@@ -36,10 +36,10 @@ void SDIFFileClass::onFloat(float f)
 
     if (idx < 0)
         return;
-    if (idx >= _sdifFileData->sdifFile()->frames.size())
+    if (idx >= _sdifFileData->sdifFile()->frameCount())
         return;
 
-    DataPtr p(new DataTypeSDIFFrame(_sdifFileData->sdifFile()->frames.at(idx)));
+    DataPtr p(new DataTypeSDIFFrame(_sdifFileData->sdifFile()->frames().at(idx)));
     dataTo(0, p);
 }
 
@@ -74,7 +74,7 @@ void SDIFFileClass::m_frames(t_symbol* s, const AtomList& l)
 
     AtomList L(Atom(gensym("frames")));
 
-    for (auto f : _sdifFileData->sdifFile()->frames) {
+    for (auto f : _sdifFileData->sdifFile()->frames()) {
         _frames.push_back(DataPtr(new DataTypeSDIFFrame(f)));
         L.append(_frames.back().asAtom());
     }
@@ -180,7 +180,7 @@ extern "C" {
 void setup_sdif0x2efile()
 {
     ObjectFactory<SDIFFileClass> f("sdif.file");
-    //    f.addMethod("info", &SDIFFileClass::m_info);
+    //f.addMethod("info", &SDIFFileClass::m_info);
 
     f.addMethod("newfile", &SDIFFileClass::m_newfile);
     f.addMethod("clear", &SDIFFileClass::m_clear);

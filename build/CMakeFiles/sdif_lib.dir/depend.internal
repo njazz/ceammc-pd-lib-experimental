@@ -127,6 +127,15 @@ CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.o
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o
  /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp
  /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.o
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.hpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.o
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.hpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp
+ /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.hpp
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o
  /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
  /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp
@@ -2259,6 +2268,73 @@ CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_data_types.h
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_matrix.cpp
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_matrix.h
+ /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o
+ ../../miniSDIF/src/mSDIFFile.hpp
+ ../../miniSDIF/src/mSDIFFrame.hpp
+ ../../miniSDIF/src/mSDIFMatrix.hpp
+ ../../miniSDIF/src/mSDIFStructures.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_datatypes.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.h
+ /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o
+ ../../miniSDIF/src/mSDIFFile.hpp
+ ../../miniSDIF/src/mSDIFFrame.hpp
+ ../../miniSDIF/src/mSDIFMatrix.hpp
+ ../../miniSDIF/src/mSDIFStructures.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_dataatom.h
+ .././lib/ceammc_factory.h
+ .././lib/ceammc_log.h
+ .././lib/ceammc_message.h
+ .././lib/ceammc_object.h
+ .././lib/ceammc_property.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_llll.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_llll.h
+ /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o
+ ../../miniSDIF/src/mSDIFFile.hpp
+ ../../miniSDIF/src/mSDIFFrame.hpp
+ ../../miniSDIF/src/mSDIFMatrix.hpp
+ ../../miniSDIF/src/mSDIFStructures.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_dataatom.h
+ .././lib/ceammc_factory.h
+ .././lib/ceammc_log.h
+ .././lib/ceammc_message.h
+ .././lib/ceammc_object.h
+ .././lib/ceammc_property.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_obj.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_obj.h
+ /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o
+ ../../PartialSynth/src/BasePartial.hpp
+ ../../PartialSynth/src/ResPartial.hpp
+ ../../PartialSynth/src/ResSynth.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_factory.h
+ .././lib/ceammc_log.h
+ .././lib/ceammc_message.h
+ .././lib/ceammc_object.h
+ .././lib/ceammc_property.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/synth_res.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/synth_res.h
  /usr/local/include/m_pd.h
 CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o
  ../../PartialSynth/src/BasePartial.hpp

@@ -127,6 +127,15 @@ CMakeFiles/sdif_lib.dir/utf8/utf8rewind.c.o: ../utf8/utf8rewind.h
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
 
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.hpp
+
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.hpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp
+CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.hpp
+
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.hpp
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp
 CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o: /Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.hpp
@@ -2259,6 +2268,73 @@ CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o: ../src/sdif_data_types.h
 CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o: ../src/sdif_matrix.cpp
 CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o: ../src/sdif_matrix.h
 CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o: /usr/local/include/m_pd.h
+
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: ../../miniSDIF/src/mSDIFFile.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: ../../miniSDIF/src/mSDIFFrame.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: ../../miniSDIF/src/mSDIFMatrix.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: ../../miniSDIF/src/mSDIFStructures.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: .././lib/ceammc_abstractdata.h
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: .././lib/ceammc_atom.h
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: .././lib/ceammc_atomlist.h
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: .././lib/ceammc_data.h
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: .././lib/ceammc_datatypes.h
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: ../src/sublist_data_type.cpp
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: ../src/sublist_data_type.h
+CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o: /usr/local/include/m_pd.h
+
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: ../../miniSDIF/src/mSDIFFile.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: ../../miniSDIF/src/mSDIFFrame.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: ../../miniSDIF/src/mSDIFMatrix.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: ../../miniSDIF/src/mSDIFStructures.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_abstractdata.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_atom.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_atomlist.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_data.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_dataatom.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_factory.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_log.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_message.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_object.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: .././lib/ceammc_property.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: ../src/sublist_data_type.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: ../src/sublist_llll.cpp
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: ../src/sublist_llll.h
+CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o: /usr/local/include/m_pd.h
+
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: ../../miniSDIF/src/mSDIFFile.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: ../../miniSDIF/src/mSDIFFrame.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: ../../miniSDIF/src/mSDIFMatrix.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: ../../miniSDIF/src/mSDIFStructures.hpp
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_abstractdata.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_atom.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_atomlist.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_data.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_dataatom.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_factory.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_log.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_message.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_object.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: .././lib/ceammc_property.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: ../src/sublist_data_type.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: ../src/sublist_obj.cpp
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: ../src/sublist_obj.h
+CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o: /usr/local/include/m_pd.h
+
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: ../../PartialSynth/src/BasePartial.hpp
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: ../../PartialSynth/src/ResPartial.hpp
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: ../../PartialSynth/src/ResSynth.hpp
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: .././lib/ceammc_abstractdata.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: .././lib/ceammc_atom.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: .././lib/ceammc_atomlist.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: .././lib/ceammc_data.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: .././lib/ceammc_factory.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: .././lib/ceammc_log.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: .././lib/ceammc_message.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: .././lib/ceammc_object.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: .././lib/ceammc_property.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: ../src/synth_res.cpp
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: ../src/synth_res.h
+CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o: /usr/local/include/m_pd.h
 
 CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o: ../../PartialSynth/src/BasePartial.hpp
 CMakeFiles/sdif_lib.dir/src/synth_sine.cpp.o: ../../PartialSynth/src/SinePartial.hpp

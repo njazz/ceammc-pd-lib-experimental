@@ -1,0 +1,27 @@
+#N canvas 235 23 1106 802 12;
+#X obj 151 253 sdif.file;
+#X obj 142 326 sdif.frame;
+#X obj 138 380 sdif.matrix;
+#X msg 149 87 read /Users/njazz/Documents/____ios/2017-07/pd-sdif/build/moanin.add.sdif
+;
+#X msg 88 213 0;
+#X obj 112 427 ui.display @size 175 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X msg 263 349 get;
+#X msg 165 212 1;
+#X msg 88 282 0;
+#X msg 254 312 dump;
+#X msg 221 146 read /Users/njazz/Documents/____ios/2017-07/pd-sdif/build/testGen.sdif
+;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 6 0 2 0;
+#X connect 7 0 0 0;
+#X connect 8 0 1 0;
+#X connect 9 0 2 0;
+#X connect 10 0 0 0;

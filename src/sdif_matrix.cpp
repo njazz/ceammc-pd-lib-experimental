@@ -6,6 +6,8 @@
 
 #include "ceammc_dataatom.h"
 
+#include "math.h"
+
 using namespace ceammc;
 
 SDIFMatrixClass::SDIFMatrixClass(const PdArgs& args)
@@ -65,31 +67,30 @@ void SDIFMatrixClass::m_newmatrix(t_symbol* s, const AtomList& l)
     int cols = 0;
     int b = mTFloat4;
 
-    if (l.size()>0)
+    if (l.size() > 0)
         t = l.at(0).asString();
 
-    if (l.size()>1)
+    if (l.size() > 1)
         rows = l.at(1).asSizeT();
 
-    if (l.size()>2)
+    if (l.size() > 2)
         cols = l.at(2).asSizeT();
 
-
-    _sdifMatrixData = new DataTypeSDIFMatrix(new MSDIFMatrix(t,rows,cols,b));
+    _sdifMatrixData = new DataTypeSDIFMatrix(new MSDIFMatrix(t, rows, cols, b));
     _dPtr = DataPtr(_sdifMatrixData);
 }
 
 void SDIFMatrixClass::m_set_size(t_symbol* s, const AtomList& l)
 {
-    if (l.size()<2) return;
+    if (l.size() < 2)
+        return;
 
     if (!_sdifMatrixData)
         return;
     if (!_sdifMatrixData->sdifMatrix())
         return;
 
-    _sdifMatrixData->sdifMatrix()->newSize(l.at(0).asSizeT(),l.at(1).asSizeT());
-
+    _sdifMatrixData->sdifMatrix()->newSize(l.at(0).asSizeT(), l.at(1).asSizeT());
 }
 void SDIFMatrixClass::m_clear(t_symbol* s, const AtomList& l)
 {
@@ -154,7 +155,7 @@ void SDIFMatrixClass::m_columnat(t_symbol* s, const AtomList& l)
     L.output(_out1);
 }
 
-void SDIFMatrixClass::m_data(t_symbol* s, const AtomList& l)
+void SDIFMatrixClass::m_get(t_symbol* s, const AtomList& l)
 {
     if (!_sdifMatrixData)
         return;
@@ -165,17 +166,85 @@ void SDIFMatrixClass::m_data(t_symbol* s, const AtomList& l)
 
     if (_sdifMatrixData->sdifMatrix()->is<float>()) {
         for (int i = 0; i < _sdifMatrixData->sdifMatrix()->rows() * _sdifMatrixData->sdifMatrix()->columns(); i++) {
-            L.append(Atom(_sdifMatrixData->sdifMatrix()->values<float>()[i]));
+            L.append(Atom(_sdifMatrixData->sdifMatrix()->values<float*>()[i]));
         }
     }
 
     if (_sdifMatrixData->sdifMatrix()->is<char>()) {
-        std::string v = _sdifMatrixData->sdifMatrix()->values<char>();
+        std::string v = _sdifMatrixData->sdifMatrix()->values<std::string>();
+        post("get %s", v.c_str());
         L.append(Atom(gensym(v.c_str())));
     }
 
     L.output(_out1);
 }
+
+void SDIFMatrixClass::m_set(t_symbol* s, const AtomList& l)
+{
+    if (!_sdifMatrixData)
+        return;
+    if (!_sdifMatrixData->sdifMatrix())
+        return;
+
+    if (_sdifMatrixData->sdifMatrix()->is<float>()) {
+        float c[l.size()];
+
+        for (int i = 0; i < l.size(); i++)
+            c[i] = l.at(i).asFloat();
+
+        uint32_t rows = int(floorf(l.size() / _sdifMatrixData->sdifMatrix()->columns()));
+        if (!rows)
+            return;
+
+        post("resized %i %i", rows, _sdifMatrixData->sdifMatrix()->columns());
+
+        _sdifMatrixData->sdifMatrix()->newSize(rows, _sdifMatrixData->sdifMatrix()->columns());
+        _sdifMatrixData->sdifMatrix()->setValues<float*>(c);
+    }
+
+    if (_sdifMatrixData->sdifMatrix()->is<char>()) {
+        std::string c;
+
+        for (int i = 0; i < l.size(); i++)
+            c = c + " " + l.at(i).asString();
+
+        _sdifMatrixData->sdifMatrix()->newSize(c.size(), 1);
+        _sdifMatrixData->sdifMatrix()->setValues<const char*>((c.c_str()));
+    }
+}
+
+void SDIFMatrixClass::m_1nvt(t_symbol* s, const AtomList& l)
+{
+    if (!l.size())
+        return;
+
+    _sdifMatrixData = new DataTypeSDIFMatrix(new MSDIFMatrix("1NVT", 1, 1, mTChar));
+    _dPtr = DataPtr(_sdifMatrixData);
+
+    std::string v;
+
+    for (int i = 0; i < int(floorf(l.size() / 2)); i++) {
+        v += l.at(i * 2).asString() + "\t" + l.at(i * 2 + 1).asString() + "\n";
+    }
+
+    _sdifMatrixData->sdifMatrix()->newSize(v.size(), 1);
+    _sdifMatrixData->sdifMatrix()->setValues<const char*>((v.c_str()));
+
+}
+
+//void SDIFMatrixClass::m_1typ(t_symbol* s, const AtomList& l)
+//{
+//    if (!_sdifMatrixData)
+//        return;
+//    if (!_sdifMatrixData->sdifMatrix())
+//        return;
+
+//    _sdifMatrixData = new DataTypeSDIFMatrix(new MSDIFMatrix("1TYP", 1, 1, mTChar));
+//    _dPtr = DataPtr(_sdifMatrixData);
+
+//}
+
+// ==========
 
 extern "C" {
 void setup_sdif0x2ematrix()
@@ -190,7 +259,14 @@ void setup_sdif0x2ematrix()
 
     f.addMethod("row_at", &SDIFMatrixClass::m_rowat);
     f.addMethod("column_at", &SDIFMatrixClass::m_columnat);
-    f.addMethod("data", &SDIFMatrixClass::m_data);
+
+    f.addMethod("get", &SDIFMatrixClass::m_get);
+    f.addMethod("set", &SDIFMatrixClass::m_set);
+
+    f.addMethod("1nvt", &SDIFMatrixClass::m_1nvt);
+    f.addMethod("1NVT", &SDIFMatrixClass::m_1nvt);
+
+    //f.addMethod("1typ", &SDIFMatrixClass::m_1typ);
 }
 }
 

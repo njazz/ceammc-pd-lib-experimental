@@ -17,7 +17,7 @@ void DataTypeSDIFFile::dump()
         return;
     }
 
-    post("sdif.file: frame count: %i", _sdifFile->frames.size());
+    post("sdif.file: frame count: %i", _sdifFile->frameCount());
 }
 
 DataType DataTypeSDIFFile::type() const

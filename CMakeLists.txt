@@ -56,7 +56,9 @@ set (SDIFLIB
 set (SYNTH
     ../PartialSynth/src/BasePartial.cpp
     ../PartialSynth/src/SinePartial.cpp
+    ../PartialSynth/src/ResPartial.cpp
     ../PartialSynth/src/SineSynth.cpp
+    ../PartialSynth/src/ResSynth.cpp
     )
 
 set (SOURCES
@@ -69,6 +71,13 @@ set (SOURCES
     src/sdif_data_types.cpp
 
     src/synth_sine.cpp
+    src/synth_res.cpp
+
+    src/sublist_obj.cpp
+    src/sublist_llll.cpp
+
+    src/sublist_data_type.cpp
+
 #    tl/tl_cue.cpp
 #    tl/tl_bang.cpp
 #    tl/tl_transport.cpp

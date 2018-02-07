@@ -312,6 +312,60 @@ Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s:
 	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s
 .PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.s
 
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.o: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.o
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.o
+
+# target to build an object file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.o
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.o
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.i: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.i
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.i
+
+# target to preprocess a source file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.i
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.i
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.s: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.s
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.s
+
+# target to generate assembly for a file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.s
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.cpp.s
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.o: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.o
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.o
+
+# target to build an object file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.o
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.o
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.i: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.i
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.i
+
+# target to preprocess a source file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.i
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.i
+
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.s: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.s
+
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.s
+
+# target to generate assembly for a file
+Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.s
+.PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.cpp.s
+
 Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.o: Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.cpp.o
 
 .PHONY : Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.o
@@ -1392,6 +1446,114 @@ src/sdif_matrix.cpp.s:
 	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.s
 .PHONY : src/sdif_matrix.cpp.s
 
+src/sublist_data_type.o: src/sublist_data_type.cpp.o
+
+.PHONY : src/sublist_data_type.o
+
+# target to build an object file
+src/sublist_data_type.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o
+.PHONY : src/sublist_data_type.cpp.o
+
+src/sublist_data_type.i: src/sublist_data_type.cpp.i
+
+.PHONY : src/sublist_data_type.i
+
+# target to preprocess a source file
+src/sublist_data_type.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.i
+.PHONY : src/sublist_data_type.cpp.i
+
+src/sublist_data_type.s: src/sublist_data_type.cpp.s
+
+.PHONY : src/sublist_data_type.s
+
+# target to generate assembly for a file
+src/sublist_data_type.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.s
+.PHONY : src/sublist_data_type.cpp.s
+
+src/sublist_llll.o: src/sublist_llll.cpp.o
+
+.PHONY : src/sublist_llll.o
+
+# target to build an object file
+src/sublist_llll.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o
+.PHONY : src/sublist_llll.cpp.o
+
+src/sublist_llll.i: src/sublist_llll.cpp.i
+
+.PHONY : src/sublist_llll.i
+
+# target to preprocess a source file
+src/sublist_llll.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.i
+.PHONY : src/sublist_llll.cpp.i
+
+src/sublist_llll.s: src/sublist_llll.cpp.s
+
+.PHONY : src/sublist_llll.s
+
+# target to generate assembly for a file
+src/sublist_llll.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.s
+.PHONY : src/sublist_llll.cpp.s
+
+src/sublist_obj.o: src/sublist_obj.cpp.o
+
+.PHONY : src/sublist_obj.o
+
+# target to build an object file
+src/sublist_obj.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o
+.PHONY : src/sublist_obj.cpp.o
+
+src/sublist_obj.i: src/sublist_obj.cpp.i
+
+.PHONY : src/sublist_obj.i
+
+# target to preprocess a source file
+src/sublist_obj.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.i
+.PHONY : src/sublist_obj.cpp.i
+
+src/sublist_obj.s: src/sublist_obj.cpp.s
+
+.PHONY : src/sublist_obj.s
+
+# target to generate assembly for a file
+src/sublist_obj.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.s
+.PHONY : src/sublist_obj.cpp.s
+
+src/synth_res.o: src/synth_res.cpp.o
+
+.PHONY : src/synth_res.o
+
+# target to build an object file
+src/synth_res.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o
+.PHONY : src/synth_res.cpp.o
+
+src/synth_res.i: src/synth_res.cpp.i
+
+.PHONY : src/synth_res.i
+
+# target to preprocess a source file
+src/synth_res.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/synth_res.cpp.i
+.PHONY : src/synth_res.cpp.i
+
+src/synth_res.s: src/synth_res.cpp.s
+
+.PHONY : src/synth_res.s
+
+# target to generate assembly for a file
+src/synth_res.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/synth_res.cpp.s
+.PHONY : src/synth_res.cpp.s
+
 src/synth_sine.o: src/synth_sine.cpp.o
 
 .PHONY : src/synth_sine.o
@@ -1692,6 +1854,12 @@ help:
 	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.o"
 	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.i"
 	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.s"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.o"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.i"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResPartial.s"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.o"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.i"
+	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/ResSynth.s"
 	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.o"
 	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.i"
 	@echo "... Users/njazz/Documents/____ios/2017-07/PartialSynth/src/SinePartial.s"
@@ -1812,6 +1980,18 @@ help:
 	@echo "... src/sdif_matrix.o"
 	@echo "... src/sdif_matrix.i"
 	@echo "... src/sdif_matrix.s"
+	@echo "... src/sublist_data_type.o"
+	@echo "... src/sublist_data_type.i"
+	@echo "... src/sublist_data_type.s"
+	@echo "... src/sublist_llll.o"
+	@echo "... src/sublist_llll.i"
+	@echo "... src/sublist_llll.s"
+	@echo "... src/sublist_obj.o"
+	@echo "... src/sublist_obj.i"
+	@echo "... src/sublist_obj.s"
+	@echo "... src/synth_res.o"
+	@echo "... src/synth_res.i"
+	@echo "... src/synth_res.s"
 	@echo "... src/synth_sine.o"
 	@echo "... src/synth_sine.i"
 	@echo "... src/synth_sine.s"

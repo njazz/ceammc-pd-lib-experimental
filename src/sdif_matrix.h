@@ -26,7 +26,9 @@ public:
 
     void m_rowat(t_symbol* s, const AtomList& l);
     void m_columnat(t_symbol* s, const AtomList& l);
-    void m_data(t_symbol* s, const AtomList& l);
+
+    void m_get(t_symbol* s, const AtomList& l);
+    void m_set(t_symbol* s, const AtomList& l);
 
     void m_type(t_symbol* s, const AtomList& l);
 
@@ -34,6 +36,9 @@ public:
 
     void m_resize(t_symbol* s, const AtomList& l);
     void m_erase_data(t_symbol* s, const AtomList& l);
+
+    void m_1nvt(t_symbol* s, const AtomList& l);
+    void m_1typ(t_symbol* s, const AtomList& l);
 };
 
 #endif // SDIF_FILE_H
