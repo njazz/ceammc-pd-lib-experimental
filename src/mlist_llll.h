@@ -3,18 +3,18 @@
 
 #include "ceammc_object.h"
 
-#include "sublist_data_type.h"
+#include "mlist_data_type.h"
 
-class SublistLlll : public BaseObject {
+class MListLlll : public BaseObject {
     t_outlet* _out1;
 
-    DataTypeSubList* _sublist;
+    DataTypeMList* _MList;
     DataPtr _dPtr;
 
     bool _outputData = false;
 
 public:
-    SublistLlll(const PdArgs& args);
+    MListLlll(const PdArgs& args);
 
     virtual void onBang() override;
     virtual void dump() const override;

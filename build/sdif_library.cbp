@@ -423,6 +423,36 @@
 		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/sdif_lib.h">
 			<Option target="sdif_lib"/>
 		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_data_type.cpp">
+			<Option target="sdif_lib"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_data_type.h">
+			<Option target="sdif_lib"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flat.cpp">
+			<Option target="sdif_lib"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flat.h">
+			<Option target="sdif_lib"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flip.cpp">
+			<Option target="sdif_lib"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flip.h">
+			<Option target="sdif_lib"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_llll.cpp">
+			<Option target="sdif_lib"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_llll.h">
+			<Option target="sdif_lib"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_obj.cpp">
+			<Option target="sdif_lib"/>
+		</Unit>
+		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_obj.h">
+			<Option target="sdif_lib"/>
+		</Unit>
 		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_data_types.cpp">
 			<Option target="sdif_lib"/>
 		</Unit>
@@ -445,24 +475,6 @@
 			<Option target="sdif_lib"/>
 		</Unit>
 		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_matrix.h">
-			<Option target="sdif_lib"/>
-		</Unit>
-		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.cpp">
-			<Option target="sdif_lib"/>
-		</Unit>
-		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.h">
-			<Option target="sdif_lib"/>
-		</Unit>
-		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_llll.cpp">
-			<Option target="sdif_lib"/>
-		</Unit>
-		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_llll.h">
-			<Option target="sdif_lib"/>
-		</Unit>
-		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_obj.cpp">
-			<Option target="sdif_lib"/>
-		</Unit>
-		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_obj.h">
 			<Option target="sdif_lib"/>
 		</Unit>
 		<Unit filename="/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/synth_res.cpp">

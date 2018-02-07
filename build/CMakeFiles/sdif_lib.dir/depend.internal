@@ -2200,6 +2200,97 @@ CMakeFiles/sdif_lib.dir/sdif_lib.cpp.o
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/sdif_lib.cpp
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/sdif_lib.h
  /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/mlist_data_type.cpp.o
+ ../../miniSDIF/src/mSDIFFile.hpp
+ ../../miniSDIF/src/mSDIFFrame.hpp
+ ../../miniSDIF/src/mSDIFMatrix.hpp
+ ../../miniSDIF/src/mSDIFStructures.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_dataatom.h
+ .././lib/ceammc_datatypes.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_data_type.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_data_type.h
+ /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/mlist_flat.cpp.o
+ ../../miniSDIF/src/mSDIFFile.hpp
+ ../../miniSDIF/src/mSDIFFrame.hpp
+ ../../miniSDIF/src/mSDIFMatrix.hpp
+ ../../miniSDIF/src/mSDIFStructures.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_dataatom.h
+ .././lib/ceammc_factory.h
+ .././lib/ceammc_log.h
+ .././lib/ceammc_message.h
+ .././lib/ceammc_object.h
+ .././lib/ceammc_property.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_data_type.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flat.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flat.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_functions.h
+ /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/mlist_flip.cpp.o
+ ../../miniSDIF/src/mSDIFFile.hpp
+ ../../miniSDIF/src/mSDIFFrame.hpp
+ ../../miniSDIF/src/mSDIFMatrix.hpp
+ ../../miniSDIF/src/mSDIFStructures.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_dataatom.h
+ .././lib/ceammc_factory.h
+ .././lib/ceammc_log.h
+ .././lib/ceammc_message.h
+ .././lib/ceammc_object.h
+ .././lib/ceammc_property.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_data_type.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flip.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flip.h
+ /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/mlist_llll.cpp.o
+ ../../miniSDIF/src/mSDIFFile.hpp
+ ../../miniSDIF/src/mSDIFFrame.hpp
+ ../../miniSDIF/src/mSDIFMatrix.hpp
+ ../../miniSDIF/src/mSDIFStructures.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_dataatom.h
+ .././lib/ceammc_factory.h
+ .././lib/ceammc_log.h
+ .././lib/ceammc_message.h
+ .././lib/ceammc_object.h
+ .././lib/ceammc_property.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_data_type.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_llll.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_llll.h
+ /usr/local/include/m_pd.h
+CMakeFiles/sdif_lib.dir/src/mlist_obj.cpp.o
+ ../../miniSDIF/src/mSDIFFile.hpp
+ ../../miniSDIF/src/mSDIFFrame.hpp
+ ../../miniSDIF/src/mSDIFMatrix.hpp
+ ../../miniSDIF/src/mSDIFStructures.hpp
+ .././lib/ceammc_abstractdata.h
+ .././lib/ceammc_atom.h
+ .././lib/ceammc_atomlist.h
+ .././lib/ceammc_data.h
+ .././lib/ceammc_dataatom.h
+ .././lib/ceammc_factory.h
+ .././lib/ceammc_log.h
+ .././lib/ceammc_message.h
+ .././lib/ceammc_object.h
+ .././lib/ceammc_property.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_data_type.h
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_obj.cpp
+ /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_obj.h
+ /usr/local/include/m_pd.h
 CMakeFiles/sdif_lib.dir/src/sdif_data_types.cpp.o
  ../../miniSDIF/src/mSDIFFile.hpp
  ../../miniSDIF/src/mSDIFFrame.hpp
@@ -2268,57 +2359,6 @@ CMakeFiles/sdif_lib.dir/src/sdif_matrix.cpp.o
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_data_types.h
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_matrix.cpp
  /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_matrix.h
- /usr/local/include/m_pd.h
-CMakeFiles/sdif_lib.dir/src/sublist_data_type.cpp.o
- ../../miniSDIF/src/mSDIFFile.hpp
- ../../miniSDIF/src/mSDIFFrame.hpp
- ../../miniSDIF/src/mSDIFMatrix.hpp
- ../../miniSDIF/src/mSDIFStructures.hpp
- .././lib/ceammc_abstractdata.h
- .././lib/ceammc_atom.h
- .././lib/ceammc_atomlist.h
- .././lib/ceammc_data.h
- .././lib/ceammc_datatypes.h
- /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.cpp
- /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.h
- /usr/local/include/m_pd.h
-CMakeFiles/sdif_lib.dir/src/sublist_llll.cpp.o
- ../../miniSDIF/src/mSDIFFile.hpp
- ../../miniSDIF/src/mSDIFFrame.hpp
- ../../miniSDIF/src/mSDIFMatrix.hpp
- ../../miniSDIF/src/mSDIFStructures.hpp
- .././lib/ceammc_abstractdata.h
- .././lib/ceammc_atom.h
- .././lib/ceammc_atomlist.h
- .././lib/ceammc_data.h
- .././lib/ceammc_dataatom.h
- .././lib/ceammc_factory.h
- .././lib/ceammc_log.h
- .././lib/ceammc_message.h
- .././lib/ceammc_object.h
- .././lib/ceammc_property.h
- /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.h
- /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_llll.cpp
- /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_llll.h
- /usr/local/include/m_pd.h
-CMakeFiles/sdif_lib.dir/src/sublist_obj.cpp.o
- ../../miniSDIF/src/mSDIFFile.hpp
- ../../miniSDIF/src/mSDIFFrame.hpp
- ../../miniSDIF/src/mSDIFMatrix.hpp
- ../../miniSDIF/src/mSDIFStructures.hpp
- .././lib/ceammc_abstractdata.h
- .././lib/ceammc_atom.h
- .././lib/ceammc_atomlist.h
- .././lib/ceammc_data.h
- .././lib/ceammc_dataatom.h
- .././lib/ceammc_factory.h
- .././lib/ceammc_log.h
- .././lib/ceammc_message.h
- .././lib/ceammc_object.h
- .././lib/ceammc_property.h
- /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_data_type.h
- /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_obj.cpp
- /Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sublist_obj.h
  /usr/local/include/m_pd.h
 CMakeFiles/sdif_lib.dir/src/synth_res.cpp.o
  ../../PartialSynth/src/BasePartial.hpp

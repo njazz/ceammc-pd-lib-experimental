@@ -73,10 +73,12 @@ set (SOURCES
     src/synth_sine.cpp
     src/synth_res.cpp
 
-    src/sublist_obj.cpp
-    src/sublist_llll.cpp
+    src/mlist_obj.cpp
+    src/mlist_llll.cpp
+    src/mlist_flat.cpp
+    src/mlist_flip.cpp
 
-    src/sublist_data_type.cpp
+    src/mlist_data_type.cpp
 
 #    tl/tl_cue.cpp
 #    tl/tl_bang.cpp

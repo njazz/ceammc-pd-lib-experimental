@@ -7,13 +7,13 @@
 
 using namespace ceammc;
 
-class DataTypeSubList : public AbstractData {
+class DataTypeMList : public AbstractData {
     AtomList* _atomList = 0;
 
 public:
     static const DataType dataType = 200;
 
-    explicit DataTypeSubList(AtomList* l);
+    explicit DataTypeMList(AtomList* l);
 
     virtual void dump() override;
     virtual DataType type() const override;
@@ -21,6 +21,9 @@ public:
     virtual std::string toString() const override;
 
     AtomList* list() { return _atomList; }
+
+    AtomList* toLlll();
+    AtomList* toFlatList();
 };
 
 #endif // SDIF_DATA_TYPES_H
