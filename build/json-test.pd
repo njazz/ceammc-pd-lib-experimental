@@ -1,0 +1,53 @@
+#N canvas 521 231 780 520 12;
+#X declare -lib sdif_lib;
+#X obj 244 35 declare -lib sdif_lib;
+#X obj 157 166 json;
+#X msg 152 109 1 2 3;
+#X obj 73 250 json;
+#X obj 64 298 ui.display @size 231 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 224 208 ui.display @size 40 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 661 163 string;
+#X obj 399 150 json;
+#X msg 380 88 1 2;
+#X obj 289 89 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 304 246 ui.display @size 95 18 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X obj 286 130 list.gen 3;
+#X obj 465 166 mlist;
+#X obj 469 104 list.gen 3;
+#X obj 578 123 mlist;
+#X obj 467 77 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 580 83 1 2;
+#X obj 437 231 mlist->llll;
+#X obj 446 299 ui.display @size 250 45 @fontname "Helvetica" @fontweight
+"normal" @fontslant "roman" @fontsize 11 @receive "(null)" @send "(null)"
+@pinned 0 @background_color 0.93 0.93 0.93 1 @border_color 0.6 0.6
+0.6 1 @display_events 1 @display_type 0 @auto_size 1;
+#X connect 1 0 3 0;
+#X connect 1 0 5 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 8 0 7 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 11 0 1 0;
+#X connect 11 0 17 0;
+#X connect 11 1 8 0;
+#X connect 11 1 15 0;
+#X connect 12 0 11 1;
+#X connect 13 0 12 0;
+#X connect 13 1 16 0;
+#X connect 14 0 13 1;
+#X connect 15 0 13 0;
+#X connect 16 0 14 0;
+#X connect 17 0 18 0;

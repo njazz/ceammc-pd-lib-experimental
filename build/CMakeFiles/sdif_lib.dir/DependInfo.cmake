@@ -41,6 +41,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   ".././CICMWrapper"
   "../../miniSDIF/src"
   "../../PartialSynth/src"
+  "../../miniSDIF/src/mlist"
+  "../../miniSDIF/src/json"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/Users/njazz/Documents/____ios/2017-07/PartialSynth/src/BasePartial.cpp.o"
@@ -81,11 +83,15 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/lib/ceammc_timeline.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/lib/ceammc_timeline.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/lib/ceammc_window.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/lib/ceammc_window.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/sdif_lib.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/sdif_lib.cpp.o"
-  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_data_type.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist_data_type.cpp.o"
-  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flat.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist_flat.cpp.o"
-  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_flip.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist_flip.cpp.o"
-  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_llll.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist_llll.cpp.o"
-  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist_obj.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist_obj.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/json/json_data_type.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/json/json_data_type.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/json/json_obj.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/json/json_obj.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/json/mstring_data_type.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/json/mstring_data_type.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist/mlist_data_type.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist/mlist_data_type.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist/mlist_flat.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist/mlist_flat.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist/mlist_flip.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist/mlist_flip.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist/mlist_llll.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist/mlist_llll.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist/mlist_obj.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist/mlist_obj.cpp.o"
+  "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/mlist/mlist_unpack.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/mlist/mlist_unpack.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_data_types.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/sdif_data_types.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_file.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/sdif_file.cpp.o"
   "/Users/njazz/Documents/____ios/2017-07/pd-sdif/src/sdif_frame.cpp" "/Users/njazz/Documents/____ios/2017-07/pd-sdif/build/CMakeFiles/sdif_lib.dir/src/sdif_frame.cpp.o"
@@ -112,6 +118,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   ".././CICMWrapper"
   "../../miniSDIF/src"
   "../../PartialSynth/src"
+  "../../miniSDIF/src/mlist"
+  "../../miniSDIF/src/json"
   )
 
 # Targets to which this target links.

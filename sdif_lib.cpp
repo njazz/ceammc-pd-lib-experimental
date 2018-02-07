@@ -14,12 +14,14 @@ extern void setup_synth0x2esine();
 extern void setup_synth0x2eres();
 
 extern void setup_mlist();
+extern void setup_mlist_unpack();
 
 extern void setup_mlist0x2ellll();
 extern void setup_mlist0x2eflat();
 
 extern void setup_mlist0x2eflip();
 
+extern void setup_json();
 }
 
 extern "C" void setup()
@@ -34,9 +36,12 @@ extern "C" void setup()
     setup_synth0x2eres();
 
     setup_mlist();
+    setup_mlist_unpack();
 
     setup_mlist0x2ellll();
     setup_mlist0x2eflat();
 
     setup_mlist0x2eflip();
+
+    setup_json();
 }

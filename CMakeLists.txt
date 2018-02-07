@@ -73,12 +73,19 @@ set (SOURCES
     src/synth_sine.cpp
     src/synth_res.cpp
 
-    src/mlist_obj.cpp
-    src/mlist_llll.cpp
-    src/mlist_flat.cpp
-    src/mlist_flip.cpp
+    src/mlist/mlist_obj.cpp
+    src/mlist/mlist_unpack.cpp
+    src/mlist/mlist_llll.cpp
+    src/mlist/mlist_flat.cpp
+    src/mlist/mlist_flip.cpp
 
-    src/mlist_data_type.cpp
+    src/json/json_obj.cpp
+
+    src/mlist/mlist_data_type.cpp
+
+    src/json/json_data_type.cpp
+
+    src/json/mstring_data_type.cpp
 
 #    tl/tl_cue.cpp
 #    tl/tl_bang.cpp
@@ -110,6 +117,9 @@ include_directories(./CICMWrapper/)
 
 include_directories(../miniSDIF/src/)
 include_directories(../PartialSynth/src/)
+
+include_directories(../miniSDIF/src/mlist)
+include_directories(../miniSDIF/src/json)
 
 add_library(sdif_lib SHARED ${TL_LIB_SOURCES} ${TL_LIB_SOURCES_PLUS} ${SOURCES} ${CICM} ${UTF8} ${SDIFLIB} ${SYNTH})
 target_link_libraries(sdif_lib "-undefined dynamic_lookup")

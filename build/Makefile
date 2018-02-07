@@ -1338,140 +1338,248 @@ sdif_lib.cpp.s:
 	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/sdif_lib.cpp.s
 .PHONY : sdif_lib.cpp.s
 
-src/mlist_data_type.o: src/mlist_data_type.cpp.o
+src/json/json_data_type.o: src/json/json_data_type.cpp.o
 
-.PHONY : src/mlist_data_type.o
-
-# target to build an object file
-src/mlist_data_type.cpp.o:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_data_type.cpp.o
-.PHONY : src/mlist_data_type.cpp.o
-
-src/mlist_data_type.i: src/mlist_data_type.cpp.i
-
-.PHONY : src/mlist_data_type.i
-
-# target to preprocess a source file
-src/mlist_data_type.cpp.i:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_data_type.cpp.i
-.PHONY : src/mlist_data_type.cpp.i
-
-src/mlist_data_type.s: src/mlist_data_type.cpp.s
-
-.PHONY : src/mlist_data_type.s
-
-# target to generate assembly for a file
-src/mlist_data_type.cpp.s:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_data_type.cpp.s
-.PHONY : src/mlist_data_type.cpp.s
-
-src/mlist_flat.o: src/mlist_flat.cpp.o
-
-.PHONY : src/mlist_flat.o
+.PHONY : src/json/json_data_type.o
 
 # target to build an object file
-src/mlist_flat.cpp.o:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_flat.cpp.o
-.PHONY : src/mlist_flat.cpp.o
+src/json/json_data_type.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/json/json_data_type.cpp.o
+.PHONY : src/json/json_data_type.cpp.o
 
-src/mlist_flat.i: src/mlist_flat.cpp.i
+src/json/json_data_type.i: src/json/json_data_type.cpp.i
 
-.PHONY : src/mlist_flat.i
+.PHONY : src/json/json_data_type.i
 
 # target to preprocess a source file
-src/mlist_flat.cpp.i:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_flat.cpp.i
-.PHONY : src/mlist_flat.cpp.i
+src/json/json_data_type.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/json/json_data_type.cpp.i
+.PHONY : src/json/json_data_type.cpp.i
 
-src/mlist_flat.s: src/mlist_flat.cpp.s
+src/json/json_data_type.s: src/json/json_data_type.cpp.s
 
-.PHONY : src/mlist_flat.s
+.PHONY : src/json/json_data_type.s
 
 # target to generate assembly for a file
-src/mlist_flat.cpp.s:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_flat.cpp.s
-.PHONY : src/mlist_flat.cpp.s
+src/json/json_data_type.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/json/json_data_type.cpp.s
+.PHONY : src/json/json_data_type.cpp.s
 
-src/mlist_flip.o: src/mlist_flip.cpp.o
+src/json/json_obj.o: src/json/json_obj.cpp.o
 
-.PHONY : src/mlist_flip.o
+.PHONY : src/json/json_obj.o
 
 # target to build an object file
-src/mlist_flip.cpp.o:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_flip.cpp.o
-.PHONY : src/mlist_flip.cpp.o
+src/json/json_obj.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/json/json_obj.cpp.o
+.PHONY : src/json/json_obj.cpp.o
 
-src/mlist_flip.i: src/mlist_flip.cpp.i
+src/json/json_obj.i: src/json/json_obj.cpp.i
 
-.PHONY : src/mlist_flip.i
+.PHONY : src/json/json_obj.i
 
 # target to preprocess a source file
-src/mlist_flip.cpp.i:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_flip.cpp.i
-.PHONY : src/mlist_flip.cpp.i
+src/json/json_obj.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/json/json_obj.cpp.i
+.PHONY : src/json/json_obj.cpp.i
 
-src/mlist_flip.s: src/mlist_flip.cpp.s
+src/json/json_obj.s: src/json/json_obj.cpp.s
 
-.PHONY : src/mlist_flip.s
+.PHONY : src/json/json_obj.s
 
 # target to generate assembly for a file
-src/mlist_flip.cpp.s:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_flip.cpp.s
-.PHONY : src/mlist_flip.cpp.s
+src/json/json_obj.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/json/json_obj.cpp.s
+.PHONY : src/json/json_obj.cpp.s
 
-src/mlist_llll.o: src/mlist_llll.cpp.o
+src/json/mstring_data_type.o: src/json/mstring_data_type.cpp.o
 
-.PHONY : src/mlist_llll.o
+.PHONY : src/json/mstring_data_type.o
 
 # target to build an object file
-src/mlist_llll.cpp.o:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_llll.cpp.o
-.PHONY : src/mlist_llll.cpp.o
+src/json/mstring_data_type.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/json/mstring_data_type.cpp.o
+.PHONY : src/json/mstring_data_type.cpp.o
 
-src/mlist_llll.i: src/mlist_llll.cpp.i
+src/json/mstring_data_type.i: src/json/mstring_data_type.cpp.i
 
-.PHONY : src/mlist_llll.i
+.PHONY : src/json/mstring_data_type.i
 
 # target to preprocess a source file
-src/mlist_llll.cpp.i:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_llll.cpp.i
-.PHONY : src/mlist_llll.cpp.i
+src/json/mstring_data_type.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/json/mstring_data_type.cpp.i
+.PHONY : src/json/mstring_data_type.cpp.i
 
-src/mlist_llll.s: src/mlist_llll.cpp.s
+src/json/mstring_data_type.s: src/json/mstring_data_type.cpp.s
 
-.PHONY : src/mlist_llll.s
+.PHONY : src/json/mstring_data_type.s
 
 # target to generate assembly for a file
-src/mlist_llll.cpp.s:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_llll.cpp.s
-.PHONY : src/mlist_llll.cpp.s
+src/json/mstring_data_type.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/json/mstring_data_type.cpp.s
+.PHONY : src/json/mstring_data_type.cpp.s
 
-src/mlist_obj.o: src/mlist_obj.cpp.o
+src/mlist/mlist_data_type.o: src/mlist/mlist_data_type.cpp.o
 
-.PHONY : src/mlist_obj.o
+.PHONY : src/mlist/mlist_data_type.o
 
 # target to build an object file
-src/mlist_obj.cpp.o:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_obj.cpp.o
-.PHONY : src/mlist_obj.cpp.o
+src/mlist/mlist_data_type.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_data_type.cpp.o
+.PHONY : src/mlist/mlist_data_type.cpp.o
 
-src/mlist_obj.i: src/mlist_obj.cpp.i
+src/mlist/mlist_data_type.i: src/mlist/mlist_data_type.cpp.i
 
-.PHONY : src/mlist_obj.i
+.PHONY : src/mlist/mlist_data_type.i
 
 # target to preprocess a source file
-src/mlist_obj.cpp.i:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_obj.cpp.i
-.PHONY : src/mlist_obj.cpp.i
+src/mlist/mlist_data_type.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_data_type.cpp.i
+.PHONY : src/mlist/mlist_data_type.cpp.i
 
-src/mlist_obj.s: src/mlist_obj.cpp.s
+src/mlist/mlist_data_type.s: src/mlist/mlist_data_type.cpp.s
 
-.PHONY : src/mlist_obj.s
+.PHONY : src/mlist/mlist_data_type.s
 
 # target to generate assembly for a file
-src/mlist_obj.cpp.s:
-	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist_obj.cpp.s
-.PHONY : src/mlist_obj.cpp.s
+src/mlist/mlist_data_type.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_data_type.cpp.s
+.PHONY : src/mlist/mlist_data_type.cpp.s
+
+src/mlist/mlist_flat.o: src/mlist/mlist_flat.cpp.o
+
+.PHONY : src/mlist/mlist_flat.o
+
+# target to build an object file
+src/mlist/mlist_flat.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_flat.cpp.o
+.PHONY : src/mlist/mlist_flat.cpp.o
+
+src/mlist/mlist_flat.i: src/mlist/mlist_flat.cpp.i
+
+.PHONY : src/mlist/mlist_flat.i
+
+# target to preprocess a source file
+src/mlist/mlist_flat.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_flat.cpp.i
+.PHONY : src/mlist/mlist_flat.cpp.i
+
+src/mlist/mlist_flat.s: src/mlist/mlist_flat.cpp.s
+
+.PHONY : src/mlist/mlist_flat.s
+
+# target to generate assembly for a file
+src/mlist/mlist_flat.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_flat.cpp.s
+.PHONY : src/mlist/mlist_flat.cpp.s
+
+src/mlist/mlist_flip.o: src/mlist/mlist_flip.cpp.o
+
+.PHONY : src/mlist/mlist_flip.o
+
+# target to build an object file
+src/mlist/mlist_flip.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_flip.cpp.o
+.PHONY : src/mlist/mlist_flip.cpp.o
+
+src/mlist/mlist_flip.i: src/mlist/mlist_flip.cpp.i
+
+.PHONY : src/mlist/mlist_flip.i
+
+# target to preprocess a source file
+src/mlist/mlist_flip.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_flip.cpp.i
+.PHONY : src/mlist/mlist_flip.cpp.i
+
+src/mlist/mlist_flip.s: src/mlist/mlist_flip.cpp.s
+
+.PHONY : src/mlist/mlist_flip.s
+
+# target to generate assembly for a file
+src/mlist/mlist_flip.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_flip.cpp.s
+.PHONY : src/mlist/mlist_flip.cpp.s
+
+src/mlist/mlist_llll.o: src/mlist/mlist_llll.cpp.o
+
+.PHONY : src/mlist/mlist_llll.o
+
+# target to build an object file
+src/mlist/mlist_llll.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_llll.cpp.o
+.PHONY : src/mlist/mlist_llll.cpp.o
+
+src/mlist/mlist_llll.i: src/mlist/mlist_llll.cpp.i
+
+.PHONY : src/mlist/mlist_llll.i
+
+# target to preprocess a source file
+src/mlist/mlist_llll.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_llll.cpp.i
+.PHONY : src/mlist/mlist_llll.cpp.i
+
+src/mlist/mlist_llll.s: src/mlist/mlist_llll.cpp.s
+
+.PHONY : src/mlist/mlist_llll.s
+
+# target to generate assembly for a file
+src/mlist/mlist_llll.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_llll.cpp.s
+.PHONY : src/mlist/mlist_llll.cpp.s
+
+src/mlist/mlist_obj.o: src/mlist/mlist_obj.cpp.o
+
+.PHONY : src/mlist/mlist_obj.o
+
+# target to build an object file
+src/mlist/mlist_obj.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_obj.cpp.o
+.PHONY : src/mlist/mlist_obj.cpp.o
+
+src/mlist/mlist_obj.i: src/mlist/mlist_obj.cpp.i
+
+.PHONY : src/mlist/mlist_obj.i
+
+# target to preprocess a source file
+src/mlist/mlist_obj.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_obj.cpp.i
+.PHONY : src/mlist/mlist_obj.cpp.i
+
+src/mlist/mlist_obj.s: src/mlist/mlist_obj.cpp.s
+
+.PHONY : src/mlist/mlist_obj.s
+
+# target to generate assembly for a file
+src/mlist/mlist_obj.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_obj.cpp.s
+.PHONY : src/mlist/mlist_obj.cpp.s
+
+src/mlist/mlist_unpack.o: src/mlist/mlist_unpack.cpp.o
+
+.PHONY : src/mlist/mlist_unpack.o
+
+# target to build an object file
+src/mlist/mlist_unpack.cpp.o:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_unpack.cpp.o
+.PHONY : src/mlist/mlist_unpack.cpp.o
+
+src/mlist/mlist_unpack.i: src/mlist/mlist_unpack.cpp.i
+
+.PHONY : src/mlist/mlist_unpack.i
+
+# target to preprocess a source file
+src/mlist/mlist_unpack.cpp.i:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_unpack.cpp.i
+.PHONY : src/mlist/mlist_unpack.cpp.i
+
+src/mlist/mlist_unpack.s: src/mlist/mlist_unpack.cpp.s
+
+.PHONY : src/mlist/mlist_unpack.s
+
+# target to generate assembly for a file
+src/mlist/mlist_unpack.cpp.s:
+	$(MAKE) -f CMakeFiles/sdif_lib.dir/build.make CMakeFiles/sdif_lib.dir/src/mlist/mlist_unpack.cpp.s
+.PHONY : src/mlist/mlist_unpack.cpp.s
 
 src/sdif_data_types.o: src/sdif_data_types.cpp.o
 
@@ -2022,21 +2130,33 @@ help:
 	@echo "... sdif_lib.o"
 	@echo "... sdif_lib.i"
 	@echo "... sdif_lib.s"
-	@echo "... src/mlist_data_type.o"
-	@echo "... src/mlist_data_type.i"
-	@echo "... src/mlist_data_type.s"
-	@echo "... src/mlist_flat.o"
-	@echo "... src/mlist_flat.i"
-	@echo "... src/mlist_flat.s"
-	@echo "... src/mlist_flip.o"
-	@echo "... src/mlist_flip.i"
-	@echo "... src/mlist_flip.s"
-	@echo "... src/mlist_llll.o"
-	@echo "... src/mlist_llll.i"
-	@echo "... src/mlist_llll.s"
-	@echo "... src/mlist_obj.o"
-	@echo "... src/mlist_obj.i"
-	@echo "... src/mlist_obj.s"
+	@echo "... src/json/json_data_type.o"
+	@echo "... src/json/json_data_type.i"
+	@echo "... src/json/json_data_type.s"
+	@echo "... src/json/json_obj.o"
+	@echo "... src/json/json_obj.i"
+	@echo "... src/json/json_obj.s"
+	@echo "... src/json/mstring_data_type.o"
+	@echo "... src/json/mstring_data_type.i"
+	@echo "... src/json/mstring_data_type.s"
+	@echo "... src/mlist/mlist_data_type.o"
+	@echo "... src/mlist/mlist_data_type.i"
+	@echo "... src/mlist/mlist_data_type.s"
+	@echo "... src/mlist/mlist_flat.o"
+	@echo "... src/mlist/mlist_flat.i"
+	@echo "... src/mlist/mlist_flat.s"
+	@echo "... src/mlist/mlist_flip.o"
+	@echo "... src/mlist/mlist_flip.i"
+	@echo "... src/mlist/mlist_flip.s"
+	@echo "... src/mlist/mlist_llll.o"
+	@echo "... src/mlist/mlist_llll.i"
+	@echo "... src/mlist/mlist_llll.s"
+	@echo "... src/mlist/mlist_obj.o"
+	@echo "... src/mlist/mlist_obj.i"
+	@echo "... src/mlist/mlist_obj.s"
+	@echo "... src/mlist/mlist_unpack.o"
+	@echo "... src/mlist/mlist_unpack.i"
+	@echo "... src/mlist/mlist_unpack.s"
 	@echo "... src/sdif_data_types.o"
 	@echo "... src/sdif_data_types.i"
 	@echo "... src/sdif_data_types.s"
