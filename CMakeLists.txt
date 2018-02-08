@@ -78,8 +78,7 @@ set (SRC_MLIST
 
     src/mlist/mlist_obj.cpp
     src/mlist/mlist_unpack.cpp
-    src/mlist/mlist_llll.cpp
-    src/mlist/mlist_flat.cpp
+
     src/mlist/mlist_flip.cpp
 
     src/mlist/mlist_data_type.cpp
@@ -94,6 +93,13 @@ set (SRC_JSON
 
 set (SRC_IMG
     src/img/mlist_image.cpp
+    )
+
+set (SRC_CONV
+
+    src/conv/mlist_llll.cpp
+    src/conv/mlist_flat.cpp
+
     )
 
 set (HEADERS
@@ -120,6 +126,7 @@ include_directories(../miniSDIF/src/mlist)
 include_directories(../miniSDIF/src/json)
 
 include_directories(../miniSDIF/src/img)
+include_directories(../miniSDIF/src/conv)
 
 add_library(sdif_lib SHARED
     ${SOURCES}
@@ -131,6 +138,7 @@ add_library(sdif_lib SHARED
     ${SRC_MLIST}
     ${SRC_JSON}
     ${SRC_IMG}
+    ${SRC_CONV}
     )
 
 target_link_libraries(sdif_lib "-undefined dynamic_lookup")

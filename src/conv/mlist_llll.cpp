@@ -1,19 +1,16 @@
 #include "ceammc_data.h"
 #include "ceammc_factory.h"
 
-#include "mlist_data_type.h"
-
 #include "ceammc_dataatom.h"
 
-#include "mlist_flat.h"
+#include "mlist_llll.h"
 
 #include "math.h"
 
-#include "mlist_functions.h"
 
 using namespace ceammc;
 
-MListFlat::MListFlat(const PdArgs& args)
+MListLlll::MListLlll(const PdArgs& args)
     : BaseObject(args)
     , _MList(new DataTypeMList(0))
     , _dPtr(_MList)
@@ -21,7 +18,7 @@ MListFlat::MListFlat(const PdArgs& args)
     _out1 = createOutlet();
 }
 
-void MListFlat::onBang()
+void MListLlll::onBang()
 {
     if (_MList->list() == 0)
         return;
@@ -34,22 +31,33 @@ void MListFlat::onBang()
 
 
 
-void MListFlat::onData(const DataPtr& d)
+void MListLlll::onData(const DataPtr& d)
 {
     if (!d.as<DataTypeMList>())
         return;
 
     _MList = const_cast<DataTypeMList*>(d.as<DataTypeMList>());
-    _MList->toFlatList()->output(_out1);
+    _MList->toLlll()->output(_out1);
+
 }
 
-void MListFlat::onList(const AtomList& l)
+void MListLlll::onList(const AtomList& l)
 {
-    AtomList* out = DataTypeMList(new AtomList(l)).toFlatList()   ;
+    AtomList* out = DataTypeMList(new AtomList(l)).toLlll()   ;
     out->output(_out1);
 }
 
-void MListFlat::dump() const
+void MListLlll::onFloat(float f)
+{
+    onList(AtomList(Atom(f)));
+}
+
+void MListLlll::onSymbol(t_symbol* s)
+{
+    onList(AtomList(Atom(s)));
+}
+
+void MListLlll::dump() const
 {
     OBJ_DBG << "DATA: MList";
     BaseObject::dump();
@@ -61,10 +69,10 @@ void MListFlat::dump() const
 // ==========
 
 extern "C" {
-void setup_mlist0x2eflat()
+void setup_mlist0x2ellll()
 {
-    ObjectFactory<MListFlat> f("conv.mlist->flat");
-    f.addAlias("mlist->flat");
+    ObjectFactory<MListLlll> f("conv.mlist->llll");
+    f.addAlias("mlist->llll");
 }
 }
 
