@@ -92,13 +92,16 @@ set (SRC_JSON
     )
 
 set (SRC_IMG
-    src/img/mlist_image.cpp
+    src/img/image_obj.cpp
+
+    src/img/image_data_type.cpp
     )
 
 set (SRC_CONV
 
     src/conv/mlist_llll.cpp
     src/conv/mlist_flat.cpp
+    src/conv/mlist_image.cpp
 
     )
 

@@ -26,6 +26,7 @@ extern void setup_mlist0x2eflip();
 extern void setup_json();
 
 extern void setup_mlist_image();
+extern void setup_conv_image_mlist();
 }
 
 extern "C" void setup()
@@ -52,4 +53,5 @@ extern "C" void setup()
     setup_json();
 
     setup_mlist_image();
+    setup_conv_image_mlist();
 }
