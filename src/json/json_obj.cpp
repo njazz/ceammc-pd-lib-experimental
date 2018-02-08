@@ -102,9 +102,14 @@ void JSONObj::onList(const AtomList& l)
     //return;
 
     //todo: try-catch
+    try{
     _JSON = new DataTypeJSON(ns);
     _dPtr = new DataPtr(_JSON);
     dataTo(0, *_dPtr);
+    }
+    catch(const std::exception& e){
+       error ("JSON error: could not create %s",ns.c_str());
+    }
 }
 
 void JSONObj::dump() const

@@ -45,18 +45,11 @@ void MListUnpack::onData(const DataPtr& d)
 
 void MListUnpack::onList(const AtomList& l)
 {
-    //if (l.size() == 1)
         if (l.at(0).isData()) {
             onData(DataAtom(l.at(0)).data());
             return;
         }
 
-//    AtomList* nl = new AtomList(l);
-//    _MList = new DataTypeMList(nl);
-//    _dPtr = new DataPtr(_MList);
-
-//    _outputData = true;
-//    dataTo(0, *_dPtr);
 }
 
 void MListUnpack::dump() const

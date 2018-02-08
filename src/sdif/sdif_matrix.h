@@ -16,10 +16,10 @@ public:
 
     virtual void onBang() override;
     virtual void dump() const override;
+
     virtual void onData(const DataPtr& d) override;
     virtual void onList(const AtomList& l) override;
 
-    //    void m_info(t_symbol* s, const AtomList& l);
     void m_clear(t_symbol* s, const AtomList& l);
 
     void m_newmatrix(t_symbol* s, const AtomList& l);
@@ -38,7 +38,7 @@ public:
     void m_erase_data(t_symbol* s, const AtomList& l);
 
     void m_1nvt(t_symbol* s, const AtomList& l);
-    void m_1typ(t_symbol* s, const AtomList& l);
+
 };
 
 #endif // SDIF_FILE_H

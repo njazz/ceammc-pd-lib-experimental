@@ -16,11 +16,13 @@ public:
 
     virtual void onBang() override;
     virtual void dump() const override;
-    virtual void onData(const DataPtr& d) override;
-    virtual void onList(const AtomList& l) override;
+
     virtual void onFloat(float f) override;
 
-    //    void m_info(t_symbol* s, const AtomList& l);
+    virtual void onData(const DataPtr& d) override;
+    virtual void onList(const AtomList& l) override;
+
+
     void m_clear(t_symbol* s, const AtomList& l);
 
     void m_newframe(t_symbol* s, const AtomList& l);
@@ -30,8 +32,10 @@ public:
     void m_add_matrix(t_symbol* s, const AtomList& l);
     void m_insert_matrix(t_symbol* s, const AtomList& l);
     void m_remove_matrix(t_symbol* s, const AtomList& l);
-    void m_remove_all_matrices(t_symbol* s, const AtomList& l);
 
+    void m_clear_matrices(t_symbol* s, const AtomList& l);
+
+    void m_matrices(t_symbol* s, const AtomList& l);
     void m_replace_matrices(t_symbol* s, const AtomList& l);
 
     void m_time(t_symbol* s, const AtomList& l);

@@ -9,6 +9,7 @@
 
 using namespace ceammc;
 
+// minimal string data type - test
 class DataTypeString : public AbstractData {
     std::string _str = "";
 

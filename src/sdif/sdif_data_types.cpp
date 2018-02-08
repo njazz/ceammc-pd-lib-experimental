@@ -6,18 +6,18 @@
 
 DataTypeSDIFFile::DataTypeSDIFFile(MSDIFFile* f)
 {
-    _sdifFile = f;
+    _file = f;
 }
 
 void DataTypeSDIFFile::dump()
 {
-    if (!_sdifFile)
+    if (!_file)
     {
         post("sdif.file: empty");
         return;
     }
 
-    post("sdif.file: frame count: %i", _sdifFile->frameCount());
+    post("sdif.file: frame count: %i", _file->frameCount());
 }
 
 DataType DataTypeSDIFFile::type() const
@@ -28,31 +28,31 @@ DataType DataTypeSDIFFile::type() const
 AbstractData* DataTypeSDIFFile::clone() const
 {
     // todo
-    return new DataTypeSDIFFile(_sdifFile);
+    return new DataTypeSDIFFile(_file);
 }
 
 std::string DataTypeSDIFFile::toString() const
 {
-    if (!_sdifFile) return "[empty file]";
-    return _sdifFile->info();
+    if (!_file) return "[empty file]";
+    return _file->info();
 }
 
 // ===========
 
 DataTypeSDIFFrame::DataTypeSDIFFrame(MSDIFFrame* f)
 {
-    _sdifFrame = f;
+    _frame = f;
 }
 
 void DataTypeSDIFFrame::dump()
 {
-    if (!_sdifFrame)
+    if (!_frame)
     {
         post("sdif.file: empty");
         return;
     }
 
-    post("sdif.frame: matrix count: %i", _sdifFrame->matrixCount());
+    post("sdif.frame: matrix count: %i", _frame->matrixCount());
 }
 
 DataType DataTypeSDIFFrame::type() const
@@ -68,26 +68,26 @@ AbstractData* DataTypeSDIFFrame::clone() const
 
 std::string DataTypeSDIFFrame::toString() const
 {
-    if (!_sdifFrame) return "[empty file]";
-    return _sdifFrame->info();
+    if (!_frame) return "[empty file]";
+    return _frame->info();
 }
 
 // ===========
 
 DataTypeSDIFMatrix::DataTypeSDIFMatrix(MSDIFMatrix* f)
 {
-    _sdifMatrix = f;
+    _matrix = f;
 }
 
 void DataTypeSDIFMatrix::dump()
 {
-    if (!_sdifMatrix)
+    if (!_matrix)
     {
         post("sdif.file: empty");
         return;
     }
 
-    post("sdif.matrix: rows %i columns %i", _sdifMatrix->rows(), _sdifMatrix->columns());
+    post("sdif.matrix: rows %i columns %i", _matrix->rows(), _matrix->columns());
 }
 
 DataType DataTypeSDIFMatrix::type() const
@@ -103,6 +103,6 @@ AbstractData* DataTypeSDIFMatrix::clone() const
 
 std::string DataTypeSDIFMatrix::toString() const
 {
-    if (!_sdifMatrix) return "[empty file]";
-    return _sdifMatrix->info();
+    if (!_matrix) return "[empty file]";
+    return _matrix->info();
 }

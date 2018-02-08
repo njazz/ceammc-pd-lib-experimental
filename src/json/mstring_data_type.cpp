@@ -10,8 +10,6 @@
 
 #include "json.hpp"
 
-
-
 using json = nlohmann::json;
 
 DataTypeString::DataTypeString(std::string str)
@@ -21,7 +19,6 @@ DataTypeString::DataTypeString(std::string str)
 
 void DataTypeString::dump()
 {
-
 }
 
 DataType DataTypeString::type() const
@@ -39,5 +36,3 @@ std::string DataTypeString::toString() const
     std::string ret = _str;
     return ret;
 }
-
-

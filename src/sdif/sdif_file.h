@@ -22,9 +22,10 @@ public:
 
     virtual void onFloat(float f) override;
 
-//    void m_info(t_symbol* s, const AtomList& l);
+    virtual void onData(const DataPtr& d) override;
+    virtual void onList(const AtomList& l) override;
 
-    void m_newfile(t_symbol* s, const AtomList& l);
+    void m_new(t_symbol* s, const AtomList& l);
     void m_clear(t_symbol* s, const AtomList& l);
 
     void m_read(t_symbol* s, const AtomList& l);
@@ -33,11 +34,11 @@ public:
     void m_add_frame(t_symbol* s, const AtomList& l);
     void m_insert_frame(t_symbol* s, const AtomList& l);
     void m_remove_frame(t_symbol* s, const AtomList& l);
-    void m_remove_all_frames(t_symbol* s, const AtomList& l);
 
-    void m_replace_frames(t_symbol* s, const AtomList& l);
+    void m_clear_frames(t_symbol* s, const AtomList& l);
 
     void m_frames(t_symbol* s, const AtomList& l);
+    void m_replace_frames(t_symbol* s, const AtomList& l);
 };
 
 #endif // SDIF_FILE_H

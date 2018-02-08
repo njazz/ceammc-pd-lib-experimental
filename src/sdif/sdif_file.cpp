@@ -18,9 +18,11 @@ SDIFFileClass::SDIFFileClass(const PdArgs& args)
     _out1 = createOutlet();
 }
 
+// ==========
+
 void SDIFFileClass::onBang()
 {
-    if (_sdifFileData->sdifFile() == 0)
+    if (_sdifFileData->file() == 0)
         return;
     dataTo(0, _dPtr);
 };
@@ -29,18 +31,34 @@ void SDIFFileClass::onFloat(float f)
 {
     if (!_sdifFileData)
         return;
-    if (!_sdifFileData->sdifFile())
+    if (!_sdifFileData->file())
         return;
 
     int idx = f;
 
     if (idx < 0)
         return;
-    if (idx >= _sdifFileData->sdifFile()->frameCount())
+    if (idx >= _sdifFileData->file()->frameCount())
         return;
 
-    DataPtr p(new DataTypeSDIFFrame(_sdifFileData->sdifFile()->frames().at(idx)));
+    DataPtr p(new DataTypeSDIFFrame(_sdifFileData->file()->frames().at(idx)));
     dataTo(0, p);
+}
+
+void SDIFFileClass::onData(const DataPtr& d)
+{
+    post("received: %s", d.data()->toString().c_str());
+    if (!d.as<DataTypeSDIFFile>())
+        return;
+
+    _sdifFileData = const_cast<DataTypeSDIFFile*>(d.as<DataTypeSDIFFile>());
+    _dPtr = DataPtr(_sdifFileData);
+}
+
+void SDIFFileClass::onList(const AtomList& l)
+{
+    DataAtom a(l.at(0));
+    onData(a.data());
 }
 
 void SDIFFileClass::dump() const
@@ -52,37 +70,9 @@ void SDIFFileClass::dump() const
     OBJ_DBG << "contents:  " << _sdifFileData->toString();
 }
 
-//void SDIFFileClass::m_info(t_symbol* s, const AtomList& l)
-//{
-//    if (!_sdifFileData->sdifFile()) {
-//        post("sdif.file: no file");
-//        return;
-//    }
+// ==========
 
-//    post(_sdifFileData->sdifFile()->info().c_str());
-//}
-
-void SDIFFileClass::m_replace_frames(t_symbol* s, const AtomList& l)
-{
-}
-
-void SDIFFileClass::m_frames(t_symbol* s, const AtomList& l)
-{
-    if (!_sdifFileData->sdifFile())
-        return;
-    _frames.clear();
-
-    AtomList L(Atom(gensym("frames")));
-
-    for (auto f : _sdifFileData->sdifFile()->frames()) {
-        _frames.push_back(DataPtr(new DataTypeSDIFFrame(f)));
-        L.append(_frames.back().asAtom());
-    }
-
-    L.output(_out1);
-}
-
-void SDIFFileClass::m_newfile(t_symbol* s, const AtomList& l)
+void SDIFFileClass::m_new(t_symbol* s, const AtomList& l)
 {
     _sdifFileData = new DataTypeSDIFFile(new MSDIFFile());
     _dPtr = DataPtr(_sdifFileData);
@@ -96,12 +86,14 @@ void SDIFFileClass::m_clear(t_symbol* s, const AtomList& l)
     _dPtr = DataPtr(_sdifFileData);
 }
 
+//
+
 void SDIFFileClass::m_read(t_symbol* s, const AtomList& l)
 {
     _sdifFileData = new DataTypeSDIFFile(new MSDIFFile());
     _dPtr = DataPtr(_sdifFileData);
 
-    mFileError e = _sdifFileData->sdifFile()->readFile(l.at(0).asString());
+    mFileError e = _sdifFileData->file()->readFile(l.at(0).asString());
 
     if (e == meOK) {
         _fileName = l.at(0).asSymbol();
@@ -119,11 +111,27 @@ void SDIFFileClass::m_read(t_symbol* s, const AtomList& l)
 
 void SDIFFileClass::m_write(t_symbol* s, const AtomList& l)
 {
-    mFileError e = _sdifFileData->sdifFile()->writeFile(l.at(0).asString());
+    mFileError e = _sdifFileData->file()->writeFile(l.at(0).asString());
     post("sdif.file: written %s", l.at(0).asString().c_str());
 }
 
 //
+
+void SDIFFileClass::m_frames(t_symbol* s, const AtomList& l)
+{
+    if (!_sdifFileData->file())
+        return;
+    _frames.clear();
+
+    AtomList L(Atom(gensym("frames")));
+
+    for (auto f : _sdifFileData->file()->frames()) {
+        _frames.push_back(DataPtr(new DataTypeSDIFFrame(f)));
+        L.append(_frames.back().asAtom());
+    }
+
+    L.output(_out1);
+}
 
 void SDIFFileClass::m_add_frame(t_symbol* s, const AtomList& l)
 {
@@ -134,11 +142,11 @@ void SDIFFileClass::m_add_frame(t_symbol* s, const AtomList& l)
     if (!a.isData())
         return;
 
-    if (!_sdifFileData->sdifFile())
+    if (!_sdifFileData->file())
         return;
 
     DataTypeSDIFFrame* f = const_cast<DataTypeSDIFFrame*>(a.data().as<DataTypeSDIFFrame>());
-    _sdifFileData->sdifFile()->addFrame(f->sdifFrame());
+    _sdifFileData->file()->addFrame(f->frame());
 }
 
 void SDIFFileClass::m_insert_frame(t_symbol* s, const AtomList& l)
@@ -150,11 +158,11 @@ void SDIFFileClass::m_insert_frame(t_symbol* s, const AtomList& l)
     if (!a.isData())
         return;
 
-    if (!_sdifFileData->sdifFile())
+    if (!_sdifFileData->file())
         return;
 
     DataTypeSDIFFrame* f = const_cast<DataTypeSDIFFrame*>(a.data().as<DataTypeSDIFFrame>());
-    _sdifFileData->sdifFile()->insertFrame(l.at(0).asInt(), f->sdifFrame());
+    _sdifFileData->file()->insertFrame(l.at(0).asInt(), f->frame());
 }
 
 void SDIFFileClass::m_remove_frame(t_symbol* s, const AtomList& l)
@@ -162,27 +170,47 @@ void SDIFFileClass::m_remove_frame(t_symbol* s, const AtomList& l)
     if (l.size() < 1)
         return;
 
-    if (!_sdifFileData->sdifFile())
+    if (!_sdifFileData->file())
         return;
 
-    _sdifFileData->sdifFile()->removeFrameAt(l.at(0).asInt());
+    _sdifFileData->file()->removeFrameAt(l.at(0).asInt());
 }
 
-void SDIFFileClass::m_remove_all_frames(t_symbol* s, const AtomList& l)
+void SDIFFileClass::m_clear_frames(t_symbol* s, const AtomList& l)
 {
-    if (!_sdifFileData->sdifFile())
+    if (!_sdifFileData->file())
         return;
 
-    _sdifFileData->sdifFile()->removeAllFrames();
+    _sdifFileData->file()->removeAllFrames();
+}
+
+void SDIFFileClass::m_replace_frames(t_symbol* s, const AtomList& l)
+{
+    if (l.size() < 1)
+        return;
+
+    if (!_sdifFileData->file())
+        return;
+
+    _sdifFileData->file()->removeAllFrames();
+
+    for (int i=0;i<l.size();i++)
+    {
+        DataAtom a(l.at(i));
+        if (!a.isData())
+            continue;
+
+        DataTypeSDIFFrame* f = const_cast<DataTypeSDIFFrame*>(a.data().as<DataTypeSDIFFrame>());
+        _sdifFileData->file()->addFrame(f->frame());
+    }
 }
 
 extern "C" {
 void setup_sdif0x2efile()
 {
     ObjectFactory<SDIFFileClass> f("sdif.file");
-    //f.addMethod("info", &SDIFFileClass::m_info);
 
-    f.addMethod("newfile", &SDIFFileClass::m_newfile);
+    f.addMethod("newfile", &SDIFFileClass::m_new);
     f.addMethod("clear", &SDIFFileClass::m_clear);
 
     f.addMethod("read", &SDIFFileClass::m_read);
@@ -191,9 +219,11 @@ void setup_sdif0x2efile()
     f.addMethod("add_frame", &SDIFFileClass::m_add_frame);
     f.addMethod("insert_frame", &SDIFFileClass::m_insert_frame);
     f.addMethod("remove_frame", &SDIFFileClass::m_remove_frame);
-    f.addMethod("remove_all_frames", &SDIFFileClass::m_remove_all_frames);
+
+    f.addMethod("clear_frames", &SDIFFileClass::m_clear_frames);
 
     f.addMethod("frames", &SDIFFileClass::m_frames);
+    f.addMethod("replace_frames", &SDIFFileClass::m_replace_frames);
 }
 }
 

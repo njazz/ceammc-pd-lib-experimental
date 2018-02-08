@@ -2,15 +2,20 @@
 #define SDIF_DATA_TYPES_H
 
 #include "ceammc_data.h"
+#include "ceammc_datatypes.h"
 #include "mSDIFFile.hpp"
 
 using namespace ceammc;
 
+static const ::ceammc::DataType DATA_SDIF_FILE = 101;
+static const ::ceammc::DataType DATA_SDIF_FRAME = 102;
+static const ::ceammc::DataType DATA_SDIF_MATRIX = 103;
+
 class DataTypeSDIFFile : public AbstractData {
-    MSDIFFile* _sdifFile = 0;
+    MSDIFFile* _file = 0;
 
 public:
-    static const DataType dataType = 101;
+    static const DataType dataType = DATA_SDIF_FILE;
 
     explicit DataTypeSDIFFile(MSDIFFile* f);
 
@@ -19,14 +24,16 @@ public:
     virtual AbstractData* clone() const override;
     virtual std::string toString() const override;
 
-    MSDIFFile* sdifFile() { return _sdifFile; }
+    MSDIFFile* file() { return _file; }
 };
 
+// ==========
+
 class DataTypeSDIFFrame : public AbstractData {
-    MSDIFFrame* _sdifFrame = 0;
+    MSDIFFrame* _frame = 0;
 
 public:
-    static const DataType dataType = 102;
+    static const DataType dataType = DATA_SDIF_FRAME;
 
     explicit DataTypeSDIFFrame(MSDIFFrame* f);
 
@@ -35,14 +42,16 @@ public:
     virtual AbstractData* clone() const override;
     virtual std::string toString() const override;
 
-    MSDIFFrame* sdifFrame() { return _sdifFrame; }
+    MSDIFFrame* frame() { return _frame; }
 };
 
+// ==========
+
 class DataTypeSDIFMatrix : public AbstractData {
-    MSDIFMatrix* _sdifMatrix = 0;
+    MSDIFMatrix* _matrix = 0;
 
 public:
-    static const DataType dataType = 103;
+    static const DataType dataType = DATA_SDIF_MATRIX;
 
     explicit DataTypeSDIFMatrix(MSDIFMatrix* f);
 
@@ -51,7 +60,7 @@ public:
     virtual AbstractData* clone() const override;
     virtual std::string toString() const override;
 
-    MSDIFMatrix* sdifMatrix() { return _sdifMatrix; }
+    MSDIFMatrix* matrix() { return _matrix; }
 };
 
 #endif // SDIF_DATA_TYPES_H

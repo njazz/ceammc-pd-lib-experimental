@@ -18,9 +18,11 @@ SDIFFrameClass::SDIFFrameClass(const PdArgs& args)
     _out1 = createOutlet();
 }
 
+// =========
+
 void SDIFFrameClass::onBang()
 {
-    if (_sdifFrameData->sdifFrame() == 0)
+    if (_sdifFrameData->frame() == 0)
         return;
     dataTo(0, _dPtr);
 };
@@ -29,17 +31,17 @@ void SDIFFrameClass::onFloat(float f)
 {
     if (!_sdifFrameData)
         return;
-    if (!_sdifFrameData->sdifFrame())
+    if (!_sdifFrameData->frame())
         return;
 
     int idx = f;
 
     if (idx < 0)
         return;
-    if (idx >= _sdifFrameData->sdifFrame()->matrixCount())
+    if (idx >= _sdifFrameData->frame()->matrixCount())
         return;
 
-    DataPtr p(new DataTypeSDIFMatrix(_sdifFrameData->sdifFrame()->matrices().at(idx)));
+    DataPtr p(new DataTypeSDIFMatrix(_sdifFrameData->frame()->matrices().at(idx)));
     dataTo(0, p);
 }
 
@@ -68,15 +70,7 @@ void SDIFFrameClass::dump() const
     OBJ_DBG << "contents:  " << _sdifFrameData->toString();
 }
 
-//void SDIFFrameClass::m_info(t_symbol* s, const AtomList& l)
-//{
-//    if (!_sdifFrameData->sdifFrame()) {
-//        post("sdif.frame: no data");
-//        return;
-//    }
-
-//    post(_sdifFrameData->sdifFrame()->info().c_str());
-//}
+// ===========
 
 void SDIFFrameClass::m_newframe(t_symbol* s, const AtomList& l)
 {
@@ -93,15 +87,19 @@ void SDIFFrameClass::m_newframe(t_symbol* s, const AtomList& l)
     _dPtr = DataPtr(_sdifFrameData);
 }
 
-void SDIFFrameClass::m_replace_matrices(t_symbol* s, const AtomList& l)
+void SDIFFrameClass::m_clear(t_symbol* s, const AtomList& l)
 {
+    _sdifFrameData = new DataTypeSDIFFrame(0);
+    _dPtr = DataPtr(_sdifFrameData);
 }
+
+// ===========
 
 void SDIFFrameClass::m_time(t_symbol* s, const AtomList& l)
 {
     if (!_sdifFrameData)
         return;
-    if (!_sdifFrameData->sdifFrame()) {
+    if (!_sdifFrameData->frame()) {
         post("sdif.frame: no data");
         return;
     }
@@ -109,18 +107,18 @@ void SDIFFrameClass::m_time(t_symbol* s, const AtomList& l)
     if (l.size() < 1) {
         AtomList L(gensym("time"));
 
-        L.append(Atom((_sdifFrameData->sdifFrame()->time())));
+        L.append(Atom((_sdifFrameData->frame()->time())));
         L.output(_out1);
     } else {
         float t = l.at(0).asFloat();
-        _sdifFrameData->sdifFrame()->setTime(t);
+        _sdifFrameData->frame()->setTime(t);
     }
 }
 void SDIFFrameClass::m_stream_id(t_symbol* s, const AtomList& l)
 {
     if (!_sdifFrameData)
         return;
-    if (!_sdifFrameData->sdifFrame()) {
+    if (!_sdifFrameData->frame()) {
         post("sdif.frame: no data");
         return;
     }
@@ -128,24 +126,18 @@ void SDIFFrameClass::m_stream_id(t_symbol* s, const AtomList& l)
     if (l.size() < 1) {
         AtomList L(gensym("stream_id"));
 
-        L.append(Atom((_sdifFrameData->sdifFrame()->streamID())));
+        L.append(Atom((_sdifFrameData->frame()->streamID())));
         L.output(_out1);
     } else {
         float i = l.at(0).asFloat();
-        _sdifFrameData->sdifFrame()->setStreamID(i);
+        _sdifFrameData->frame()->setStreamID(i);
     }
-}
-
-void SDIFFrameClass::m_clear(t_symbol* s, const AtomList& l)
-{
-    _sdifFrameData = new DataTypeSDIFFrame(0);
-    _dPtr = DataPtr(_sdifFrameData);
 }
 
 void SDIFFrameClass::m_type(t_symbol* s, const AtomList& l)
 {
     AtomList L(Atom(gensym("type")));
-    L.append(Atom(gensym(_sdifFrameData->sdifFrame()->signature())));
+    L.append(Atom(gensym(_sdifFrameData->frame()->signature())));
     L.output(_out1);
 }
 
@@ -160,11 +152,11 @@ void SDIFFrameClass::m_add_matrix(t_symbol* s, const AtomList& l)
     if (!a.isData())
         return;
 
-    if (!_sdifFrameData->sdifFrame())
+    if (!_sdifFrameData->frame())
         return;
 
     DataTypeSDIFMatrix* f = const_cast<DataTypeSDIFMatrix*>(a.data().as<DataTypeSDIFMatrix>());
-    _sdifFrameData->sdifFrame()->addMatrix(f->sdifMatrix());
+    _sdifFrameData->frame()->addMatrix(f->matrix());
 }
 
 void SDIFFrameClass::m_insert_matrix(t_symbol* s, const AtomList& l)
@@ -176,11 +168,11 @@ void SDIFFrameClass::m_insert_matrix(t_symbol* s, const AtomList& l)
     if (!a.isData())
         return;
 
-    if (!_sdifFrameData->sdifFrame())
+    if (!_sdifFrameData->frame())
         return;
 
     DataTypeSDIFMatrix* f = const_cast<DataTypeSDIFMatrix*>(a.data().as<DataTypeSDIFMatrix>());
-    _sdifFrameData->sdifFrame()->insertMatrix(l.at(0).asInt(), f->sdifMatrix());
+    _sdifFrameData->frame()->insertMatrix(l.at(0).asInt(), f->matrix());
 }
 
 void SDIFFrameClass::m_remove_matrix(t_symbol* s, const AtomList& l)
@@ -188,25 +180,58 @@ void SDIFFrameClass::m_remove_matrix(t_symbol* s, const AtomList& l)
     if (l.size() < 1)
         return;
 
-    if (!_sdifFrameData->sdifFrame())
+    if (!_sdifFrameData->frame())
         return;
 
-    _sdifFrameData->sdifFrame()->removeMatrixAt(l.at(0).asInt());
+    _sdifFrameData->frame()->removeMatrixAt(l.at(0).asInt());
 }
 
-void SDIFFrameClass::m_remove_all_matrices(t_symbol* s, const AtomList& l)
+void SDIFFrameClass::m_clear_matrices(t_symbol* s, const AtomList& l)
 {
-    if (!_sdifFrameData->sdifFrame())
+    if (!_sdifFrameData->frame())
         return;
 
-    _sdifFrameData->sdifFrame()->removeAllMatrices();
+    _sdifFrameData->frame()->removeAllMatrices();
+}
+
+void SDIFFrameClass::m_matrices(t_symbol* s, const AtomList& l)
+{
+    if (!_sdifFrameData->frame())
+        return;
+
+    _sdifFrameData->frame()->removeAllMatrices();
+
+    AtomList L(Atom(gensym("matrices")));
+
+    for (auto f : _sdifFrameData->frame()->matrices()) {
+        DataPtr* n = new DataPtr(new DataTypeSDIFMatrix(f));
+        L.append(n->asAtom());
+    }
+
+    L.output(_out1);
+
+}
+void SDIFFrameClass::m_replace_matrices(t_symbol* s, const AtomList& l)
+{
+    if (!_sdifFrameData->frame())
+        return;
+
+    _sdifFrameData->frame()->removeAllMatrices();
+
+    for (int i = 0; i < l.size(); i++) {
+        DataAtom a(l.at(i));
+        if (!a.isData())
+            return;
+
+        DataTypeSDIFMatrix* f = const_cast<DataTypeSDIFMatrix*>(a.data().as<DataTypeSDIFMatrix>());
+        _sdifFrameData->frame()->addMatrix(f->matrix());
+    }
 }
 
 extern "C" {
 void setup_sdif0x2eframe()
 {
     ObjectFactory<SDIFFrameClass> f("sdif.frame");
-    //    f.addMethod("info", &SDIFFrameClass::m_info);
 
     f.addMethod("clear", &SDIFFrameClass::m_clear);
     f.addMethod("new", &SDIFFrameClass::m_newframe);
@@ -219,7 +244,9 @@ void setup_sdif0x2eframe()
     f.addMethod("add_matrix", &SDIFFrameClass::m_add_matrix);
     f.addMethod("insert_matrix", &SDIFFrameClass::m_insert_matrix);
     f.addMethod("remove_matrix", &SDIFFrameClass::m_remove_matrix);
-    f.addMethod("remove_all_matrices", &SDIFFrameClass::m_remove_all_matrices);
+
+    f.addMethod("matrices", &SDIFFrameClass::m_matrices);
+    f.addMethod("clear_matrices", &SDIFFrameClass::m_clear_matrices);
 }
 }
 

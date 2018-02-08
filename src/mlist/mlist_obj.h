@@ -17,7 +17,7 @@ public:
 
     virtual void onBang() override;
     virtual void dump() const override;
-//    virtual void onData(const DataPtr& d) override;
+
     virtual void onList(const AtomList& l) override;
 
     virtual void onFloat(float f) override;

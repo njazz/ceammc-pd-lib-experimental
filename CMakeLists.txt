@@ -17,22 +17,12 @@ project(sdif_library)
 
 add_definitions(-DHAVE_UNISTD_H)
 
-file(GLOB TL_LIB_SOURCES
-    "lib/*.h"
-    "lib/*.cpp"
-    "lib/*.c"
-)
+
 
 file(GLOB UTF8
     "utf8/*.h"
     "utf8/*.c"
     "utf8/internal/*.c"
-)
-
-set(TL_LIB_SOURCES_PLUS
-
-#    lib/ceammc_timeline.cpp
-
 )
 
 set (CICM
@@ -64,14 +54,27 @@ set (SYNTH
 set (SOURCES
     sdif_lib.cpp
 
-    src/sdif_file.cpp
-    src/sdif_frame.cpp
-    src/sdif_matrix.cpp
 
-    src/sdif_data_types.cpp
+    )
 
-    src/synth_sine.cpp
-    src/synth_res.cpp
+set (SRC_SDIF
+
+    src/sdif/sdif_file.cpp
+    src/sdif/sdif_frame.cpp
+    src/sdif/sdif_matrix.cpp
+
+    src/sdif/sdif_data_types.cpp
+
+    src/sdif/sdif_1trc.cpp
+    )
+
+set (SRC_SYNTH
+
+    src/synth/synth_sine.cpp
+    src/synth/synth_res.cpp
+    )
+
+set (SRC_MLIST
 
     src/mlist/mlist_obj.cpp
     src/mlist/mlist_unpack.cpp
@@ -79,24 +82,19 @@ set (SOURCES
     src/mlist/mlist_flat.cpp
     src/mlist/mlist_flip.cpp
 
-    src/json/json_obj.cpp
-
     src/mlist/mlist_data_type.cpp
+    )
 
+set (SRC_JSON
     src/json/json_data_type.cpp
-
     src/json/mstring_data_type.cpp
 
-#    tl/tl_cue.cpp
-#    tl/tl_bang.cpp
-#    tl/tl_transport.cpp
+    src/json/json_obj.cpp
+    )
 
-#    tl/tl_parameter.cpp
-#    tl/tl_toggle.cpp
-#    tl/tl_value.cpp
-
-#    tl/tl_delay.cpp
-)
+set (SRC_IMG
+    src/img/mlist_image.cpp
+    )
 
 set (HEADERS
     ../miniSDIF/src/mSDIFFile.hpp
@@ -121,10 +119,29 @@ include_directories(../PartialSynth/src/)
 include_directories(../miniSDIF/src/mlist)
 include_directories(../miniSDIF/src/json)
 
-add_library(sdif_lib SHARED ${TL_LIB_SOURCES} ${TL_LIB_SOURCES_PLUS} ${SOURCES} ${CICM} ${UTF8} ${SDIFLIB} ${SYNTH})
+include_directories(../miniSDIF/src/img)
+
+add_library(sdif_lib SHARED
+    ${SOURCES}
+    ${UTF8}
+    ${SDIFLIB}
+    ${SYNTH}
+    ${SRC_SDIF}
+    ${SRC_SYNTH}
+    ${SRC_MLIST}
+    ${SRC_JSON}
+    ${SRC_IMG}
+    )
+
 target_link_libraries(sdif_lib "-undefined dynamic_lookup")
 SET_TARGET_PROPERTIES(sdif_lib PROPERTIES PREFIX "")
 set_target_properties(sdif_lib PROPERTIES SUFFIX ".pd_darwin")
+
+FIND_PACKAGE(JPEG REQUIRED)
+IF(JPEG_FOUND)
+  INCLUDE_DIRECTORIES(${JPEG_INCLUDE_DIR})
+  TARGET_LINK_LIBRARIES(sdif_lib ${JPEG_LIBRARIES})
+ENDIF()
 
 #install(TARGETS timeline LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../bin)
 

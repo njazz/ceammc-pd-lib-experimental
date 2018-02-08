@@ -16,9 +16,9 @@ class MListFlip : public BaseObject {
 public:
     MListFlip(const PdArgs& args);
 
-//    virtual void onBang() override;
     virtual void dump() const override;
-    //virtual void onData(const DataPtr& d) override;
+
+    virtual void onBang() override;
     virtual void onList(const AtomList& l) override;
 };
 

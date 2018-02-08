@@ -2,7 +2,6 @@
 #define JSON_DATA_TYPES_H
 
 #include "ceammc_data.h"
-#include "mSDIFFile.hpp"
 #include "ceammc_atomlist.h"
 #include "json.hpp"
 

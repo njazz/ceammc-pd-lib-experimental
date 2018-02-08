@@ -30,26 +30,9 @@ void MListObj::onBang()
         _MList->list()->output(_out1);
 };
 
-//void MListObj::onData(const DataPtr& d)
-//{
-//    if (!d.as<DataTypeMList>())
-//        return;
-
-//    _MList = const_cast<DataTypeMList*>(d.as<DataTypeMList>());
-//    _dPtr = new DataPtr(_MList);
-
-//    _outputData = false;
-
-//    _MList->list()->output(_out1);
-//}
 
 void MListObj::onList(const AtomList& l)
 {
-    //    if (l.size() == 1)
-    //        if (l.at(0).isData()) {
-    //            onData(DataAtom(l.at(0)).data());
-    //            return;
-    //        }
 
     AtomList* nl = new AtomList(l);
     _MList = new DataTypeMList(nl);

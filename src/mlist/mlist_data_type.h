@@ -8,7 +8,7 @@
 using namespace ceammc;
 
 class DataTypeMList : public AbstractData {
-    AtomList* _atomList = 0;
+    AtomList* _list = 0;
 
 public:
     static const DataType dataType = 200;
@@ -20,10 +20,13 @@ public:
     virtual AbstractData* clone() const override;
     virtual std::string toString() const override;
 
-    AtomList* list() { return _atomList; }
+    AtomList* list() { return _list; }
 
     AtomList* toLlll();
     AtomList* toFlatList();
+
+    int minimalSublistLength();
+    AtomList* flip();
 };
 
 #endif // SDIF_DATA_TYPES_H
