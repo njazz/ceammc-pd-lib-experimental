@@ -11,7 +11,6 @@ class ConvJSON
 {
     ConvJSON() = delete;
 public:
-    static DataTypeImage* toImage(DataTypeJSON* json);
     static DataTypeMList *toMList(DataTypeJSON* json);
     static AtomList* toList(DataTypeJSON* json);
 

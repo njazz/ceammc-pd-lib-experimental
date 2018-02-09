@@ -38,15 +38,10 @@ void MListLlll::onData(const DataPtr& d)
     _MList = const_cast<DataTypeMList*>(d.as<DataTypeMList>());
 
     ConvMList::toLlll(_MList)->output(_out1);
-//    _MList->toLlll()->output(_out1);
-
 }
 
 void MListLlll::onList(const AtomList& l)
 {
-//    AtomList* out = DataTypeMList(new AtomList(l)).toLlll();
-//    out->output(_out1);
-
     ConvMList::toLlll((new DataTypeMList(new AtomList(l))))->output(_out1);
 }
 

@@ -52,8 +52,6 @@ void ListToJSON::onList(const AtomList& l)
 
     try {
         _json = ConvList::toJSON(const_cast<AtomList*>(&l));
-        //_json = new DataTypeJSON("{}");
-        //_json->fromList(const_cast<AtomList&>(l));
         _dPtr = new DataPtr(_json);
         onBang();
     } catch (std::exception& e) {

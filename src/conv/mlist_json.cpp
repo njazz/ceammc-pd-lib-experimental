@@ -40,7 +40,7 @@ void MListToJSON::onData(const DataPtr& d)
         return;
     }
 
-    std::string str = "{\"mlist\":" + ConvMList::toJSONString(mlist) + "}";
+    std::string str = "{\"list\":" + ConvMList::toJSONString(mlist) + "}";
     try {
         _json = new DataTypeJSON(str);
         _dPtr = new DataPtr(_json);

@@ -1,22 +1,17 @@
 #include "conv_image.h"
-
 #include "ceammc_log.h"
-
 #include "ceammc_dataatom.h"
 
 AtomList* ConvImage::toList(DataTypeImage* image)
 {
-    AtomList* ret;
+    AtomList* ret = new AtomList();
 
-
-    if (!image)
-    {
+    if (!image) {
         LIB_ERR << "bad image data";
         return 0;
     }
 
-    if (!image->img())
-    {
+    if (!image->img()) {
         LIB_ERR << "bad image data pointer";
         return 0;
     }
@@ -24,19 +19,15 @@ AtomList* ConvImage::toList(DataTypeImage* image)
     int w = image->img()->width();
     int h = image->img()->height();
 
-    ret = new AtomList();
-
     for (int i = 0; i < h; i++) {
-        AtomList* sL = new AtomList();
+        AtomList* subList = new AtomList();
         for (int j = 0; j < w; j++) {
-            sL->append(Atom(float(image->img()->atXY(j, i))));
+            subList->append(Atom(float(image->img()->atXY(j, i))));
         }
-        DataTypeMList* ml = new DataTypeMList(sL);
-        DataAtom* da = new DataAtom(ml);
-        ret->append(da->toAtom());
+        DataTypeMList* mlist = new DataTypeMList(subList);
+        DataAtom* dataAtom = new DataAtom(mlist);
+        ret->append(dataAtom->toAtom());
     }
-
-
     return ret;
 }
 
@@ -44,10 +35,3 @@ DataTypeMList* ConvImage::toMList(DataTypeImage* image)
 {
     return new DataTypeMList(ConvImage::toList(image));
 }
-
-//DataTypeJSON* ConvImage::toJSON(DataTypeImage* image)
-//{
-//    DataTypeJSON* ret;
-
-//    return ret;
-//}

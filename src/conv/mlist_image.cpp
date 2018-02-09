@@ -13,7 +13,6 @@
 #include "conv_list.h"
 
 using namespace cimg_library;
-
 using namespace ceammc;
 
 MListToImage::MListToImage(const PdArgs& args)
@@ -50,44 +49,9 @@ void MListToImage::onList(const AtomList& l)
         return;
     }
 
-//    DataTypeMList* ml = const_cast<DataTypeMList*>(DataAtom(l.at(0)).data().as<DataTypeMList>());
-//    if (!ml) {
-//        error("first element is not an mlist");
-//        return;
-//    }
-
-
-//    DataTypeMList*ml = new DataTypeMList(new AtomList(l));
-
-//    int w = DataTypeMList(new AtomList(l)).minimalSublistLength();
-//    int h = l.size();
-
-//    post("w h %i %i", w, h);
-
-//    DataTypeImage* im = new DataTypeImage(new CImg<unsigned char>(w, h));
-
-//    for (int i = 0; i < h; i++) {
-//        DataTypeMList* nl = const_cast<DataTypeMList*>(DataAtom(l.at(i)).data().as<DataTypeMList>());
-//        if (!nl)
-//            return;
-
-//        AtomList* sL = nl->list();
-
-//        if (sL->size() < w) {
-//            error("mlist length is less than expected");
-//            return;
-//        }
-
-//        for (int j = 0; j < w; j++) {
-
-//            unsigned char c = sL->at(j).asFloat();
-
-//            im->img()->set_linear_atXY(c, j, i);
-//        }
-//    }
-
     DataTypeImage* img = ConvList::toImage(new AtomList(l));
-    if (!img) return;
+    if (!img)
+        return;
 
     _img = img;
     _dPtr = new DataPtr(_img);

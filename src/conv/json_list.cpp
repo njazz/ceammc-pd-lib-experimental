@@ -25,10 +25,10 @@ JSONToList::JSONToList(const PdArgs& args)
 
 void JSONToList::onBang()
 {
-    if (!_list) return;
+    if (!_list)
+        return;
     _list->output(_out1);
 }
-
 
 void JSONToList::onData(const DataPtr& d)
 {
@@ -36,16 +36,13 @@ void JSONToList::onData(const DataPtr& d)
         return;
 
     DataTypeJSON* json = const_cast<DataTypeJSON*>(d.as<DataTypeJSON>());
-    if (!json)
-    {
+    if (!json) {
         error("bad input json");
         return;
     }
 
-
-    _list = ConvJSON::toList(json);//json->toList();
+    _list = ConvJSON::toList(json); //json->toList();
     onBang();
-
 }
 
 void JSONToList::onList(const AtomList& l)
@@ -55,7 +52,6 @@ void JSONToList::onList(const AtomList& l)
             onData(DataAtom(l.at(0)).data());
             return;
         }
-
 }
 
 void JSONToList::dump() const

@@ -1,9 +1,5 @@
 #include "conv_mlist.h"
-
-#include "ceammc_platform.h"
-
 #include "ceammc_log.h"
-
 #include "ceammc_dataatom.h"
 
 DataTypeImage* ConvMList::toImage(DataTypeMList* mlist)
@@ -48,6 +44,7 @@ DataTypeImage* ConvMList::toImage(DataTypeMList* mlist)
 
     return ret;
 }
+
 DataTypeJSON* ConvMList::toJSON(DataTypeMList* mlist)
 {
     DataTypeJSON* ret;

@@ -33,30 +33,6 @@ void ImageToMlist::onData(const DataPtr& d)
 {
     DataTypeImage* img = const_cast<DataTypeImage*>(d.as<DataTypeImage>());
 
-//    if (!img)
-//        return;
-
-//    if (!img->img())
-//        return;
-
-//    int w = img->img()->width();
-//    int h = img->img()->height();
-
-//    post("got image %i %i", w, h);
-//    AtomList* ret = new AtomList();
-
-//    for (int i = 0; i < h; i++) {
-//        AtomList* sL = new AtomList();
-//        for (int j = 0; j < w; j++) {
-//            sL->append(Atom(float(img->img()->atXY(j, i))));
-//        }
-//        DataTypeMList* ml = new DataTypeMList(sL);
-//        DataAtom* da = new DataAtom(ml);
-//        ret->append(da->toAtom());
-//    }
-
-//    _MList = new DataTypeMList(ret);
-
     DataTypeMList*mlist = ConvImage::toMList(img);
     if (!mlist) return;
     _MList = mlist;

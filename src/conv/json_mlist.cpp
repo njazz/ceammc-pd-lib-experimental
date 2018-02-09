@@ -21,9 +21,7 @@ JSONToMList::JSONToMList(const PdArgs& args)
     , _mlist(new DataTypeMList(new AtomList()))
     , _dPtr(new DataPtr(_mlist))
 {
-    //    std::string str = "{}";
-    //    _JSON = new DataTypeJSON(str);
-    //    _dPtr = new DataPtr(_JSON);
+
     _out1 = createOutlet();
 }
 
@@ -50,16 +48,7 @@ void JSONToMList::onData(const DataPtr& d)
         return;
     }
 
-//    post("input %s", json->toString().c_str());
-
-//    auto a = json->json()["mlist"];
-//    if (a.is_null()) post("isnull");
-//    for (auto e:a)
-//    {
-//        post("element");
-//    }
-
-    _mlist = ConvJSON::toMList(json);//json->toMList();
+    _mlist = ConvJSON::toMList(json); //json->toMList();
     onBang();
 }
 

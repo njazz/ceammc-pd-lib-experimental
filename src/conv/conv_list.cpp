@@ -11,10 +11,7 @@ DataTypeJSON* ConvList::toJSON(AtomList* list)
 
 DataTypeImage* ConvList::toImage(AtomList* list)
 {
-    DataTypeImage* ret;
-
     DataTypeMList* mlist = new DataTypeMList(list);
-
     return ConvMList::toImage(mlist);
 }
 

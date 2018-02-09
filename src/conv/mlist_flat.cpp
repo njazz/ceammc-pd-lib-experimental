@@ -36,15 +36,11 @@ void MListFlat::onData(const DataPtr& d)
         return;
 
     _MList = const_cast<DataTypeMList*>(d.as<DataTypeMList>());
-
     ConvMList::toFlatList(_MList)->output(_out1);
 }
 
 void MListFlat::onList(const AtomList& l)
 {
-    //AtomList* out = DataTypeMList(new AtomList(l)).toFlatList();
-    //out->output(_out1);
-
     ConvMList::toFlatList(new DataTypeMList(new AtomList(l)))->output(_out1);
 }
 

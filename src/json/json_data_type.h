@@ -1,8 +1,8 @@
 #ifndef JSON_DATA_TYPES_H
 #define JSON_DATA_TYPES_H
 
-#include "ceammc_data.h"
 #include "ceammc_atomlist.h"
+#include "ceammc_data.h"
 #include "json.hpp"
 
 using json = nlohmann::json;
@@ -11,7 +11,7 @@ using namespace ceammc;
 class DataTypeMList;
 
 class DataTypeJSON : public AbstractData {
-    json _json = "{}"_json;
+    nlohmann::json _json = "{}"_json;
 
 public:
     static const DataType dataType = 200;
@@ -24,18 +24,12 @@ public:
     virtual std::string toString() const override;
 
     const nlohmann::json json() { return _json; }
-    void set(std::string key, nlohmann::json j){_json[key] = j;}
+    void set(std::string key, nlohmann::json j) { _json[key] = j; }
 
-//    DataTypeMList* toMList();
-//    AtomList* toList();
+    void toFile(std::string fileName);
+    void fromFile(std::string fileName);
 
-//    void fromList(const AtomList &a);
-
-    void toFile( std::string fileName);
-    void fromFile( std::string fileName);
-
-
-
+    void clear() { _json.clear(); }
 };
 
 #endif // SDIF_DATA_TYPES_H
