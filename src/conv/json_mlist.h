@@ -3,12 +3,12 @@
 
 #include "ceammc_object.h"
 
-#include "../json/json_data_type.h"
+#include "../mlist/mlist_data_type.h"
 
 class JSONToMList : public BaseObject {
     t_outlet* _out1;
 
-    DataTypeJSON* _JSON;
+    DataTypeMList* _mlist;
     DataPtr* _dPtr = 0;
 
 public:
@@ -16,6 +16,8 @@ public:
 
     //    virtual void onBang() override;
     virtual void dump() const override;
+
+    virtual void onBang() override;
 
     virtual void onData(const DataPtr& d) override;
     virtual void onList(const AtomList& l) override;

@@ -10,8 +10,8 @@
 
 #include "json.hpp"
 
-#include <iostream>
 #include <fstream>
+#include <iostream>
 #include <streambuf>
 
 #include "../mlist/mlist_data_type.h"
@@ -62,18 +62,67 @@ void DataTypeJSON::fromFile(std::string fileName)
 {
     std::ifstream f(fileName);
     std::string s((std::istreambuf_iterator<char>(f)),
-                     std::istreambuf_iterator<char>());
+        std::istreambuf_iterator<char>());
     f.close();
     _json = json::parse(s);
 }
 
 // ==========
 
-DataTypeMList* DataTypeJSON::toMList()
+DataTypeMList* mListFromJSONArray(nlohmann::json j)
 {
+
     DataTypeMList* ret = 0;
 
+    AtomList* ml = new AtomList(); //Atom(gensym("test")));
+
+//    json ll = j;
+
+//    if (ll.is_array())
+//        ml->append(Atom(gensym("array")));
+
+    for (auto& e : j) {
+
+        if (e.is_array()) {
+            DataTypeMList* dl = mListFromJSONArray(e); //new DataTypeMList(new AtomList(Atom(gensym("mlist"))));
+            DataAtom* a = new DataAtom(dl);
+            ml->append(a->toAtom());
+        }
+
+        else if (e.is_object())
+        {
+            auto ee = e["mlist"];
+            if (ee.is_null()) continue;
+
+            DataTypeMList* dl = mListFromJSONArray(ee); //new DataTypeMList(new AtomList(Atom(gensym("mlist"))));
+            DataAtom* a = new DataAtom(dl);
+            ml->append(a->toAtom());
+        }
+
+        else if (e.is_number()) {
+            float f = e;
+            ml->append(f);
+        }
+
+        else if (e.is_string()){
+
+            std::string str = e;
+            ml->append(Atom(gensym(str.c_str())));
+
+        }
+    }
+
+    ret = new DataTypeMList(ml);
     return ret;
+}
+
+DataTypeMList* DataTypeJSON::toMList()
+{
+    auto l = _json["mlist"];
+    if (l.is_null())
+        return 0;
+
+    return mListFromJSONArray(l);
 }
 
 void DataTypeJSON::fromList(AtomList& l)
@@ -81,20 +130,8 @@ void DataTypeJSON::fromList(AtomList& l)
     std::string ns = "{\"list\":[";
 
     std::string str;
-    if (l.at(0).isData()) {
-        DataAtom a = DataAtom(l.at(0));
-        str = a.data()->toString();
-        if (strlen(str.c_str()) == 0)
-            str = "0";
-        else
-            str = "\""+str+"\"";
-    } else
-        str = l.at(0).asString();
 
-    ns += str;
-
-
-    for (int i = 1; i < l.size(); i++) {
+    for (int i = 0; i < l.size(); i++) {
         std::string str;
         if (l.at(i).isData()) {
             DataAtom a = DataAtom(l.at(i));
@@ -102,11 +139,17 @@ void DataTypeJSON::fromList(AtomList& l)
             if (strlen(str.c_str()) == 0)
                 str = "0";
             else
-                str = "\""+str+"\"";
-        } else
-            str = l.at(i).asString();
+                str = "\"" + str + "\"";
+        } else {
+            if (l.at(i).isSymbol())
+                str = "\"" + l.at(i).asString() + "\"";
+            else
+                str = l.at(i).asString();
+        }
 
-        ns += "," + str;
+        ns += str;
+        if (i < (l.size() - 1))
+            ns += ",";
     }
     ns += "]}";
 
@@ -120,16 +163,17 @@ AtomList* DataTypeJSON::toList()
     if (l.is_null())
         return 0;
 
-    auto a = _json["list"];
-
     AtomList* ret = new AtomList();
 
-    for (auto e : a)
-    {
-        std::string str = a;
-        ret->append(Atom(gensym(str.c_str())));
+    for (auto& e : l) {
+        if (e.is_number()) {
+            float f = e;
+            ret->append(f);
+        } else {
+            std::string str = e;
+            ret->append(Atom(gensym(str.c_str())));
+        }
     }
 
     return ret;
 }
-

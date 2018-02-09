@@ -1,7 +1,7 @@
 #include "ceammc_data.h"
 #include "ceammc_factory.h"
 
-//#include "../mlist/mlist_data_type.h"
+#include "../json/json_data_type.h"
 
 #include "ceammc_dataatom.h"
 
@@ -15,43 +15,35 @@ using namespace ceammc;
 
 JSONToList::JSONToList(const PdArgs& args)
     : BaseObject(args)
-    , _JSON(new DataTypeJSON("{}"))
-    , _dPtr(new DataPtr(_JSON))
+
 {
-    //    std::string str = "{}";
-    //    _JSON = new DataTypeJSON(str);
-    //    _dPtr = new DataPtr(_JSON);
+    _list = 0;
     _out1 = createOutlet();
 }
 
-//void JSONToList::onBang()
-//{
+void JSONToList::onBang()
+{
+    if (!_list) return;
+    _list->output(_out1);
+}
 
-//    if (_outputData)
-//        dataTo(0, *_dPtr);
-//    else
-////        _JSON->list()->output(_out1);
-//};
 
 void JSONToList::onData(const DataPtr& d)
 {
     if (!d.as<DataTypeJSON>())
         return;
 
-    DataTypeJSON* JSON = const_cast<DataTypeJSON*>(d.as<DataTypeJSON>());
-    //_dPtr = new DataPtr(_JSON);
+    DataTypeJSON* json = const_cast<DataTypeJSON*>(d.as<DataTypeJSON>());
+    if (!json)
+    {
+        error("bad input json");
+        return;
+    }
 
-    //    _outputData = false;
 
-    std::string ret = JSON->json().dump();
+    _list = json->toList();
+    onBang();
 
-    DataTypeString* s = new DataTypeString(ret);
-    DataPtr* ns = new DataPtr(s);
-    DataAtom* a = new DataAtom(*ns);
-
-    AtomList(Atom(gensym(ret.c_str()))).output(_out1);
-
-    //post("data: %s", ns->data()->toString().c_str());
 }
 
 void JSONToList::onList(const AtomList& l)
@@ -62,54 +54,6 @@ void JSONToList::onList(const AtomList& l)
             return;
         }
 
-    //    AtomList* nl = new AtomList(l);
-
-    std::string ns = "{\"list\":[";
-
-    std::string str;
-    if (l.at(0).isData()) {
-        DataAtom a = DataAtom(l.at(0));
-        str = a.data()->toString();
-        if (strlen(str.c_str()) == 0)
-            str = "0";
-        else
-            str = "\""+str+"\"";
-    } else
-        str = l.at(0).asString();
-
-    ns += str;
-
-
-    for (int i = 1; i < l.size(); i++) {
-        std::string str;
-        if (l.at(i).isData()) {
-            DataAtom a = DataAtom(l.at(i));
-            str = a.data()->toString();
-            if (strlen(str.c_str()) == 0)
-                str = "0";
-            else
-                str = "\""+str+"\"";
-        } else
-            str = l.at(i).asString();
-
-        ns += "," + str;
-    }
-    ns += "]}";
-
-
-    post ("%s",ns.c_str());
-
-    //return;
-
-    //todo: try-catch
-    try{
-    _JSON = new DataTypeJSON(ns);
-    _dPtr = new DataPtr(_JSON);
-    dataTo(0, *_dPtr);
-    }
-    catch(const std::exception& e){
-       error ("JSON error: could not create %s",ns.c_str());
-    }
 }
 
 void JSONToList::dump() const
@@ -124,9 +68,10 @@ void JSONToList::dump() const
 // ==========
 
 extern "C" {
-void setup_json_list()
+void setup_conv_json_list()
 {
     ObjectFactory<JSONToList> f("conv.json->list");
+    f.addAlias("json->list");
 }
 }
 

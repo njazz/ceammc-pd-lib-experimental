@@ -33,7 +33,7 @@ extern void setup_conv_mlist_image();
 extern void setup_conv_json_mlist();
 extern void setup_conv_mlist_json();
 
-//extern void setup_conv_json_list();
+extern void setup_conv_json_list();
 extern void setup_conv_list_json();
 }
 
@@ -68,6 +68,6 @@ extern "C" void setup()
     setup_conv_json_mlist();
     setup_conv_mlist_json();
 
-   // setup_conv_json_list();
+    setup_conv_json_list();
     setup_conv_list_json();
 }

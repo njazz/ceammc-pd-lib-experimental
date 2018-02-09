@@ -13,6 +13,7 @@ class DataTypeMList;
 class DataTypeJSON : public AbstractData {
     json _json = "{}"_json;
 
+    //static DataTypeMList* mListFromJSONArray(nlohmann::json j);
 public:
     static const DataType dataType = 200;
 

@@ -9,14 +9,15 @@
 
 #include "math.h"
 
+#include "../json/json_data_type.h"
 #include "../json/mstring_data_type.h"
 
 using namespace ceammc;
 
 JSONToMList::JSONToMList(const PdArgs& args)
     : BaseObject(args)
-    , _JSON(new DataTypeJSON("{}"))
-    , _dPtr(new DataPtr(_JSON))
+    , _mlist(new DataTypeMList(new AtomList()))
+    , _dPtr(new DataPtr(_mlist))
 {
     //    std::string str = "{}";
     //    _JSON = new DataTypeJSON(str);
@@ -24,34 +25,40 @@ JSONToMList::JSONToMList(const PdArgs& args)
     _out1 = createOutlet();
 }
 
-//void JSONToMList::onBang()
-//{
-
-//    if (_outputData)
-//        dataTo(0, *_dPtr);
-//    else
-////        _JSON->list()->output(_out1);
-//};
+void JSONToMList::onBang()
+{
+    if (!_mlist)
+        return;
+    if (!_mlist->list())
+        return;
+    _mlist->list()->output(_out1);
+}
 
 void JSONToMList::onData(const DataPtr& d)
 {
     if (!d.as<DataTypeJSON>())
         return;
 
-    DataTypeJSON* JSON = const_cast<DataTypeJSON*>(d.as<DataTypeJSON>());
-    //_dPtr = new DataPtr(_JSON);
+    post("on data");
 
-    //    _outputData = false;
+    DataTypeJSON* json = const_cast<DataTypeJSON*>(d.as<DataTypeJSON>());
 
-    std::string ret = JSON->json().dump();
+    if (!json) {
+        error("bad input json");
+        return;
+    }
 
-    DataTypeString* s = new DataTypeString(ret);
-    DataPtr* ns = new DataPtr(s);
-    DataAtom* a = new DataAtom(*ns);
+//    post("input %s", json->toString().c_str());
 
-    AtomList(Atom(gensym(ret.c_str()))).output(_out1);
+//    auto a = json->json()["mlist"];
+//    if (a.is_null()) post("isnull");
+//    for (auto e:a)
+//    {
+//        post("element");
+//    }
 
-    //post("data: %s", ns->data()->toString().c_str());
+    _mlist = json->toMList();
+    onBang();
 }
 
 void JSONToMList::onList(const AtomList& l)
@@ -61,55 +68,6 @@ void JSONToMList::onList(const AtomList& l)
             onData(DataAtom(l.at(0)).data());
             return;
         }
-
-    //    AtomList* nl = new AtomList(l);
-
-    std::string ns = "{\"list\":[";
-
-    std::string str;
-    if (l.at(0).isData()) {
-        DataAtom a = DataAtom(l.at(0));
-        str = a.data()->toString();
-        if (strlen(str.c_str()) == 0)
-            str = "0";
-        else
-            str = "\""+str+"\"";
-    } else
-        str = l.at(0).asString();
-
-    ns += str;
-
-
-    for (int i = 1; i < l.size(); i++) {
-        std::string str;
-        if (l.at(i).isData()) {
-            DataAtom a = DataAtom(l.at(i));
-            str = a.data()->toString();
-            if (strlen(str.c_str()) == 0)
-                str = "0";
-            else
-                str = "\""+str+"\"";
-        } else
-            str = l.at(i).asString();
-
-        ns += "," + str;
-    }
-    ns += "]}";
-
-
-    post ("%s",ns.c_str());
-
-    //return;
-
-    //todo: try-catch
-    try{
-    _JSON = new DataTypeJSON(ns);
-    _dPtr = new DataPtr(_JSON);
-    dataTo(0, *_dPtr);
-    }
-    catch(const std::exception& e){
-       error ("JSON error: could not create %s",ns.c_str());
-    }
 }
 
 void JSONToMList::dump() const
@@ -127,6 +85,7 @@ extern "C" {
 void setup_conv_json_mlist()
 {
     ObjectFactory<JSONToMList> f("conv.json->mlist");
+    f.addAlias("json->mlist");
 }
 }
 
