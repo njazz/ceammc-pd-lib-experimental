@@ -13,7 +13,6 @@ class DataTypeMList;
 class DataTypeJSON : public AbstractData {
     json _json = "{}"_json;
 
-    //static DataTypeMList* mListFromJSONArray(nlohmann::json j);
 public:
     static const DataType dataType = 200;
 
@@ -25,7 +24,7 @@ public:
     virtual std::string toString() const override;
 
     const nlohmann::json json() { return _json; }
-     void set(std::string key, nlohmann::json j){_json[key] = j;}
+    void set(std::string key, nlohmann::json j){_json[key] = j;}
 
     DataTypeMList* toMList();
     AtomList* toList();

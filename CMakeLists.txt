@@ -164,6 +164,10 @@ IF(JPEG_FOUND)
   TARGET_LINK_LIBRARIES(sdif_lib ${JPEG_LIBRARIES})
 ENDIF()
 
+add_subdirectory(tests)
+enable_testing()
+
+
 #install(TARGETS timeline LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../bin)
 
 
