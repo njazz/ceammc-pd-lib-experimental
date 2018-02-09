@@ -166,7 +166,7 @@ ENDIF()
 
 add_subdirectory(tests)
 enable_testing()
-
+#add_test (NAME MyTest COMMAND Test)
 
 #install(TARGETS timeline LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../bin)
 

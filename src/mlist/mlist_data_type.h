@@ -22,8 +22,8 @@ public:
 
     AtomList* list() { return _list; }
 
-    AtomList* toLlll();
     AtomList* toFlatList();
+    AtomList* toLlll();
     std::string toJSONString();
 
     int minimalSublistLength();
