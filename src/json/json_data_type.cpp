@@ -69,61 +69,61 @@ void DataTypeJSON::fromFile(std::string fileName)
 
 // ==========
 
-DataTypeMList* mListFromJSONArray(nlohmann::json j)
-{
+//DataTypeMList* mListFromJSONArray(nlohmann::json j)
+//{
 
-    DataTypeMList* ret = 0;
+//    DataTypeMList* ret = 0;
 
-    AtomList* ml = new AtomList(); //Atom(gensym("test")));
+//    AtomList* ml = new AtomList(); //Atom(gensym("test")));
 
-//    json ll = j;
+////    json ll = j;
 
-//    if (ll.is_array())
-//        ml->append(Atom(gensym("array")));
+////    if (ll.is_array())
+////        ml->append(Atom(gensym("array")));
 
-    for (auto& e : j) {
+//    for (auto& e : j) {
 
-        if (e.is_array()) {
-            DataTypeMList* dl = mListFromJSONArray(e); //new DataTypeMList(new AtomList(Atom(gensym("mlist"))));
-            DataAtom* a = new DataAtom(dl);
-            ml->append(a->toAtom());
-        }
+//        if (e.is_array()) {
+//            DataTypeMList* dl = mListFromJSONArray(e); //new DataTypeMList(new AtomList(Atom(gensym("mlist"))));
+//            DataAtom* a = new DataAtom(dl);
+//            ml->append(a->toAtom());
+//        }
 
-        else if (e.is_object())
-        {
-            auto ee = e["mlist"];
-            if (ee.is_null()) continue;
+//        else if (e.is_object())
+//        {
+//            auto ee = e["mlist"];
+//            if (ee.is_null()) continue;
 
-            DataTypeMList* dl = mListFromJSONArray(ee); //new DataTypeMList(new AtomList(Atom(gensym("mlist"))));
-            DataAtom* a = new DataAtom(dl);
-            ml->append(a->toAtom());
-        }
+//            DataTypeMList* dl = mListFromJSONArray(ee); //new DataTypeMList(new AtomList(Atom(gensym("mlist"))));
+//            DataAtom* a = new DataAtom(dl);
+//            ml->append(a->toAtom());
+//        }
 
-        else if (e.is_number()) {
-            float f = e;
-            ml->append(f);
-        }
+//        else if (e.is_number()) {
+//            float f = e;
+//            ml->append(f);
+//        }
 
-        else if (e.is_string()){
+//        else if (e.is_string()){
 
-            std::string str = e;
-            ml->append(Atom(gensym(str.c_str())));
+//            std::string str = e;
+//            ml->append(Atom(gensym(str.c_str())));
 
-        }
-    }
+//        }
+//    }
 
-    ret = new DataTypeMList(ml);
-    return ret;
-}
+//    ret = new DataTypeMList(ml);
+//    return ret;
+//}
 
-DataTypeMList* DataTypeJSON::toMList()
-{
-    auto l = _json["mlist"];
-    if (l.is_null())
-        return 0;
+//DataTypeMList* DataTypeJSON::toMList()
+//{
+//    auto l = _json["mlist"];
+//    if (l.is_null())
+//        return 0;
 
-    return mListFromJSONArray(l);
-}
+//    return mListFromJSONArray(l);
+//}
 
 //void DataTypeJSON::fromList(const AtomList& l)
 //{

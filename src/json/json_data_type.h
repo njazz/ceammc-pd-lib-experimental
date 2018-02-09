@@ -26,7 +26,7 @@ public:
     const nlohmann::json json() { return _json; }
     void set(std::string key, nlohmann::json j){_json[key] = j;}
 
-    DataTypeMList* toMList();
+//    DataTypeMList* toMList();
 //    AtomList* toList();
 
 //    void fromList(const AtomList &a);

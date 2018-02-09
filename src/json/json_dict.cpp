@@ -98,7 +98,7 @@ void JSONDict::m_get_mlist(t_symbol* s, const AtomList& l)
 
     DataTypeJSON* jj = new DataTypeJSON(j2.dump());
     if (jj) {
-        DataTypeMList* ll = jj->toMList();
+        DataTypeMList* ll = ConvJSON::toMList(jj);//jj->toMList();
         if (ll) {
             DataPtr* p = new DataPtr(ll);
             DataAtom* a = new DataAtom(*p);

@@ -12,6 +12,8 @@
 #include "../json/json_data_type.h"
 #include "../json/mstring_data_type.h"
 
+#include "../conv/conv_json.h"
+
 using namespace ceammc;
 
 JSONToMList::JSONToMList(const PdArgs& args)
@@ -57,7 +59,7 @@ void JSONToMList::onData(const DataPtr& d)
 //        post("element");
 //    }
 
-    _mlist = json->toMList();
+    _mlist = ConvJSON::toMList(json);//json->toMList();
     onBang();
 }
 
