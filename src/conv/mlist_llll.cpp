@@ -7,6 +7,8 @@
 
 #include "math.h"
 
+#include "../conv/conv_mlist.h"
+
 using namespace ceammc;
 
 MListLlll::MListLlll(const PdArgs& args)
@@ -34,13 +36,18 @@ void MListLlll::onData(const DataPtr& d)
         return;
 
     _MList = const_cast<DataTypeMList*>(d.as<DataTypeMList>());
-    _MList->toLlll()->output(_out1);
+
+    ConvMList::toLlll(_MList)->output(_out1);
+//    _MList->toLlll()->output(_out1);
+
 }
 
 void MListLlll::onList(const AtomList& l)
 {
-    AtomList* out = DataTypeMList(new AtomList(l)).toLlll();
-    out->output(_out1);
+//    AtomList* out = DataTypeMList(new AtomList(l)).toLlll();
+//    out->output(_out1);
+
+    ConvMList::toLlll((new DataTypeMList(new AtomList(l))))->output(_out1);
 }
 
 void MListLlll::onFloat(float f)

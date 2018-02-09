@@ -10,6 +10,8 @@
 
 #include "math.h"
 
+#include "conv_mlist.h"
+
 using namespace cimg_library;
 
 using namespace ceammc;

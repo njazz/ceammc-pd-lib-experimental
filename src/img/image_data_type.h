@@ -1,5 +1,5 @@
-#ifndef JSON_DATA_TYPES_H
-#define JSON_DATA_TYPES_H
+#ifndef IMAGE_DATA_TYPES_H
+#define IMAGE_DATA_TYPES_H
 
 #include "ceammc_data.h"
 #include "ceammc_atomlist.h"

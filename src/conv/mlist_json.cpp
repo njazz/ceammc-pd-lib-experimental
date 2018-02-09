@@ -9,6 +9,8 @@
 
 #include "../mlist/mlist_data_type.h"
 
+#include "../conv/conv_mlist.h"
+
 using namespace ceammc;
 
 MListToJSON::MListToJSON(const PdArgs& args)
@@ -21,7 +23,8 @@ MListToJSON::MListToJSON(const PdArgs& args)
 
 void MListToJSON::onBang()
 {
-    if (!_dPtr) return;
+    if (!_dPtr)
+        return;
 
     dataTo(0, *_dPtr);
 };
@@ -32,22 +35,19 @@ void MListToJSON::onData(const DataPtr& d)
         return;
 
     DataTypeMList* mlist = const_cast<DataTypeMList*>(d.as<DataTypeMList>());
-    if (!mlist)
-    {
+    if (!mlist) {
         error("bad input list");
         return;
     }
 
-    std::string str = "{\"mlist\":"+ mlist->toJSONString()+"}";
+    std::string str = "{\"mlist\":" + ConvMList::toJSONString(mlist) + "}";
     try {
         _json = new DataTypeJSON(str);
         _dPtr = new DataPtr(_json);
-            onBang();
+        onBang();
     } catch (std::exception& e) {
         error("couldn't create json: %s", str.c_str());
     }
-
-
 }
 
 void MListToJSON::onList(const AtomList& l)
@@ -56,7 +56,6 @@ void MListToJSON::onList(const AtomList& l)
     DataTypeMList* m = new DataTypeMList(&ll);
     DataPtr p = DataPtr(m);
     onData(p);
-
 }
 
 void MListToJSON::onFloat(float f)

@@ -8,6 +8,8 @@
 
 #include "ceammc_atomlist.h"
 
+#include "../conv/conv_mlist.h"
+
 DataTypeMList::DataTypeMList(AtomList* l)
 {
     _list = l;
@@ -35,7 +37,7 @@ std::string DataTypeMList::toString() const
     if (!_list)
         return "[empty]";
 
-    AtomList* m = const_cast<DataTypeMList*>(this)->toLlll();
+    AtomList* m = ConvMList::toLlll(const_cast<DataTypeMList*>(this));//const_cast<DataTypeMList*>(this)->toLlll();
 
     std::string ret;
     for (int i = 0; i < m->size(); i++)
@@ -44,98 +46,99 @@ std::string DataTypeMList::toString() const
     return ret;
 }
 
-AtomList* DataTypeMList::toLlll()
-{
-    AtomList* ret = new AtomList(Atom(gensym("(")));
-    //
-    for (int i = 0; i < _list->size(); i++) {
+//AtomList* DataTypeMList::toLlll()
+//{
+//    AtomList* ret = new AtomList(Atom(gensym("(")));
+//    //
+//    for (int i = 0; i < _list->size(); i++) {
 
-        if (_list->at(i).isData()) {
-            DataAtom da = DataAtom(_list->at(i));
-            DataTypeMList* s = const_cast<DataTypeMList*>(da.data().as<DataTypeMList>());
+//        if (_list->at(i).isData()) {
+//            DataAtom da = DataAtom(_list->at(i));
+//            DataTypeMList* s = const_cast<DataTypeMList*>(da.data().as<DataTypeMList>());
 
-            if (s) {
-                AtomList sl = AtomList(*s->list());
-                AtomList* e = s->toLlll();
+//            if (s) {
+//                AtomList sl = AtomList(*s->list());
+//                AtomList* e = s->toLlll();
 
-                for (int j = 0; j < e->size(); j++) {
-                    ret->append(e->at(j));
-                }
-            } else {
-                ret->append(_list->at(i));
-            }
-        } else {
-            ret->append(_list->at(i));
-        }
-    }
+//                for (int j = 0; j < e->size(); j++) {
+//                    ret->append(e->at(j));
+//                }
+//            } else {
+//                ret->append(_list->at(i));
+//            }
+//        } else {
+//            ret->append(_list->at(i));
+//        }
+//    }
 
-    //
-    ret->append((Atom(gensym(")"))));
-    return ret;
-}
+//    //
+//    ret->append((Atom(gensym(")"))));
+//    return ret;
+//}
 
-AtomList* DataTypeMList::toFlatList()
-{
-    AtomList* ret = new AtomList();
-    //
-    for (int i = 0; i < _list->size(); i++) {
+//AtomList* DataTypeMList::toFlatList()
+//{
+//    AtomList* ret = new AtomList();
+//    //
+//    for (int i = 0; i < _list->size(); i++) {
 
-        if (_list->at(i).isData()) {
-            DataAtom da = DataAtom(_list->at(i));
-            DataTypeMList* s = const_cast<DataTypeMList*>(da.data().as<DataTypeMList>());
+//        if (_list->at(i).isData()) {
+//            DataAtom da = DataAtom(_list->at(i));
+//            DataTypeMList* s = const_cast<DataTypeMList*>(da.data().as<DataTypeMList>());
 
-            if (s) {
-                AtomList sl = AtomList(*s->list());
-                AtomList* e = s->toFlatList();
+//            if (s) {
+//                AtomList sl = AtomList(*s->list());
+//                AtomList* e = s->toFlatList();
 
-                for (int j = 0; j < e->size(); j++) {
-                    ret->append(e->at(j));
-                }
-            } else {
-                ret->append(_list->at(i));
-            }
-        } else {
-            ret->append(_list->at(i));
-        }
-    }
+//                for (int j = 0; j < e->size(); j++) {
+//                    ret->append(e->at(j));
+//                }
+//            } else {
+//                ret->append(_list->at(i));
+//            }
+//        } else {
+//            ret->append(_list->at(i));
+//        }
+//    }
 
-    //
-    return ret;
-}
+//    //
+//    return ret;
+//}
 
-std::string DataTypeMList::toJSONString()
-{
-    std::string ret = "[";
-    //
-    for (int i = 0; i < _list->size(); i++) {
+//std::string DataTypeMList::toJSONString()
+//{
+//    std::string ret = "[";
+//    //
+//    for (int i = 0; i < _list->size(); i++) {
 
-        if (_list->at(i).isData()) {
-            DataAtom da = DataAtom(_list->at(i));
-            DataTypeMList* s = const_cast<DataTypeMList*>(da.data().as<DataTypeMList>());
+//        if (_list->at(i).isData()) {
+//            DataAtom da = DataAtom(_list->at(i));
+//            DataTypeMList* s = const_cast<DataTypeMList*>(da.data().as<DataTypeMList>());
 
-            if (s) {
-                std::string e = s->toJSONString();
-                ret += e;
+//            if (s) {
+//                std::string e = s->toJSONString();
+//                ret += e;
 
-                if (i < (_list->size() - 1))
-                    ret += ",";
+//                if (i < (_list->size() - 1))
+//                    ret += ",";
 
-                continue;
-            }
-        }
+//                continue;
+//            }
+//        }
 
-        if (_list->at(i).isSymbol())
-            ret += "\"" + _list->at(i).asString() + "\"";
-        else
-            ret += _list->at(i).asString();
+//        if (_list->at(i).isSymbol())
+//            ret += "\"" + _list->at(i).asString() + "\"";
+//        else
+//            ret += _list->at(i).asString();
 
-        if (i < (_list->size() - 1))
-            ret += ",";
-    }
-    //
-    ret += "]";
-    return ret;
-}
+//        if (i < (_list->size() - 1))
+//            ret += ",";
+//    }
+//    //
+//    ret += "]";
+//    return ret;
+//}
+
 int DataTypeMList::minimalSublistLength()
 {
     if (!_list)

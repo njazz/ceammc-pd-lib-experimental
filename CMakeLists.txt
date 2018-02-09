@@ -69,7 +69,6 @@ set (SRC_SDIF
     )
 
 set (SRC_SYNTH
-
     src/synth/synth_sine.cpp
     src/synth/synth_res.cpp
     )
@@ -113,6 +112,12 @@ set (SRC_CONV
 
     src/conv/json_mlist.cpp
     src/conv/json_list.cpp
+
+    src/conv/conv_mlist.cpp
+    src/conv/conv_image.cpp
+    src/conv/conv_list.cpp
+    src/conv/conv_json.cpp
+
     )
 
 set (HEADERS

@@ -22,9 +22,9 @@ public:
 
     AtomList* list() { return _list; }
 
-    AtomList* toFlatList();
-    AtomList* toLlll();
-    std::string toJSONString();
+//    AtomList* toFlatList();
+//    AtomList* toLlll();
+//    std::string toJSONString();
 
     int minimalSublistLength();
     AtomList* flip();

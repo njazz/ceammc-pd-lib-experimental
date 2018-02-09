@@ -11,6 +11,8 @@
 
 #include "mstring_data_type.h"
 
+#include "../conv/conv_mlist.h"
+
 using namespace ceammc;
 
 JSONDict::JSONDict(const PdArgs& args)
@@ -95,8 +97,7 @@ void JSONDict::m_get_mlist(t_symbol* s, const AtomList& l)
     DataTypeJSON* jj = new DataTypeJSON(j2.dump());
     if (jj) {
         DataTypeMList* ll = jj->toMList();
-        if (ll)
-        {
+        if (ll) {
             DataPtr* p = new DataPtr(ll);
             DataAtom* a = new DataAtom(*p);
             AtomList listOut(a->toAtom());
@@ -115,9 +116,11 @@ void JSONDict::m_get_json(t_symbol* s, const AtomList& l)
         return;
 
     DataPtr* p = new DataPtr(new DataTypeJSON(j.dump()));
-    if (!p) return;
+    if (!p)
+        return;
     DataAtom* a = new DataAtom(*p);
-    if (!a) return;
+    if (!a)
+        return;
     AtomList listOut(a->toAtom());
     listOut.output(_out1);
 }
@@ -144,11 +147,11 @@ void JSONDict::m_set_mlist(t_symbol* s, const AtomList& l)
     DataAtom a(l.at(1));
     DataTypeMList* ml = const_cast<DataTypeMList*>(a.data().as<DataTypeMList>());
 
-    if (!ml) return;
+    if (!ml)
+        return;
 
-    DataTypeJSON jj("{\"_set\":"+ml->toJSONString()+"}");
+    DataTypeJSON jj("{\"_set\":" + ConvMList::toJSONString(ml) + "}");
     _JSON->set(l.at(0).asString(), jj.json()["_set"]);
-
 }
 
 void JSONDict::m_set_json(t_symbol* s, const AtomList& l)
@@ -158,7 +161,8 @@ void JSONDict::m_set_json(t_symbol* s, const AtomList& l)
 
     DataAtom a(l.at(1));
     DataTypeJSON* ml = const_cast<DataTypeJSON*>(a.data().as<DataTypeJSON>());
-    if (!ml) return;
+    if (!ml)
+        return;
 
     _JSON->set(l.at(0).asString(), ml->json());
 }
