@@ -18,7 +18,7 @@ DataTypeImage* ConvMList::toImage(DataTypeMList* mlist)
     int w = mlist->minimalSublistLength();
     int h = mlist->list()->size();
 
-    LIB_ERR << "w h" << w << h;
+    LIB_DBG << "w h " << w << " " << h;
 
     AtomList* l = mlist->list();
 

@@ -18,6 +18,8 @@ public:
     static AtomList* toFlatList(DataTypeMList *mlist);
 
     static std::string toJSONString(DataTypeMList* mlist);
+
+
 };
 
 #endif // CONVMLIST_H

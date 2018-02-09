@@ -50,41 +50,48 @@ void MListToImage::onList(const AtomList& l)
         return;
     }
 
-    DataTypeMList* ml = const_cast<DataTypeMList*>(DataAtom(l.at(0)).data().as<DataTypeMList>());
-    if (!ml) {
-        error("first element is not an mlist");
-        return;
-    }
+//    DataTypeMList* ml = const_cast<DataTypeMList*>(DataAtom(l.at(0)).data().as<DataTypeMList>());
+//    if (!ml) {
+//        error("first element is not an mlist");
+//        return;
+//    }
 
-    int w = DataTypeMList(new AtomList(l)).minimalSublistLength();
-    int h = l.size();
 
-    post("w h %i %i", w, h);
+    DataTypeMList*ml = new DataTypeMList(new AtomList(l));
 
-    DataTypeImage* im = new DataTypeImage(new CImg<unsigned char>(w, h));
+//    int w = DataTypeMList(new AtomList(l)).minimalSublistLength();
+//    int h = l.size();
 
-    for (int i = 0; i < h; i++) {
-        DataTypeMList* nl = const_cast<DataTypeMList*>(DataAtom(l.at(i)).data().as<DataTypeMList>());
-        if (!nl)
-            return;
+//    post("w h %i %i", w, h);
 
-        AtomList* sL = nl->list();
+//    DataTypeImage* im = new DataTypeImage(new CImg<unsigned char>(w, h));
 
-        if (sL->size() < w) {
-            error("mlist length is less than expected");
-            return;
-        }
+//    for (int i = 0; i < h; i++) {
+//        DataTypeMList* nl = const_cast<DataTypeMList*>(DataAtom(l.at(i)).data().as<DataTypeMList>());
+//        if (!nl)
+//            return;
 
-        for (int j = 0; j < w; j++) {
+//        AtomList* sL = nl->list();
 
-            unsigned char c = sL->at(j).asFloat();
+//        if (sL->size() < w) {
+//            error("mlist length is less than expected");
+//            return;
+//        }
 
-            im->img()->set_linear_atXY(c, j, i);
-        }
-    }
+//        for (int j = 0; j < w; j++) {
 
-    _img = im;
+//            unsigned char c = sL->at(j).asFloat();
+
+//            im->img()->set_linear_atXY(c, j, i);
+//        }
+//    }
+
+    DataTypeImage* img = ConvMList::toImage(ml);
+    if (!img) return;
+
+    _img = img;
     _dPtr = new DataPtr(_img);
+    onBang();
 }
 
 void MListToImage::dump() const
