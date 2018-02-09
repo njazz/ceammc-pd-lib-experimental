@@ -1,6 +1,6 @@
 #include "conv_mlist.h"
-#include "ceammc_log.h"
 #include "ceammc_dataatom.h"
+#include "ceammc_log.h"
 
 DataTypeImage* ConvMList::toImage(DataTypeMList* mlist)
 {
@@ -65,7 +65,7 @@ AtomList* ConvMList::toLlll(DataTypeMList* mlist)
 
             if (s) {
                 AtomList sl = AtomList(*s->list());
-                AtomList* e =  ConvMList::toLlll(s); //s->toLlll();
+                AtomList* e = ConvMList::toLlll(s); //s->toLlll();
 
                 for (int j = 0; j < e->size(); j++) {
                     ret->append(e->at(j));
@@ -83,7 +83,7 @@ AtomList* ConvMList::toLlll(DataTypeMList* mlist)
     return ret;
 }
 
-AtomList* ConvMList::toFlatList( DataTypeMList *mlist)
+AtomList* ConvMList::toFlatList(DataTypeMList* mlist)
 {
     AtomList* ret = new AtomList();
     AtomList* list = mlist->list();
@@ -116,22 +116,32 @@ AtomList* ConvMList::toFlatList( DataTypeMList *mlist)
 std::string ConvMList::toJSONString(DataTypeMList* mlist)
 {
     AtomList* list = mlist->list();
+
     std::string ret = "[";
     //
     for (int i = 0; i < list->size(); i++) {
 
         if (list->at(i).isData()) {
             DataAtom da = DataAtom(list->at(i));
-            DataTypeMList* s = const_cast<DataTypeMList*>(da.data().as<DataTypeMList>());
 
-            if (s) {
-                std::string e = ConvMList::toJSONString(s);//s->toJSONString();
+            if (da.data()->type() == DataTypeMList::dataType) {
+                DataTypeMList* s = const_cast<DataTypeMList*>(da.data().as<DataTypeMList>());
+
+                std::string e = ConvMList::toJSONString(s); //s->toJSONString();
                 ret += e;
 
                 if (i < (list->size() - 1))
                     ret += ",";
 
                 continue;
+            }
+            else {
+
+                if (da.data()->type() == DataTypeJSON::dataType)
+                    ret += da.data()->toString();
+                else
+                    ret += "\"" + da.data()->toString() + "\"";
+
             }
         }
 

@@ -26,9 +26,10 @@ std::string ConvList::toJSONString(AtomList* l)
         if (l->at(i).isData()) {
             DataAtom a = DataAtom(l->at(i));
             str = a.data()->toString();
+
             if (strlen(str.c_str()) == 0)
                 str = "0";
-            else
+            else if (a.data()->type() != DataTypeJSON::dataType)
                 str = "\"" + str + "\"";
         } else {
             if (l->at(i).isSymbol())

@@ -40,13 +40,15 @@ void MListToJSON::onData(const DataPtr& d)
         return;
     }
 
-    std::string str = "{\"list\":" + ConvMList::toJSONString(mlist) + "}";
+
     try {
+        std::string str = "{\"list\":" + ConvMList::toJSONString(mlist) + "}";
+
         _json = new DataTypeJSON(str);
         _dPtr = new DataPtr(_json);
         onBang();
     } catch (std::exception& e) {
-        error("couldn't create json: %s", str.c_str());
+        error("couldn't create json");
     }
 }
 

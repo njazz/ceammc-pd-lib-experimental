@@ -14,7 +14,7 @@ class DataTypeJSON : public AbstractData {
     nlohmann::json _json = "{}"_json;
 
 public:
-    static const DataType dataType = 200;
+    static const DataType dataType = 500;
 
     explicit DataTypeJSON(std::string jsonString);
 
