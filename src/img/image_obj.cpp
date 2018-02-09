@@ -25,15 +25,49 @@ void ImageObj::onBang()
     if (!_img->img())
         return;
 
-    int w = _img->img()->width();
-    int h = _img->img()->height();
+    //    int w = _img->img()->width();
+    //    int h = _img->img()->height();
 
-    post("out img %i %i", w,h);
+    //    post("out img %i %i", w, h);
 
     AtomList* ret = new AtomList((new DataAtom(*_dPtr))->toAtom());
     ret->output(_out1);
 };
 
+void ImageObj::onData(const DataPtr& d)
+{
+    DataTypeImage* img = const_cast<DataTypeImage*>(d.as<DataTypeImage>());
+
+    if (!img)
+        return;
+
+    if (!img->img())
+        return;
+
+    int w = img->img()->width();
+    int h = img->img()->height();
+
+    _img = img;
+    _dPtr = new DataPtr(img);
+}
+
+void ImageObj::onList(const AtomList& l)
+{
+    if (l.size() == 1)
+        if (l.at(0).isData()) {
+
+            DataTypeImage* img = const_cast<DataTypeImage*>(DataAtom(l.at(0)).data().as<DataTypeImage>());
+
+            post("img %lu", (long)img);
+
+            if (img)
+                if (img->img())
+                    post("img: %i %i", img->img()->width(), img->img()->height());
+
+            onData(DataAtom(l.at(0)).data());
+            return;
+        }
+}
 
 void ImageObj::dump() const
 {
@@ -63,17 +97,33 @@ void ImageObj::m_read(t_symbol* s, const AtomList& l)
 }
 void ImageObj::m_write(t_symbol* s, const AtomList& l)
 {
+    if (l.size() < 1)
+        return;
+
+    if (!_img)
+        return;
+
+    if (!_img->img()) {
+        error("cannot write empty file");
+        return;
+    }
+
+    try {
+        _img->img()->save(l.at(0).asString().c_str());
+    } catch (std::exception& e) {
+        error("error: %s", e.what());
+        _img = 0;
+    }
 }
 
 // ==========
 
 extern "C" {
-void setup_mlist_image()
+void setup_image()
 {
     ObjectFactory<ImageObj> f("image");
 
     f.addMethod("read", &ImageObj::m_read);
+    f.addMethod("write", &ImageObj::m_write);
 }
 }
-
-

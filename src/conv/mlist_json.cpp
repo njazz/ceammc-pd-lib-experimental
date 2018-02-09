@@ -3,72 +3,88 @@
 
 #include "ceammc_dataatom.h"
 
-#include "mlist_llll.h"
+#include "mlist_json.h"
 
 #include "math.h"
 
+#include "../mlist/mlist_data_type.h"
+
 using namespace ceammc;
 
-MListLlll::MListLlll(const PdArgs& args)
+MListToJSON::MListToJSON(const PdArgs& args)
     : BaseObject(args)
-    , _MList(new DataTypeMList(0))
-    , _dPtr(_MList)
+    , _json(new DataTypeJSON("{}"))
+    , _dPtr(new DataPtr(_json))
 {
     _out1 = createOutlet();
 }
 
-void MListLlll::onBang()
+void MListToJSON::onBang()
 {
-    if (_MList->list() == 0)
-        return;
+    if (!_dPtr) return;
 
-    if (_outputData)
-        dataTo(0, _dPtr);
-    else
-        _MList->list()->output(_out1);
+    dataTo(0, *_dPtr);
 };
 
-void MListLlll::onData(const DataPtr& d)
+void MListToJSON::onData(const DataPtr& d)
 {
     if (!d.as<DataTypeMList>())
         return;
 
-    _MList = const_cast<DataTypeMList*>(d.as<DataTypeMList>());
-    _MList->toLlll()->output(_out1);
+    DataTypeMList* mlist = const_cast<DataTypeMList*>(d.as<DataTypeMList>());
+    if (!mlist)
+    {
+        error("bad input list");
+        return;
+    }
+
+    std::string str = mlist->toJSONString();
+    try {
+        _json = new DataTypeJSON(str);
+        _dPtr = new DataPtr(_json);
+            onBang();
+    } catch (std::exception& e) {
+        error("couldn't create json: %s", str.c_str());
+    }
+
+
 }
 
-void MListLlll::onList(const AtomList& l)
+void MListToJSON::onList(const AtomList& l)
 {
-    AtomList* out = DataTypeMList(new AtomList(l)).toLlll();
-    out->output(_out1);
+    AtomList ll = l;
+    DataTypeMList* m = new DataTypeMList(&ll);
+    DataPtr p = DataPtr(m);
+    onData(p);
+
 }
 
-void MListLlll::onFloat(float f)
+void MListToJSON::onFloat(float f)
 {
     onList(AtomList(Atom(f)));
 }
 
-void MListLlll::onSymbol(t_symbol* s)
+void MListToJSON::onSymbol(t_symbol* s)
 {
     onList(AtomList(Atom(s)));
 }
 
-void MListLlll::dump() const
+void MListToJSON::dump() const
 {
     OBJ_DBG << "DATA: MList";
     BaseObject::dump();
-    OBJ_DBG << "id:       " << _dPtr.desc().id;
-    OBJ_DBG << "refcount: " << _dPtr.refCount();
-    OBJ_DBG << "contents:  " << _MList->toString();
+    OBJ_DBG << "id:       " << _dPtr->desc().id;
+    OBJ_DBG << "refcount: " << _dPtr->refCount();
+    OBJ_DBG << "contents:  " << _json->toString();
 }
 
 // ==========
 
 extern "C" {
-void setup_mlist0x2ellll()
+void setup_conv_mlist_json()
 {
-    ObjectFactory<MListLlll> f("conv.mlist->llll");
-    f.addAlias("mlist->llll");
+    ObjectFactory<MListToJSON> f("conv.mlist->json");
+    f.addAlias("mlist->json");
 }
 }
 

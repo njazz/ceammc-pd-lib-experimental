@@ -5,17 +5,15 @@
 
 #include "ceammc_dataatom.h"
 
-#include "mlist_image.h"
+#include "image_mlist.h"
 
 #include "math.h"
-
-
 
 using namespace cimg_library;
 
 using namespace ceammc;
 
-MListImage::MListImage(const PdArgs& args)
+ImageToMlist::ImageToMlist(const PdArgs& args)
     : BaseObject(args)
     , _MList(new DataTypeMList(0))
     , _dPtr(new DataPtr(_MList))
@@ -23,60 +21,61 @@ MListImage::MListImage(const PdArgs& args)
     _out1 = createOutlet();
 }
 
-void MListImage::onBang()
+void ImageToMlist::onBang()
 {
-    if (!_img) return;
+    if (!_MList->list()) return;
+    _MList->list()->output(_out1);
+};
 
-    int w = _img->width();
-    int h = _img->height();
+void ImageToMlist::onData(const DataPtr& d)
+{
+    DataTypeImage* img = const_cast<DataTypeImage*>(d.as<DataTypeImage>());
 
+    if (!img)
+        return;
+
+    if (!img->img())
+        return;
+
+    int w = img->img()->width();
+    int h = img->img()->height();
+
+    post("got image %i %i", w, h);
     AtomList* ret = new AtomList();
 
-    for (int i=0;i<h;i++)
-    {
+    for (int i = 0; i < h; i++) {
         AtomList* sL = new AtomList();
-        for (int j=0;j<w;j++)
-        {
-            sL->append(Atom(float(_img->atXY(i,j))));
+        for (int j = 0; j < w; j++) {
+            sL->append(Atom(float(img->img()->atXY(j, i))));
         }
         DataTypeMList* ml = new DataTypeMList(sL);
-        DataAtom *da = new DataAtom(ml);
+        DataAtom* da = new DataAtom(ml);
         ret->append(da->toAtom());
     }
 
-    ret->output(_out1);
-    //delete ret;
-};
+    _MList = new DataTypeMList(ret);
+    _dPtr = new DataPtr(_MList);
+}
 
+void ImageToMlist::onList(const AtomList& l)
+{
+    if (l.size() == 1)
+        if (l.at(0).isData()) {
 
+            DataTypeImage* img = const_cast<DataTypeImage*>(DataAtom(l.at(0)).data().as<DataTypeImage>());
 
-//void MListImage::onList(const AtomList& l)
-//{
-//    //    if (l.size() == 1)
-//    //        if (l.at(0).isData()) {
-//    //            onData(DataAtom(l.at(0)).data());
-//    //            return;
-//    //        }
+            post("img %lu", (long)img);
 
-//    AtomList* nl = new AtomList(l);
-//    _MList = new DataTypeMList(nl);
-//    _dPtr = new DataPtr(_MList);
+            if (img)
+                if (img->img())
+                    post("img: %i %i", img->img()->width(), img->img()->height());
 
-//    _outputData = true;
-//    dataTo(0, *_dPtr);
-//}
+            onData(DataAtom(l.at(0)).data());
+            return;
+        }
+}
 
-//void MListImage::onFloat(float f)
-//{
-//    onList(AtomList(Atom(f)));
-//}
-
-//void MListImage::onSymbol(t_symbol* s)
-//{
-//    onList(AtomList(Atom(s)));
-//}
-
-void MListImage::dump() const
+void ImageToMlist::dump() const
 {
     OBJ_DBG << "DATA: MList";
     BaseObject::dump();
@@ -86,34 +85,12 @@ void MListImage::dump() const
 }
 
 // ==========
-void MListImage::m_read(t_symbol* s, const AtomList& l)
-{
-    if (l.size()<1)
-        return;
-
-    try{
-
-    _img = new CImg<unsigned char>(l.at(0).asString().c_str());
-    post("loaded [%i,%i]", _img->width(), _img->height());
-    }
-    catch(std::exception&e)
-    {
-       error("error: %s", e.what());
-       _img = 0;
-    }
-
-}
-void MListImage::m_write(t_symbol* s, const AtomList& l)
-{}
-
-// ==========
 
 extern "C" {
-void setup_mlist_image()
+void setup_conv_image_mlist()
 {
-    ObjectFactory<MListImage> f("mlist.image");
-
-    f.addMethod("read",&MListImage::m_read);
+    ObjectFactory<ImageToMlist> f("conv.image->mlist");
+    f.addAlias("image->mlist");
 }
 }
 

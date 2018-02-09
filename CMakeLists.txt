@@ -101,8 +101,15 @@ set (SRC_CONV
 
     src/conv/mlist_llll.cpp
     src/conv/mlist_flat.cpp
+    src/conv/mlist_json.cpp
     src/conv/mlist_image.cpp
 
+    src/conv/image_mlist.cpp
+
+    src/conv/list_json.cpp
+
+    src/conv/json_mlist.cpp
+    src/conv/json_list.cpp
     )
 
 set (HEADERS

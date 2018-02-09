@@ -12,14 +12,12 @@
 
 using json = nlohmann::json;
 
-DataTypeImage::DataTypeImage(CImg<unsigned char> *img)
+DataTypeImage::DataTypeImage(CImg<unsigned char>* img)
 {
     if (!img)
         return;
 
     _img = new CImg<unsigned char>(*img);
-
-//    *_img = img;
 }
 
 void DataTypeImage::dump()
@@ -33,12 +31,13 @@ DataType DataTypeImage::type() const
 
 AbstractData* DataTypeImage::clone() const
 {
-    //CImg<unsigned char> *img = new CImg<unsigned char>(*_img);
     return new DataTypeImage(_img);
 }
 
 std::string DataTypeImage::toString() const
 {
-    std::string ret = "[image]";
+    if (!_img)
+        return "[image: empty]";
+    std::string ret = "[image " + std::to_string(_img->width()) + "x" + std::to_string(_img->height()) + "]";
     return ret;
 }

@@ -3,16 +3,16 @@
 
 #include "ceammc_object.h"
 
-#include "json_data_type.h"
+#include "../json/json_data_type.h"
 
-class JSONObj : public BaseObject {
+class JSONToList : public BaseObject {
     t_outlet* _out1;
 
     DataTypeJSON* _JSON;
     DataPtr* _dPtr = 0;
 
 public:
-    JSONObj(const PdArgs& args);
+    JSONToList(const PdArgs& args);
 
     //    virtual void onBang() override;
     virtual void dump() const override;

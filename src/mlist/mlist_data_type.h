@@ -1,8 +1,8 @@
-#ifndef SDIF_DATA_TYPES_H
-#define SDIF_DATA_TYPES_H
+#ifndef MLIST_DATA_TYPES_H
+#define MLIST_DATA_TYPES_H
 
 #include "ceammc_data.h"
-#include "mSDIFFile.hpp"
+//#include "mSDIFFile.hpp"
 #include "ceammc_atomlist.h"
 
 using namespace ceammc;
@@ -24,9 +24,10 @@ public:
 
     AtomList* toLlll();
     AtomList* toFlatList();
+    std::string toJSONString();
 
     int minimalSublistLength();
     AtomList* flip();
 };
 
-#endif // SDIF_DATA_TYPES_H
+#endif // MLIST_DATA_TYPES_H

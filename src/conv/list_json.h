@@ -5,20 +5,22 @@
 
 #include "../json/json_data_type.h"
 
-class JSONToMList : public BaseObject {
+class ListToJSON : public BaseObject {
     t_outlet* _out1;
 
-    DataTypeJSON* _JSON;
+    DataTypeJSON* _json;
     DataPtr* _dPtr = 0;
 
 public:
-    JSONToMList(const PdArgs& args);
+    ListToJSON(const PdArgs& args);
 
     //    virtual void onBang() override;
     virtual void dump() const override;
 
     virtual void onData(const DataPtr& d) override;
     virtual void onList(const AtomList& l) override;
+
+    virtual void onBang() override;
 };
 
 #endif // SDIF_FILE_H

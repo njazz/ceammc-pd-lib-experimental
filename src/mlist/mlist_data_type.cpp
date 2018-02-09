@@ -103,6 +103,39 @@ AtomList* DataTypeMList::toFlatList()
     return ret;
 }
 
+std::string DataTypeMList::toJSONString()
+{
+    std::string ret = "{\"mlist\":[";
+    //
+    for (int i = 0; i < _list->size(); i++) {
+
+        if (_list->at(i).isData()) {
+            DataAtom da = DataAtom(_list->at(i));
+            DataTypeMList* s = const_cast<DataTypeMList*>(da.data().as<DataTypeMList>());
+
+            if (s) {
+                std::string e = s->toJSONString();
+                ret += e;
+
+                if (i < (_list->size() - 1))
+                    ret += ",";
+
+                continue;
+            }
+        }
+
+        if (_list->at(i).isSymbol())
+            ret += "\"" + _list->at(i).asString() + "\"";
+        else
+            ret += _list->at(i).asString();
+
+        if (i < (_list->size() - 1))
+            ret += ",";
+    }
+    //
+    ret += "]}";
+    return ret;
+}
 int DataTypeMList::minimalSublistLength()
 {
     if (!_list)

@@ -5,15 +5,15 @@
 
 #include "ceammc_dataatom.h"
 
-#include "json_obj.h"
+#include "json_mlist.h"
 
 #include "math.h"
 
-#include "mstring_data_type.h"
+#include "../json/mstring_data_type.h"
 
 using namespace ceammc;
 
-JSONObj::JSONObj(const PdArgs& args)
+JSONToMList::JSONToMList(const PdArgs& args)
     : BaseObject(args)
     , _JSON(new DataTypeJSON("{}"))
     , _dPtr(new DataPtr(_JSON))
@@ -24,7 +24,7 @@ JSONObj::JSONObj(const PdArgs& args)
     _out1 = createOutlet();
 }
 
-//void JSONObj::onBang()
+//void JSONToMList::onBang()
 //{
 
 //    if (_outputData)
@@ -33,7 +33,7 @@ JSONObj::JSONObj(const PdArgs& args)
 ////        _JSON->list()->output(_out1);
 //};
 
-void JSONObj::onData(const DataPtr& d)
+void JSONToMList::onData(const DataPtr& d)
 {
     if (!d.as<DataTypeJSON>())
         return;
@@ -54,7 +54,7 @@ void JSONObj::onData(const DataPtr& d)
     //post("data: %s", ns->data()->toString().c_str());
 }
 
-void JSONObj::onList(const AtomList& l)
+void JSONToMList::onList(const AtomList& l)
 {
     if (l.size() == 1)
         if (l.at(0).isData()) {
@@ -112,7 +112,7 @@ void JSONObj::onList(const AtomList& l)
     }
 }
 
-void JSONObj::dump() const
+void JSONToMList::dump() const
 {
     OBJ_DBG << "DATA: JSON";
     BaseObject::dump();
@@ -124,9 +124,9 @@ void JSONObj::dump() const
 // ==========
 
 extern "C" {
-void setup_json()
+void setup_conv_json_mlist()
 {
-    ObjectFactory<JSONObj> f("json");
+    ObjectFactory<JSONToMList> f("conv.json->mlist");
 }
 }
 
