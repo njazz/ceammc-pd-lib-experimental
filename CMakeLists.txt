@@ -89,6 +89,9 @@ set (SRC_JSON
     src/json/mstring_data_type.cpp
 
     src/json/json_obj.cpp
+
+    src/json/json_dict.cpp
+
     )
 
 set (SRC_IMG

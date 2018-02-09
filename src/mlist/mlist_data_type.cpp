@@ -105,7 +105,7 @@ AtomList* DataTypeMList::toFlatList()
 
 std::string DataTypeMList::toJSONString()
 {
-    std::string ret = "{\"mlist\":[";
+    std::string ret = "[";
     //
     for (int i = 0; i < _list->size(); i++) {
 
@@ -133,7 +133,7 @@ std::string DataTypeMList::toJSONString()
             ret += ",";
     }
     //
-    ret += "]}";
+    ret += "]";
     return ret;
 }
 int DataTypeMList::minimalSublistLength()

@@ -125,7 +125,7 @@ DataTypeMList* DataTypeJSON::toMList()
     return mListFromJSONArray(l);
 }
 
-void DataTypeJSON::fromList(AtomList& l)
+void DataTypeJSON::fromList(const AtomList& l)
 {
     std::string ns = "{\"list\":[";
 

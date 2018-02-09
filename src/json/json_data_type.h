@@ -24,15 +24,18 @@ public:
     virtual AbstractData* clone() const override;
     virtual std::string toString() const override;
 
-    json json() { return _json; }
+    const nlohmann::json json() { return _json; }
+     void set(std::string key, nlohmann::json j){_json[key] = j;}
 
     DataTypeMList* toMList();
     AtomList* toList();
 
-    void fromList(AtomList& a);
+    void fromList(const AtomList &a);
 
     void toFile( std::string fileName);
     void fromFile( std::string fileName);
+
+
 
 };
 
