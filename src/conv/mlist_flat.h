@@ -11,8 +11,6 @@ class MListFlat : public BaseObject {
     DataTypeMList* _MList;
     DataPtr _dPtr;
 
-    bool _outputData = false;
-
 public:
     MListFlat(const PdArgs& args);
 

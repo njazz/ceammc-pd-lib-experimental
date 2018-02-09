@@ -37,11 +37,14 @@ std::string DataTypeMList::toString() const
     if (!_list)
         return "[empty]";
 
-    AtomList* m = ConvMList::toLlll(const_cast<DataTypeMList*>(this));//const_cast<DataTypeMList*>(this)->toLlll();
+    AtomList* m = ConvMList::toLlll(const_cast<DataTypeMList*>(this)); //const_cast<DataTypeMList*>(this)->toLlll();
 
     std::string ret;
-    for (int i = 0; i < m->size(); i++)
-        ret += m->at(i).asString() + " ";
+    for (int i = 0; i < m->size(); i++) {
+        ret += m->at(i).asString();
+        if (i < (m->size() - 1))
+            ret += " ";
+    }
 
     return ret;
 }

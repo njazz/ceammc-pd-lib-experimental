@@ -11,8 +11,6 @@ class MListLlll : public BaseObject {
     DataTypeMList* _MList;
     DataPtr _dPtr;
 
-    bool _outputData = false;
-
 public:
     MListLlll(const PdArgs& args);
 

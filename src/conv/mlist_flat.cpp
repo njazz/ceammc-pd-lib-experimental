@@ -24,10 +24,7 @@ void MListFlat::onBang()
     if (_MList->list() == 0)
         return;
 
-    if (_outputData)
-        dataTo(0, _dPtr);
-    else
-        _MList->list()->output(_out1);
+    ConvMList::toFlatList(_MList)->output(_out1);
 };
 
 void MListFlat::onData(const DataPtr& d)

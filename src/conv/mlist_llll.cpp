@@ -24,10 +24,7 @@ void MListLlll::onBang()
     if (_MList->list() == 0)
         return;
 
-    if (_outputData)
-        dataTo(0, _dPtr);
-    else
-        _MList->list()->output(_out1);
+    ConvMList::toLlll(_MList)->output(_out1);
 };
 
 void MListLlll::onData(const DataPtr& d)
