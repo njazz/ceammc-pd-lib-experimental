@@ -125,55 +125,55 @@ DataTypeMList* DataTypeJSON::toMList()
     return mListFromJSONArray(l);
 }
 
-void DataTypeJSON::fromList(const AtomList& l)
-{
-    std::string ns = "{\"list\":[";
+//void DataTypeJSON::fromList(const AtomList& l)
+//{
+//    std::string ns = "{\"list\":[";
 
-    std::string str;
+//    std::string str;
 
-    for (int i = 0; i < l.size(); i++) {
-        std::string str;
-        if (l.at(i).isData()) {
-            DataAtom a = DataAtom(l.at(i));
-            str = a.data()->toString();
-            if (strlen(str.c_str()) == 0)
-                str = "0";
-            else
-                str = "\"" + str + "\"";
-        } else {
-            if (l.at(i).isSymbol())
-                str = "\"" + l.at(i).asString() + "\"";
-            else
-                str = l.at(i).asString();
-        }
+//    for (int i = 0; i < l.size(); i++) {
+//        std::string str;
+//        if (l.at(i).isData()) {
+//            DataAtom a = DataAtom(l.at(i));
+//            str = a.data()->toString();
+//            if (strlen(str.c_str()) == 0)
+//                str = "0";
+//            else
+//                str = "\"" + str + "\"";
+//        } else {
+//            if (l.at(i).isSymbol())
+//                str = "\"" + l.at(i).asString() + "\"";
+//            else
+//                str = l.at(i).asString();
+//        }
 
-        ns += str;
-        if (i < (l.size() - 1))
-            ns += ",";
-    }
-    ns += "]}";
+//        ns += str;
+//        if (i < (l.size() - 1))
+//            ns += ",";
+//    }
+//    ns += "]}";
 
-    _json = json::parse(ns);
-}
+//    _json = json::parse(ns);
+//}
 
-AtomList* DataTypeJSON::toList()
-{
+//AtomList* DataTypeJSON::toList()
+//{
 
-    auto l = _json["list"];
-    if (l.is_null())
-        return 0;
+//    auto l = _json["list"];
+//    if (l.is_null())
+//        return 0;
 
-    AtomList* ret = new AtomList();
+//    AtomList* ret = new AtomList();
 
-    for (auto& e : l) {
-        if (e.is_number()) {
-            float f = e;
-            ret->append(f);
-        } else {
-            std::string str = e;
-            ret->append(Atom(gensym(str.c_str())));
-        }
-    }
+//    for (auto& e : l) {
+//        if (e.is_number()) {
+//            float f = e;
+//            ret->append(f);
+//        } else {
+//            std::string str = e;
+//            ret->append(Atom(gensym(str.c_str())));
+//        }
+//    }
 
-    return ret;
-}
+//    return ret;
+//}

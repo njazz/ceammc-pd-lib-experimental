@@ -11,6 +11,8 @@
 
 #include "../json/mstring_data_type.h"
 
+#include "../conv/conv_list.h"
+
 using namespace ceammc;
 
 ListToJSON::ListToJSON(const PdArgs& args)
@@ -49,8 +51,9 @@ void ListToJSON::onList(const AtomList& l)
 {
 
     try {
-        _json = new DataTypeJSON("{}");
-        _json->fromList(const_cast<AtomList&>(l));
+        _json = ConvList::toJSON(const_cast<AtomList*>(&l));
+        //_json = new DataTypeJSON("{}");
+        //_json->fromList(const_cast<AtomList&>(l));
         _dPtr = new DataPtr(_json);
         onBang();
     } catch (std::exception& e) {

@@ -10,7 +10,7 @@
 
 #include "math.h"
 
-#include "conv_mlist.h"
+#include "conv_list.h"
 
 using namespace cimg_library;
 
@@ -57,7 +57,7 @@ void MListToImage::onList(const AtomList& l)
 //    }
 
 
-    DataTypeMList*ml = new DataTypeMList(new AtomList(l));
+//    DataTypeMList*ml = new DataTypeMList(new AtomList(l));
 
 //    int w = DataTypeMList(new AtomList(l)).minimalSublistLength();
 //    int h = l.size();
@@ -86,7 +86,7 @@ void MListToImage::onList(const AtomList& l)
 //        }
 //    }
 
-    DataTypeImage* img = ConvMList::toImage(ml);
+    DataTypeImage* img = ConvList::toImage(new AtomList(l));
     if (!img) return;
 
     _img = img;

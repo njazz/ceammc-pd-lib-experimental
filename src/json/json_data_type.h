@@ -27,9 +27,9 @@ public:
     void set(std::string key, nlohmann::json j){_json[key] = j;}
 
     DataTypeMList* toMList();
-    AtomList* toList();
+//    AtomList* toList();
 
-    void fromList(const AtomList &a);
+//    void fromList(const AtomList &a);
 
     void toFile( std::string fileName);
     void fromFile( std::string fileName);

@@ -12,6 +12,8 @@
 #include "mstring_data_type.h"
 
 #include "../conv/conv_mlist.h"
+#include "../conv/conv_list.h"
+#include "../conv/conv_json.h"
 
 using namespace ceammc;
 
@@ -76,9 +78,9 @@ void JSONDict::m_get_list(t_symbol* s, const AtomList& l)
 
     DataTypeJSON* jj = new DataTypeJSON(j2.dump());
     if (jj) {
-        AtomList* ll = jj->toList();
+        AtomList* ll = ConvJSON::toList(jj);// jj->toList();
         if (ll)
-            jj->toList()->output(_out1);
+            ll->output(_out1);
     }
 }
 
@@ -133,10 +135,12 @@ void JSONDict::m_set_list(t_symbol* s, const AtomList& l)
     AtomList l2 = l;
     l2.remove(0);
 
-    DataTypeJSON jj("{}");
-    jj.fromList(l2);
+//    DataTypeJSON jj("{}");
+//    jj.fromList(l2);
 
-    _JSON->set(l.at(0).asString(), jj.json()["list"]);
+    DataTypeJSON* jj = ConvList::toJSON(&l2);
+
+    _JSON->set(l.at(0).asString(), jj->json()["list"]);
 }
 
 void JSONDict::m_set_mlist(t_symbol* s, const AtomList& l)

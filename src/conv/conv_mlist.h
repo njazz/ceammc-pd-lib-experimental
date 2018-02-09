@@ -1,5 +1,5 @@
-#ifndef CONVMLIST_H
-#define CONVMLIST_H
+#ifndef CONV_MLIST_H
+#define CONV_MLIST_H
 
 #include "../mlist/mlist_data_type.h"
 #include "../img/image_data_type.h"

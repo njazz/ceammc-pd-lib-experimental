@@ -1,5 +1,5 @@
-#ifndef CONVMLIST_H
-#define CONVMLIST_H
+#ifndef CONV_LIST_H
+#define CONV_LIST_H
 
 #include "../img/image_data_type.h"
 #include "../json/json_data_type.h"
@@ -13,9 +13,8 @@ class ConvList {
 public:
     static DataTypeImage* toImage(AtomList* list);
     static DataTypeJSON* toJSON(AtomList *list);
-    static DataTypeMList* toMList(AtomList* list);
 
-    static std::string toJSONString(AtomList* mlist);
+    static std::string toJSONString(AtomList* l);
 };
 
 #endif // CONVMLIST_H

@@ -1,23 +1,50 @@
 #include "conv_list.h"
+#include "conv_mlist.h"
 
- DataTypeJSON* ConvList::toJSON(AtomList* list)
- {
-     DataTypeJSON *ret;
+#include "ceammc_dataatom.h"
 
-     return ret;
- }
-
- DataTypeMList* ConvList::toMList(AtomList* list)
- {
-     DataTypeMList *ret;
-
-     return ret;
- }
-
-std::string ConvList::toJSONString(AtomList* list)
+DataTypeJSON* ConvList::toJSON(AtomList* list)
 {
-    std::string ret;
-
+    DataTypeJSON* ret = new DataTypeJSON(toJSONString(list));
     return ret;
 }
 
+DataTypeImage* ConvList::toImage(AtomList* list)
+{
+    DataTypeImage* ret;
+
+    DataTypeMList* mlist = new DataTypeMList(list);
+
+    return ConvMList::toImage(mlist);
+}
+
+std::string ConvList::toJSONString(AtomList* l)
+{
+    std::string ret = "{\"list\":[";
+
+    std::string str;
+
+    for (int i = 0; i < l->size(); i++) {
+        std::string str;
+        if (l->at(i).isData()) {
+            DataAtom a = DataAtom(l->at(i));
+            str = a.data()->toString();
+            if (strlen(str.c_str()) == 0)
+                str = "0";
+            else
+                str = "\"" + str + "\"";
+        } else {
+            if (l->at(i).isSymbol())
+                str = "\"" + l->at(i).asString() + "\"";
+            else
+                str = l->at(i).asString();
+        }
+
+        ret += str;
+        if (i < (l->size() - 1))
+            ret += ",";
+    }
+    ret += "]}";
+
+    return ret;
+}
