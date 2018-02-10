@@ -17,7 +17,6 @@ class MListToImage : public BaseObject {
     DataTypeImage* _img;
     DataPtr* _dPtr = 0;
 
-    bool _outputData = false;
 
 public:
     MListToImage(const PdArgs& args);

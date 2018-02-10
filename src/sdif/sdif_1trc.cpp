@@ -113,6 +113,10 @@ void SDIF1TRCClass::m_read(t_symbol* s, const AtomList& l)
 
 void SDIF1TRCClass::m_write(t_symbol* s, const AtomList& l)
 {
+    if (!_sdifFileData->file())
+        return;
+    if (_sdifFileData->file()->frameCount() < 1)
+        return;
     mFileError e = _sdifFileData->file()->writeFile(l.at(0).asString());
     post("sdif.file: written %s", l.at(0).asString().c_str());
 }

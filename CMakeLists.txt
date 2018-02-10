@@ -17,8 +17,6 @@ project(sdif_library)
 
 add_definitions(-DHAVE_UNISTD_H)
 
-
-
 file(GLOB UTF8
     "utf8/*.h"
     "utf8/*.c"
@@ -53,8 +51,6 @@ set (SYNTH
 
 set (SOURCES
     sdif_lib.cpp
-
-
     )
 
 set (SRC_SDIF
@@ -120,6 +116,7 @@ set (SRC_CONV
 
     )
 
+
 set (HEADERS
     ../miniSDIF/src/mSDIFFile.hpp
     ../miniSDIF/src/mSDIFFrame.hpp
@@ -170,8 +167,31 @@ IF(JPEG_FOUND)
 ENDIF()
 
 add_subdirectory(tests)
+
+
+#######
 enable_testing()
-#add_test (NAME MyTest COMMAND Test)
+
+macro(add_unit_test target target_test)
+    set(UNIT_TEST_TARGETS ${UNIT_TEST_TARGETS} ${target_test})
+    add_test(target ${CMAKE_BINARY_DIR}/tests/${target_test})
+endmacro(add_unit_test)
+
+add_unit_test (all_tests test_converters)
+
+add_custom_target( all_tests ALL
+                   DEPENDS ${UNIT_TEST_TARGETS}
+)
+
+
+add_custom_command(TARGET all_tests
+                   COMMENT "Running tests..."
+                   POST_BUILD
+                   COMMAND ${CMAKE_CTEST_COMMAND}
+                   ARGS --output-on-failure -fprofile-arcs -ftest-coverage
+                   WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+                   )
+
 
 #install(TARGETS timeline LIBRARY DESTINATION ${CMAKE_BINARY_DIR}/../bin)
 
