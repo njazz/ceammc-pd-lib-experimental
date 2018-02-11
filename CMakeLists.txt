@@ -95,6 +95,12 @@ set (SRC_IMG
     src/img/image_data_type.cpp
     )
 
+set (SRC_MAT
+    src/matrix/matrix_obj.cpp
+
+    src/matrix/matrix_data_type.cpp
+    )
+
 set (SRC_CONV
 
     src/conv/mlist_llll.cpp
@@ -103,6 +109,7 @@ set (SRC_CONV
     src/conv/mlist_image.cpp
 
     src/conv/image_mlist.cpp
+    src/conv/image_matrix.cpp
 
     src/conv/list_json.cpp
 
@@ -113,14 +120,28 @@ set (SRC_CONV
     src/conv/conv_image.cpp
     src/conv/conv_list.cpp
     src/conv/conv_json.cpp
+    src/conv/conv_matrix.cpp
+
+    src/conv/matrix_image.cpp
 
     )
-
 
 set (HEADERS
     ../miniSDIF/src/mSDIFFile.hpp
     ../miniSDIF/src/mSDIFFrame.hpp
     ../miniSDIF/src/mSDIFMatrix.hpp
+)
+
+file(GLOB LIB_SRC
+    "lib/ceammc_atomlist.cpp"
+    "lib/ceammc_atom.cpp"
+    "lib/ceammc_abstractdata.cpp"
+    "lib/ceammc_dataatom.cpp"
+    "lib/ceammc_data.cpp"
+    "lib/ceammc_datastorage.cpp"
+    "lib/ceammc_log.cpp"
+
+
 )
 
 find_package(Boost 1.47.0 REQUIRED)
@@ -153,7 +174,10 @@ add_library(sdif_lib SHARED
     ${SRC_MLIST}
     ${SRC_JSON}
     ${SRC_IMG}
+    ${SRC_MAT}
     ${SRC_CONV}
+
+    ${LIB_SRC}
     )
 
 target_link_libraries(sdif_lib "-undefined dynamic_lookup")
@@ -182,7 +206,6 @@ add_unit_test (all_tests test_converters)
 add_custom_target( all_tests ALL
                    DEPENDS ${UNIT_TEST_TARGETS}
 )
-
 
 add_custom_command(TARGET all_tests
                    COMMENT "Running tests..."

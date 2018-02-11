@@ -36,6 +36,11 @@ extern void setup_conv_mlist_json();
 
 extern void setup_conv_json_list();
 extern void setup_conv_list_json();
+
+extern void setup_conv_matrix_image();
+extern void setup_conv_image_matrix();
+
+extern void setup_matrix();
 }
 
 extern "C" void setup()
@@ -72,4 +77,9 @@ extern "C" void setup()
 
     setup_conv_json_list();
     setup_conv_list_json();
+
+    setup_conv_matrix_image();
+    setup_conv_image_matrix();
+
+    setup_matrix();
 }

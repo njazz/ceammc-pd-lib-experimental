@@ -35,3 +35,29 @@ DataTypeMList* ConvImage::toMList(DataTypeImage* image)
 {
     return new DataTypeMList(ConvImage::toList(image));
 }
+
+DataTypeMatrix* ConvImage::toMatrix(DataTypeImage* image)
+{
+    if (!image) {
+        LIB_ERR << "bad image data";
+        return 0;
+    }
+
+    if (!image->img()) {
+        LIB_ERR << "bad image data pointer";
+        return 0;
+    }
+
+    int w = image->img()->width();
+    int h = image->img()->height();
+
+    DataTypeMatrix* ret = new DataTypeMatrix(w,h);
+
+    for (int y = 0; y < h; y++) {
+        for (int x = 0; x < w; x++) {
+            ret->set(x,y, float(image->img()->atXY(x, y)));
+        }
+
+    }
+    return ret;
+}

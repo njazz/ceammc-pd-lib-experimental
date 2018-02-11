@@ -62,6 +62,12 @@ set (SRC_IMG
     ../src/img/image_data_type.cpp
     )
 
+set (SRC_MAT
+#    src/matrix/matrix_obj.cpp
+
+    ../src/matrix/matrix_data_type.cpp
+    )
+
 set (SRC_CONV
 
 #    ../src/conv/mlist_llll.cpp
@@ -121,7 +127,7 @@ file(GLOB UTF8
 
 #target_link_libraries(test_converters puredata-core)
 
-add_executable(test_converters test_converters.cpp catch.hpp ${SRC_CONV} ${SRC_JSON} ${SRC_MLIST} ${SRC_IMG} ${LIB_SRC} ${UTF8} ${PD_SRC})
+add_executable(test_converters test_converters.cpp catch.hpp ${SRC_CONV} ${SRC_JSON} ${SRC_MLIST} ${SRC_IMG} ${SRC_MAT} ${LIB_SRC} ${UTF8} ${PD_SRC})
 
 SET(CMAKE_CXX_FLAGS="-g -O0 -Wall -W -Wshadow -Wunused-variable -Wunused-parameter -Wunused-function -Wunused -Wno-system-headers -Wno-deprecated -Woverloaded-virtual -Wwrite-strings -fprofile-arcs -ftest-coverage")
 SET(CMAKE_C_FLAGS="-g -O0 -Wall -W -fprofile-arcs -ftest-coverage")
