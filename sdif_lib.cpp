@@ -26,6 +26,8 @@ extern void setup_mlist0x2eflip();
 extern void setup_json();
 extern void setup_json_dict();
 
+extern void setup_json_recorder();
+
 extern void setup_image();
 
 extern void setup_conv_image_mlist();
@@ -66,6 +68,8 @@ extern "C" void setup()
 
     setup_json();
     setup_json_dict();
+
+    setup_json_recorder();
 
     setup_image();
 

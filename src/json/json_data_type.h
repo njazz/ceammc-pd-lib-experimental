@@ -24,7 +24,10 @@ public:
     virtual std::string toString() const override;
 
     const nlohmann::json json() { return _json; }
-    void set(std::string key, nlohmann::json j) { _json[key] = j; }
+
+    template<typename T>
+    inline
+    void set(T key, nlohmann::json j) { _json[key] = j; }
 
     void toFile(std::string fileName);
     void fromFile(std::string fileName);

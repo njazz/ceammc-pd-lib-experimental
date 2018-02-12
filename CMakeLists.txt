@@ -87,6 +87,7 @@ set (SRC_JSON
 
     src/json/json_dict.cpp
 
+    src/json/json_recorder.cpp
     )
 
 set (SRC_IMG
