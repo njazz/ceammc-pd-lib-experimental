@@ -205,6 +205,36 @@ void SDIFFileClass::m_replace_frames(t_symbol* s, const AtomList& l)
     }
 }
 
+void SDIFFileClass::m_timescale(t_symbol* s, const AtomList& l)
+{
+    if (l.size() < 1)
+        return;
+
+    if (!_sdifFileData->file())
+        return;
+
+    _sdifFileData->file()->setTimeScale(l.at(0).asFloat());
+}
+
+void SDIFFileClass::m_timeoffset(t_symbol* s, const AtomList& l)
+{
+    if (l.size() < 1)
+        return;
+
+    if (!_sdifFileData->file())
+        return;
+
+    _sdifFileData->file()->setTimeOffset(l.at(0).asFloat());
+}
+
+void SDIFFileClass::m_timeapply(t_symbol* s, const AtomList& l)
+{
+
+    if (!_sdifFileData->file())
+        return;
+
+    _sdifFileData->file()->applyTime();
+}
 extern "C" {
 void setup_sdif0x2efile()
 {
@@ -219,6 +249,10 @@ void setup_sdif0x2efile()
     f.addMethod("add_frame", &SDIFFileClass::m_add_frame);
     f.addMethod("insert_frame", &SDIFFileClass::m_insert_frame);
     f.addMethod("remove_frame", &SDIFFileClass::m_remove_frame);
+
+    f.addMethod("time_scale", &SDIFFileClass::m_timescale);
+    f.addMethod("time_offset", &SDIFFileClass::m_timeoffset);
+    f.addMethod("time_apply", &SDIFFileClass::m_timeapply);
 
     f.addMethod("clear_frames", &SDIFFileClass::m_clear_frames);
 

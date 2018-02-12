@@ -59,7 +59,7 @@ void JSONRecorder::onList(const AtomList& l)
     auto duration = std::chrono::steady_clock::now().time_since_epoch();
     auto millis = std::chrono::duration_cast<std::chrono::milliseconds>(duration).count();
 
-    int key = millis-_startTime;
+    int key = millis - _startTime;
 
     DataTypeMList* ml = new DataTypeMList(new AtomList(l));
     //DataTypeJSON* jj = ConvMList::toJSON(ml);

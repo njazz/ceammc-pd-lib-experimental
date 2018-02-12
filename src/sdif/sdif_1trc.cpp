@@ -176,6 +176,36 @@ void SDIF1TRCClass::m_remove_all_frames(t_symbol* s, const AtomList& l)
     _sdifFileData->file()->removeAllFrames();
 }
 
+void SDIF1TRCClass::m_timescale(t_symbol* s, const AtomList& l)
+{
+    if (l.size() < 1)
+        return;
+
+    if (!_sdifFileData->file())
+        return;
+
+    _sdifFileData->file()->setTimeScale(l.at(0).asFloat());
+}
+
+void SDIF1TRCClass::m_timeoffset(t_symbol* s, const AtomList& l)
+{
+    if (l.size() < 1)
+        return;
+
+    if (!_sdifFileData->file())
+        return;
+
+    _sdifFileData->file()->setTimeOffset(l.at(0).asFloat());
+}
+
+void SDIF1TRCClass::m_timeapply(t_symbol* s, const AtomList& l)
+{
+
+    if (!_sdifFileData->file())
+        return;
+
+    _sdifFileData->file()->applyTime();
+}
 extern "C" {
 void setup_sdif0x2e1trc()
 {
@@ -186,6 +216,10 @@ void setup_sdif0x2e1trc()
 
     f.addMethod("read", &SDIF1TRCClass::m_read);
     f.addMethod("write", &SDIF1TRCClass::m_write);
+
+    f.addMethod("time_scale", &SDIF1TRCClass::m_timescale);
+    f.addMethod("time_offset", &SDIF1TRCClass::m_timeoffset);
+    f.addMethod("time_apply", &SDIF1TRCClass::m_timeapply);
 
     f.addMethod("add", &SDIF1TRCClass::m_add);
     f.addMethod("insert", &SDIF1TRCClass::m_insert);

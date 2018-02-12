@@ -11,9 +11,12 @@ extern void setup_sdif0x2eframe();
 extern void setup_sdif0x2ematrix();
 
 extern void setup_sdif0x2e1trc();
+extern void setup_sdif0x2e1trc_merge();
 
 extern void setup_synth0x2esine();
 extern void setup_synth0x2eres();
+
+extern void setup_list0x2edo();
 
 extern void setup_mlist();
 extern void setup_mlist_unpack();
@@ -54,9 +57,12 @@ extern "C" void setup()
     setup_sdif0x2ematrix();
 
     setup_sdif0x2e1trc();
+    setup_sdif0x2e1trc_merge();
 
     setup_synth0x2esine();
     setup_synth0x2eres();
+
+    setup_list0x2edo();
 
     setup_mlist();
     setup_mlist_unpack();

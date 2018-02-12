@@ -62,11 +62,16 @@ set (SRC_SDIF
     src/sdif/sdif_data_types.cpp
 
     src/sdif/sdif_1trc.cpp
+    src/sdif/sdif_1trc_merge.cpp
     )
 
 set (SRC_SYNTH
     src/synth/synth_sine.cpp
     src/synth/synth_res.cpp
+    )
+
+set (SRC_LIST
+    src/list/list_do.cpp
     )
 
 set (SRC_MLIST
@@ -173,6 +178,7 @@ add_library(sdif_lib SHARED
     ${SRC_SDIF}
     ${SRC_SYNTH}
     ${SRC_MLIST}
+    ${SRC_LIST}
     ${SRC_JSON}
     ${SRC_IMG}
     ${SRC_MAT}

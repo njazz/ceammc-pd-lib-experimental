@@ -39,6 +39,10 @@ public:
 
     void m_frames(t_symbol* s, const AtomList& l);
     void m_replace_frames(t_symbol* s, const AtomList& l);
+
+    void m_timescale(t_symbol* s, const AtomList& l);
+    void m_timeoffset(t_symbol* s, const AtomList& l);
+    void m_timeapply(t_symbol* s, const AtomList& l);
 };
 
 #endif // SDIF_FILE_H

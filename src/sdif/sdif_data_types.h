@@ -14,6 +14,7 @@ static const ::ceammc::DataType DATA_SDIF_MATRIX = 103;
 class DataTypeSDIFFile : public AbstractData {
     MSDIFFile* _file = 0;
 
+
 public:
     static const DataType dataType = DATA_SDIF_FILE;
 
@@ -25,6 +26,10 @@ public:
     virtual std::string toString() const override;
 
     MSDIFFile* file() { return _file; }
+
+    //
+    void mergeFrames(MSDIFFrameVector* frames);
+
 };
 
 // ==========

@@ -11,8 +11,7 @@ DataTypeSDIFFile::DataTypeSDIFFile(MSDIFFile* f)
 
 void DataTypeSDIFFile::dump()
 {
-    if (!_file)
-    {
+    if (!_file) {
         post("sdif.file: empty");
         return;
     }
@@ -33,7 +32,8 @@ AbstractData* DataTypeSDIFFile::clone() const
 
 std::string DataTypeSDIFFile::toString() const
 {
-    if (!_file) return "[empty file]";
+    if (!_file)
+        return "[empty file]";
     return _file->info();
 }
 
@@ -46,8 +46,7 @@ DataTypeSDIFFrame::DataTypeSDIFFrame(MSDIFFrame* f)
 
 void DataTypeSDIFFrame::dump()
 {
-    if (!_frame)
-    {
+    if (!_frame) {
         post("sdif.file: empty");
         return;
     }
@@ -68,7 +67,8 @@ AbstractData* DataTypeSDIFFrame::clone() const
 
 std::string DataTypeSDIFFrame::toString() const
 {
-    if (!_frame) return "[empty file]";
+    if (!_frame)
+        return "[empty file]";
     return _frame->info();
 }
 
@@ -81,8 +81,7 @@ DataTypeSDIFMatrix::DataTypeSDIFMatrix(MSDIFMatrix* f)
 
 void DataTypeSDIFMatrix::dump()
 {
-    if (!_matrix)
-    {
+    if (!_matrix) {
         post("sdif.file: empty");
         return;
     }
@@ -103,6 +102,38 @@ AbstractData* DataTypeSDIFMatrix::clone() const
 
 std::string DataTypeSDIFMatrix::toString() const
 {
-    if (!_matrix) return "[empty file]";
+    if (!_matrix)
+        return "[empty file]";
     return _matrix->info();
+}
+
+MSDIFFrame* mergeFramesProc(MSDIFFrame* f1, MSDIFFrame* f2, int& i1, int& i2)
+{
+    if (f1->time() < f2->time()) {
+        i1--;
+        return f1;
+    } else {
+        i2--;
+        return f2;
+    }
+}
+void DataTypeSDIFFile::mergeFrames(MSDIFFrameVector* frames2)
+{
+    MSDIFFrameVector nf;
+
+    int f_c1 = file()->frameCount();
+    int f_c2 = frames2->size();
+
+    while (f_c1) {
+        int i1 = file()->frameCount() - f_c1;
+        int i2 = frames2->size() - f_c2;
+
+        while (f_c2) {
+            nf.push_back(mergeFramesProc(file()->frames()[i1], frames2->at(i2), i1, i2));
+        }
+
+        nf.push_back(file()->frames()[i1]);
+    }
+
+    file()->replaceFrames(nf);
 }
