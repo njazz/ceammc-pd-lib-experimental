@@ -73,6 +73,16 @@ void SDIF1TRCMergeClass::onData(const DataPtr& d)
     if (!_sdifFileData->file())
         return;
 
+    DataTypeSDIFFile* out = new DataTypeSDIFFile(new MSDIFFile());
+
+    for (auto f : _sdifFileData->file()->frames())
+    {
+        out->file()->addFrame(f);
+    }
+
+    _sdifFileData = out;
+    _dPtr = DataPtr(_sdifFileData);
+
     _sdifFileData->file()->mergeFramesWithSignature("1TRC",_sdifSecondFileData->file());
 
     onBang();
