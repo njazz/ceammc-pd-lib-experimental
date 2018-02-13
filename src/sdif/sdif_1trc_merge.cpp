@@ -17,6 +17,7 @@ SDIF1TRCMergeClass::SDIF1TRCMergeClass(const PdArgs& args)
     , _sdifFileData(new DataTypeSDIFFile(0))
     , _dPtr(_sdifFileData)
 {
+    createInlet();
     _out1 = createOutlet();
 }
 
@@ -32,20 +33,20 @@ void SDIF1TRCMergeClass::onBang()
 
 void SDIF1TRCMergeClass::onFloat(float f)
 {
-    if (!_sdifFileData)
-        return;
-    if (!_sdifFileData->file())
-        return;
+//    if (!_sdifFileData)
+//        return;
+//    if (!_sdifFileData->file())
+//        return;
 
-    int idx = f;
+//    int idx = f;
 
-    if (idx < 0)
-        return;
-    if (idx >= _sdifFileData->file()->frameCount())
-        return;
+//    if (idx < 0)
+//        return;
+//    if (idx >= _sdifFileData->file()->frameCount())
+//        return;
 
-    DataPtr p(new DataTypeSDIFFrame(_sdifFileData->file()->frames().at(idx)));
-    dataTo(0, p);
+//    DataPtr p(new DataTypeSDIFFrame(_sdifFileData->file()->frames().at(idx)));
+//    dataTo(0, p);
 }
 
 void SDIF1TRCMergeClass::dump() const
@@ -66,9 +67,13 @@ void SDIF1TRCMergeClass::onData(const DataPtr& d)
     _sdifFileData = const_cast<DataTypeSDIFFile*>(d.as<DataTypeSDIFFile>());
     _dPtr = DataPtr(_sdifFileData);
 
-    if (!_sdifSecondFileData->file()) return;
+    if (!_sdifSecondFileData->file())
+        return;
 
-    _sdifFileData->file()->mergeFrames(_sdifSecondFileData->file()->framesWithSignature("1TRC"));
+    if (!_sdifFileData->file())
+        return;
+
+    _sdifFileData->file()->mergeFramesWithSignature("1TRC",_sdifSecondFileData->file());
 
     onBang();
 }

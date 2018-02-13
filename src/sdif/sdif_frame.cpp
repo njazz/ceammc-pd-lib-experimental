@@ -199,7 +199,6 @@ void SDIFFrameClass::m_matrices(t_symbol* s, const AtomList& l)
     if (!_sdifFrameData->frame())
         return;
 
-    _sdifFrameData->frame()->removeAllMatrices();
 
     AtomList L(Atom(gensym("matrices")));
 
