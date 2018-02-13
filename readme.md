@@ -1,4 +1,4 @@
-#####temporary development repository, part of CEAMMC Puredata build 0.5
+##### temporary development repository, part of CEAMMC Puredata build 0.5
 
 main project link:
 
