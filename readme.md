@@ -4,6 +4,8 @@ main project link:
 
 http://gitgub.com/uliss/pure-data
 
+Included objects: SDIF file handling, synth objects, more data types (multi level list, image, matrix, JSON)
+
 to install:
 
 1. make folder, clone this repository, http://github.com/njazz/PartialSynth, http://github.com/njazz/miniSDIF
