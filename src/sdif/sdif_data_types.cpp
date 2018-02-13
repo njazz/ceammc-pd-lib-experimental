@@ -107,33 +107,4 @@ std::string DataTypeSDIFMatrix::toString() const
     return _matrix->info();
 }
 
-MSDIFFrame* mergeFramesProc(MSDIFFrame* f1, MSDIFFrame* f2, int& i1, int& i2)
-{
-    if (f1->time() < f2->time()) {
-        i1--;
-        return f1;
-    } else {
-        i2--;
-        return f2;
-    }
-}
-void DataTypeSDIFFile::mergeFrames(MSDIFFrameVector* frames2)
-{
-    MSDIFFrameVector nf;
 
-    int f_c1 = file()->frameCount();
-    int f_c2 = frames2->size();
-
-    while (f_c1) {
-        int i1 = file()->frameCount() - f_c1;
-        int i2 = frames2->size() - f_c2;
-
-        while (f_c2) {
-            nf.push_back(mergeFramesProc(file()->frames()[i1], frames2->at(i2), i1, i2));
-        }
-
-        nf.push_back(file()->frames()[i1]);
-    }
-
-    file()->replaceFrames(nf);
-}

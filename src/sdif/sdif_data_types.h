@@ -27,9 +27,6 @@ public:
 
     MSDIFFile* file() { return _file; }
 
-    //
-    void mergeFrames(MSDIFFrameVector* frames);
-
 };
 
 // ==========
