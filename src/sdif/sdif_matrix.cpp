@@ -123,7 +123,7 @@ void SDIFMatrixClass::m_rowat(t_symbol* s, const AtomList& l)
         return;
 
     for (int i = 0; i < _sdifMatrixData->matrix()->columns(); i++) {
-        L.append(Atom(_sdifMatrixData->matrix()->rowAt<float>(idx)[i]));
+        L.append(Atom(_sdifMatrixData->matrix()->valuesAtRow<float>(idx)[i]));
     }
 
     L.output(_out1);
@@ -148,7 +148,7 @@ void SDIFMatrixClass::m_columnat(t_symbol* s, const AtomList& l)
         return;
 
     for (int i = 0; i < _sdifMatrixData->matrix()->rows(); i++) {
-        L.append(Atom(_sdifMatrixData->matrix()->columnAt<float>(idx)[i]));
+        L.append(Atom(_sdifMatrixData->matrix()->valuesAtColumn<float>(idx)[i]));
     }
 
     L.output(_out1);

@@ -15,6 +15,7 @@ using namespace ceammc;
 SDIF1TRCMergeClass::SDIF1TRCMergeClass(const PdArgs& args)
     : BaseObject(args)
     , _sdifFileData(new DataTypeSDIFFile(0))
+    , _sdifSecondFileData(new DataTypeSDIFFile(0))
     , _dPtr(_sdifFileData)
 {
     createInlet();
@@ -67,23 +68,24 @@ void SDIF1TRCMergeClass::onData(const DataPtr& d)
     _sdifFileData = const_cast<DataTypeSDIFFile*>(d.as<DataTypeSDIFFile>());
     _dPtr = DataPtr(_sdifFileData);
 
-    if (!_sdifSecondFileData->file())
-        return;
+//    if (!_sdifSecondFileData->file())
+//        return;
 
     if (!_sdifFileData->file())
         return;
 
-    DataTypeSDIFFile* out = new DataTypeSDIFFile(new MSDIFFile());
+    DataTypeSDIFFile* out = new DataTypeSDIFFile(new MSDIFFile(*_sdifFileData->file()));
 
-    for (auto f : _sdifFileData->file()->frames())
-    {
-        out->file()->addFrame(f);
-    }
+//    for (auto f : _sdifFileData->file()->frames())
+//    {
+//        out->file()->addFrame(f);
+//    }
 
     _sdifFileData = out;
     _dPtr = DataPtr(_sdifFileData);
 
-    _sdifFileData->file()->mergeFramesWithSignature("1TRC",_sdifSecondFileData->file());
+    if (_sdifSecondFileData->file())
+        _sdifFileData->file()->mergeFramesWithSignature("1TRC",_sdifSecondFileData->file());
 
     onBang();
 }
@@ -96,6 +98,8 @@ void SDIF1TRCMergeClass::onList(const AtomList& l)
 
 void SDIF1TRCMergeClass::onInlet(size_t s, const AtomList& l)
 {
+    if (s==0) return;
+
     DataAtom a(l.at(0));
 
     if (!a.data().as<DataTypeSDIFFile>())
