@@ -1,10 +1,13 @@
-##### temporary development repository, part of CEAMMC Puredata build 0.5
+### temporary development repository, part of CEAMMC Puredata build 0.6+
 
 main project link:
 
 http://gitgub.com/uliss/pure-data
 
-Included objects: SDIF file handling, synth objects, more data types (multi level list, image, matrix, JSON)
+Included objects: 
+- SDIF file handling 
+- synth objects for SDIF models
+- more custom data types (multi level list, image, matrix, JSON)
 
 to install:
 
