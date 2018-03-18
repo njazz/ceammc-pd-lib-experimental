@@ -132,6 +132,17 @@ set (SRC_CONV
 
     )
 
+set (SRC_TL
+    src/tl/tl_bang.cpp
+    src/tl/tl_cue.cpp
+    src/tl/tl_transport.cpp
+
+    src/tl/tl_toggle.cpp
+    src/tl/tl_value.cpp
+    src/tl/tl_parameter.cpp
+    src/tl/tl_delay.cpp	
+)
+
 set (HEADERS
     ../miniSDIF/src/mSDIFFile.hpp
     ../miniSDIF/src/mSDIFFrame.hpp
@@ -184,7 +195,7 @@ add_library(sdif_lib SHARED
     ${SRC_MAT}
     ${SRC_CONV}
 
-    ${LIB_SRC}
+    #${LIB_SRC}
     )
 
 target_link_libraries(sdif_lib "-undefined dynamic_lookup")
